@@ -31,16 +31,13 @@
     "preview": "gatsby build && gatsby serve"
   },
   "devDependencies": {
-    "gatsby": "^2.21.11",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^3.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@arshad/gatsby-theme-blog-core": "^1.2.1",
     "@arshad/gatsby-theme-page-core": "^1.1.6",
-    "@arshad/gatsby-theme-phoenix": "^1.1.8",
-    "@arshad/gatsby-theme-photo-core": "^1.1.6",
-    "@arshad/gatsby-theme-podcast-core": "^1.1.6",
-    "@arshad/gatsby-theme-portfolio-core": "^1.1.6"
+    "@arshad/gatsby-theme-phoenix": "^1.1.8"
   }
 }
