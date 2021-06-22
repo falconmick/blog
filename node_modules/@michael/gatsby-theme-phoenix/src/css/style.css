@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /*@apply .font-text .text-text .pb-12;*/
+  @apply .font-text .text-text .pb-12;
+  font-size: 16px;
+}
+
+.animated {
+  transition: all ease-in 0.25s;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  @apply .font-heading .font-bold .text-dark;
+  letter-spacing: 0.01em;
+}
+
+.mode-dark h1,
+.mode-dark .h1,
+.mode-dark h2,
+.mode-dark .h2,
+.mode-dark h3,
+.mode-dark .h3,
+.mode-dark h4,
+.mode-dark .h4,
+.mode-dark h5,
+.mode-dark .h5 {
+  @apply .text-white;
+}
+
+h1,
+.h1 {
+  @apply .text-4xl;
+  line-height: 42px;
+}
+
+h1 span,
+.h1 span {
+  background-image: -webkit-linear-gradient(bottom,
+      color(theme("colors.primary") a(40%)) 35%,
+      transparent 50%);
+  background-image: linear-gradient(0deg,
+      color(theme("colors.primary") a(40%)) 35%,
+      transparent 20%);
+}
+
+@screen lg {
+
+  h1,
+  .h1 {
+    @apply .text-6xl;
+    line-height: 64px;
+  }
+}
+
+@screen lg {
+
+  h2,
+  .h2 {
+    @apply .text-6xl;
+    line-height: 60px;
+  }
+}
+
+h2,
+.h2 {
+  @apply .text-3xl;
+  line-height: 36px;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+@screen lg {
+
+  h2,
+  .h2 {
+    @apply .text-4xl;
+    line-height: 42px;
+  }
+}
+
+h3,
+.h3 {
+  @apply .text-3xl;
+  line-height: 36px;
+}
+
+h4,
+.h4 {
+  @apply .text-base .uppercase;
+}
+
+.content a {
+  @apply .text-primary;
+}
+
+.content a:hover,
+.content .mode-dark a:hover {
+  @apply .text-primary .underline;
+}
+
+p {
+  @apply .text-lg .leading-relaxed;
+}
+
+.mode-dark p {
+  @apply .text-white;
+}
+
+.large {
+  @apply .text-4xl;
+}
+
+small,
+.small {
+  @apply .text-sm .text-light;
+}
+
+.mode-dark small {
+  @apply .text-gray;
+}
+
+.lead {
+  @apply .text-xl .font-light .text-gray;
+  line-height: 32px;
+}
+
+@screen lg {
+  .lead {
+    @apply .text-2xl;
+    line-height: 38px;
+  }
+}
+
+.button {
+  @apply .inline-flex .items-center .text-dark .uppercase .font-semibold .rounded-sm .no-underline;
+  height: 50px;
+}
+
+.button:hover {
+  @apply .text-dark;
+  text-decoration: none !important;
+}
+
+.mode-dark .button {
+  @apply .text-white;
+}
+
+.button-primary {
+  @apply .px-4 .bg-primary .text-white;
+}
+
+.mode-dark .button-primary {
+  @apply .bg-primary .text-white;
+}
+
+.button-primary:hover {
+  @apply .bg-dark .text-white;
+}
+
+.mode-dark .button-primary:hover {
+  @apply .bg-gray .text-white;
+}
+
+figure {
+  margin: 0 auto;
+}
+
+figcaption {
+  @apply .text-sm .text-light .text-center .mt-4;
+}
+
+.mode-dark figcaption {
+  @apply .text-gray;
+}
+
+blockquote {
+  border-left: 4px solid;
+  @apply .border-primary .pl-8 .py-2 .pr-4 .mb-8 .font-heading .text-2xl .leading-tight;
+}
+
+@screen md {
+  blockquote {
+    @apply .pl-16 .py-2 .pr-4 .mb-8 .text-4xl;
+  }
+}
+
+blockquote p {
+  @apply .text-2xl .leading-tight;
+  margin: 0 0 1rem !important;
+  line-height: 32px;
+}
+
+@screen md {
+  blockquote p {
+    @apply .text-4xl;
+    line-height: 48px;
+  }
+}
+
+blockquote footer,
+blockquote cite {
+  @apply .text-md .text-light;
+}
+
+.mode-dark blockquote footer,
+.mode-dark blockquote cite {
+  @apply .text-gray;
+}
+
+.content pre[class*="language-"] {
+  @apply .rounded-sm .my-8;
+}
+
+.content p {
+  @apply .mb-8;
+}
+
+.content h2 {
+  @apply .mt-12 .mb-6;
+}
+
+.content h3 {
+  @apply .my-8;
+}
+
+.content ul {
+  @apply .my-10 .ml-10 .text-lg;
+  list-style: circle;
+}
+
+.content ul li {
+  @apply .mb-4 .items-center;
+}
+
+.content nav ul {
+  margin: auto;
+  list-style: none;
+}
+
+.content nav ul li {
+  margin-bottom: auto;
+}
+
+.mode-dark .content ul li {
+  @apply .text-white;
+}
+
+label {
+  @apply .block .font-bold .font-heading .text-xl .mb-2;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+}
+
+.mode-dark label {
+  @apply .text-white;
+}
+
+input,
+textarea,
+select {
+  @apply .border-gray .rounded-sm .px-4 .py-4 .w-full .bg-white;
+  appearance: none;
+  height: 50px;
+  border: 1px solid;
+  line-height: 1;
+}
+
+.mode-dark input,
+.mode-dark textarea,
+.mode-dark select {
+  @apply .bg-dark .text-white;
+}
+
+.checkbox,
+.radio {
+  @apply .flex;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  @apply .mr-4;
+  height: 24px;
+  width: 24px;
+}
+
+[type="radio"] {
+  @apply .rounded-full;
+}
+
+[type="checkbox"]:checked,
+[type="radio"]:checked {
+  @apply .bg-primary;
+}
+
+textarea {
+  height: auto;
+}
+
+.nav-open #nav-main {
+  display: block;
+}
+
+.mode-dark .gatsby-resp-image-image {
+  box-shadow: none !important;
+}
