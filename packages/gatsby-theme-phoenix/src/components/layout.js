@@ -70,7 +70,7 @@ export default ({ pageTitle, pageExcerpt, children }) => {
           class: mode === "dark" ? "mode-dark" : "",
         }}
         bodyAttributes={{
-          class: "antialiased bg-white dark:bg-dark px-4",
+          class: "antialiased bg-white dark:bg-dark",
         }}
       />
 
