@@ -17,7 +17,7 @@ This core theme includes a <code>Post</code> type that you can use to build a Ga
 ### Step 1: In the root of your Gatsby site, run the following command:
 
 ```shell
-yarn add @arshad/gatsby-theme-blog-core
+yarn add @michael/gatsby-theme-blog-core
 ```
 
 ### Step 2: Enable it in `gatsby-config.js`

@@ -17,7 +17,7 @@ This core theme includes a <code>Page</code> type that you can use to build MDX 
 ### Step 1: In the root of your Gatsby site, run the following command:
 
 ```shell
-yarn add @arshad/gatsby-theme-page-core
+yarn add @michael/gatsby-theme-page-core
 ```
 
 ### Step 2: Enable it in `gatsby-config.js`

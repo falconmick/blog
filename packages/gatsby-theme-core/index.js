@@ -1,7 +1,7 @@
 import React from "react"
 
-export const ComponentPlaceholder = props => {
-  const matches = props.path.match(/(gatsby-theme-[\w\d-]*)\/src\/(.*)/)
+export const ComponentPlaceholder = (props) => {
+  const matches = props.path.match(/(gatsby-theme-[\w\d-]*)\/src\/(.*)/) || ["",""];
   const path = `./src/${props.path.match(/@michael/) ? "@michael/" : ""}${
     matches[1]
   }/${matches[2]}`
@@ -28,4 +28,4 @@ export const ComponentPlaceholder = props => {
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </div>
   )
-}
+};

@@ -17,7 +17,7 @@ This core theme includes shared functionality and helpers for <a href="https://g
 ### Step 1: In the root of your Gatsby site, run the following command:
 
 ```shell
-yarn add @arshad/gatsby-theme-core
+yarn add @michael/gatsby-theme-core
 ```
 
 ### Step 2: Enable it in `gatsby-config.js`

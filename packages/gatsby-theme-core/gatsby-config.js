@@ -1,4 +1,4 @@
-import withDefaults from "./theme-options.js";
+const withDefaults = require("./theme-options.js");
 
 module.exports = (themeOptions) => {
   const { imagesPath } = withDefaults(themeOptions)
@@ -16,4 +16,4 @@ module.exports = (themeOptions) => {
       },
     ],
   }
-}
+};

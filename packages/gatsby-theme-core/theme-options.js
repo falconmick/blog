@@ -1,4 +1,4 @@
-export default (themeOptions) => ({
+module.exports = (themeOptions) => ({
   imagesPath: `assets/images`,
   ...themeOptions,
 });
