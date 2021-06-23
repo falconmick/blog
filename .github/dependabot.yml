@@ -9,5 +9,6 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     open-pull-requests-limit: 100
+    target-branch: "dependamerge"
     schedule:
       interval: "daily"
