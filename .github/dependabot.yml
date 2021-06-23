@@ -8,30 +8,6 @@ updates:
 
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
+    open-pull-requests-limit: 0
     schedule:
       interval: "daily"
-
-#  - package-ecosystem: "npm" # See documentation for possible values
-#    directory: "sites/blog" # Location of package manifests
-#    schedule:
-#      interval: "daily"
-
-#  - package-ecosystem: "npm" # See documentation for possible values
-#    directory: "packages/gatsby-theme-blog-core" # Location of package manifests
-#    schedule:
-#      interval: "daily"
-
-#  - package-ecosystem: "npm" # See documentation for possible values
-#    directory: "packages/gatsby-theme-core" # Location of package manifests
-#    schedule:
-#      interval: "daily"
-
-#  - package-ecosystem: "npm" # See documentation for possible values
-#    directory: "packages/gatsby-theme-page-core" # Location of package manifests
-#    schedule:
-#      interval: "daily"
-
-#  - package-ecosystem: "npm" # See documentation for possible values
-#    directory: "packages/gatsby-theme-blog-phoenix" # Location of package manifests
-#    schedule:
-#      interval: "daily"
