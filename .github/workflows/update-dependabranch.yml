@@ -1,0 +1,18 @@
+﻿name: Pull Request to dependamerge
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto-pull-request:
+    name: PullRequestAction
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull-request-action
+        uses: vsoch/pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_PREFIX: "main"
+          PULL_REQUEST_BRANCH: "dependamerge"
+          PULL_REQUEST_UPDATE: true
