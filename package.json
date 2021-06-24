@@ -1,4 +1,7 @@
 {
   "private": true,
-  "workspaces": ["sites/*", "packages/*"]
+  "workspaces": ["sites/*", "packages/*"],
+  "scripts": {
+    "start": "yarn workspace @michael/blog start"
+  }
 }

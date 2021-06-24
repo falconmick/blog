@@ -315,3 +315,7 @@ textarea {
 .mode-dark .gatsby-resp-image-image {
   box-shadow: none !important;
 }
+
+.prism-code-px-4 .prism-code {
+  @apply -mx-4;
+}
