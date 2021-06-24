@@ -48,6 +48,7 @@
       <workItem from="1622648541415" duration="323000" />
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
+      <workItem from="1624544537787" duration="1110000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -100,6 +101,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="in process of migrating to latest n gratest" />
