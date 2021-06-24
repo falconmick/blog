@@ -47,7 +47,7 @@
     "prismjs": "^1.23.0",
     "react-helmet": "^6.1.0",
     "striptags": "^3.2.0",
-    "tailwindcss": "^2.2.2",
+    "tailwindcss": "^2.2.4",
     "tailwindcss-dark-mode": "^1.1.7"
   }
 }
