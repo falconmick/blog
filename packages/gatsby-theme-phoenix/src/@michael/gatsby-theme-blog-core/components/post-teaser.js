@@ -21,7 +21,7 @@ export default ({ title, slug, image, date, excerpt }) => {
             />
           )}
         </div>
-        <div className="md:w-1/2 py-4 md:py-0 lg:py-6 md:pl-4 lg:pl-2">
+        <div className="mx-4 md:mx-0 md:w-1/2 py-4 md:py-0 lg:py-6 md:pl-4 lg:pl-2">
           <h2 className="text-text dark:text-white">{title}</h2>
           <small className="mt-2 block">{date}</small>
 

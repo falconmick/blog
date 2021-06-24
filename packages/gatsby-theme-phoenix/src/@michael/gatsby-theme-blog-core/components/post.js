@@ -26,7 +26,7 @@ export default ({ title, excerpt, image, tags, caption, date, body }) => {
   return (
     <Layout>
       <article className="post mb-12 md:mb-24">
-        <div className="text-center lg:w-4/5 mx-auto">
+        <div className="text-center lg:w-4/5 mx-auto px-4">
           <p className="small">{date}</p>
           <h1 className="mt-2">
             <span>{title}</span>
@@ -48,11 +48,11 @@ export default ({ title, excerpt, image, tags, caption, date, body }) => {
           </figure>
         )}
 
-        <div className="lg:w-4/5 my-6 mx-auto content">
+        <div className="lg:w-4/5 my-6 mx-auto content px-4 prism-code-px-4">
           {body && <MDXRenderer>{body}</MDXRenderer>}
         </div>
 
-        <div className="lg:w-4/5 mx-auto">
+        <div className="lg:w-4/5 mx-auto px-4">
           {tags && (
             <div className="text-sm mt-8 pt-8 md:mt-16 md:pt-16 border-t border-offwhite dark:border-text text-text dark:text-white">
               Tagged with {tagLinks}
