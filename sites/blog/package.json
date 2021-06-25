@@ -38,6 +38,7 @@
   "dependencies": {
     "@michael/gatsby-theme-blog-core": "1.0.0",
     "@michael/gatsby-theme-page-core": "1.0.0",
-    "@michael/gatsby-theme-phoenix": "1.0.0"
+    "@michael/gatsby-theme-phoenix": "1.0.0",
+    "gatsby-plugin-netlify": "^3.8.0"
   }
 }
