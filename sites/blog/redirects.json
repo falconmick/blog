@@ -38,5 +38,41 @@
   {
     "fromPath": "/search*",
     "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2012/12/my-first-post.html",
+    "toPath": "/blog/2012/12/my-first-post"
+  },
+  {
+    "fromPath": "/2012/12/merry-christmas-to-all.html",
+    "toPath": "/blog/2012/12/merry-christmas-to-all"
+  },
+  {
+    "fromPath": "/2012/12/restaurant-order-system.html",
+    "toPath": "/blog/2012/12/restaurant-order-system"
+  },
+  {
+    "fromPath": "/2013/03/2010-2011-murdoch-university.html",
+    "toPath": "/blog/2013/03/murdoch-university"
+  },
+  {
+    "fromPath": "/2014/10/knockoutjs-easy-line-clamping.html",
+    "toPath": "/blog/2014/10/knockoutjs-easy-line-clamping"
+  },
+  {
+    "fromPath": "/2014/11/quick-and-easy-console-logging-trace.html",
+    "toPath": "/blog/2014/11/quick-and-easy-console-logging-trace"
+  },
+  {
+    "fromPath": "/2014/11/downgrading-from-visual-studio-2013.html",
+    "toPath": "/blog/2014/11/downgrading-from-visual-studio-2013"
+  },
+  {
+    "fromPath": "/2016/02/getting-mvc-6-and-net-core-running-on.html",
+    "toPath": "/blog/2016/02/getting-mvc-6-and-net-core-running-on"
+  },
+  {
+    "fromPath": "/2016/10/angular-2-contentchildren-with-abstract.html",
+    "toPath": "/blog/2016/10/angular-2-polymorphic-component-container"
   }
 ]

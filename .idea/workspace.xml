@@ -7,9 +7,8 @@
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/redirects.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/redirects.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
       <workItem from="1624544537787" duration="3843000" />
-      <workItem from="1624599580755" duration="19027000" />
+      <workItem from="1624599580755" duration="20074000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -158,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624616662104</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="started on redirects">
+      <created>1624639577840</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624639577840</updated>
+    </task>
+    <task id="LOCAL-00015" summary="modifed base slug system to mirror blogger">
+      <created>1624639597238</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624639597238</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +205,8 @@
     <MESSAGE value="added final blog posts that needed migrating" />
     <MESSAGE value="removed demo blog post" />
     <MESSAGE value="added remaining blog posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="added remaining blog posts" />
+    <MESSAGE value="started on redirects" />
+    <MESSAGE value="modifed base slug system to mirror blogger" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifed base slug system to mirror blogger" />
   </component>
 </project>
