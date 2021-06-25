@@ -38,6 +38,8 @@ export const fragment = graphql`
           src
         }
       }
+      extension
+      publicURL
     }
   }
 `

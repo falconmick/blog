@@ -34,14 +34,24 @@ export default ({ title, excerpt, image, tags, caption, date, body }) => {
           {excerpt && <p className="lead mt-4">{excerpt}</p>}
         </div>
 
-        {image.full && (
-          <figure className="mt-8 mb-10 md:mt-16 mt:mb-20">
-            <Img
-              fluid={image.full.fluid}
-              className="rounded-sm"
-              title={title}
-              alt={caption || title}
-            />
+        {image.publicURL && (
+          <figure className="mt-8 mb-10 md:mt-16 mt:mb-20 post-image">
+            {image.extension === "svg" ? (
+              <img
+                src={image.publicURL}
+                className="rounded-sm svg-img"
+                title={title}
+                alt={caption || title}
+              />
+            ) : (
+              <Img
+                fluid={image.full.fluid}
+                className="rounded-sm"
+                style={{ height: "100%", width: "100%" }}
+                title={title}
+                alt={caption || title}
+              />
+            )}
             {caption && (
               <figcaption dangerouslySetInnerHTML={{ __html: caption }} />
             )}

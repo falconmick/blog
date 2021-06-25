@@ -319,3 +319,16 @@ textarea {
 .prism-code-px-4 .prism-code {
   @apply -mx-4;
 }
+
+.post-image {
+  height: 340px;
+}
+
+.post-image img {
+  max-width: unset;
+  height: 340px;
+}
+
+.post-image .svg-img {
+  width: 100%;
+}
