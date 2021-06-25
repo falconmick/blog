@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/redirects.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/redirects.json" afterDir="false" />
-    </list>
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +59,7 @@
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
       <workItem from="1624544537787" duration="3843000" />
-      <workItem from="1624599580755" duration="20074000" />
+      <workItem from="1624599580755" duration="20386000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -171,7 +166,28 @@
       <option name="project" value="LOCAL" />
       <updated>1624639597238</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="finished redirects">
+      <created>1624640697659</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640697659</updated>
+    </task>
+    <task id="LOCAL-00017" summary="madd blog post redirects perma">
+      <created>1624640907294</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640907295</updated>
+    </task>
+    <task id="LOCAL-00018" summary="madd blog post redirects perma">
+      <created>1624640918121</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640918121</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +223,8 @@
     <MESSAGE value="added remaining blog posts" />
     <MESSAGE value="started on redirects" />
     <MESSAGE value="modifed base slug system to mirror blogger" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifed base slug system to mirror blogger" />
+    <MESSAGE value="finished redirects" />
+    <MESSAGE value="madd blog post redirects perma" />
+    <option name="LAST_COMMIT_MESSAGE" value="madd blog post redirects perma" />
   </component>
 </project>

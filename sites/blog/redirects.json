@@ -1,5 +1,9 @@
 ﻿[
   {
+    "fromPath": "/",
+    "toPath": "/blog"
+  },
+  {
     "fromPath": "/2012/",
     "toPath": "/blog"
   },
