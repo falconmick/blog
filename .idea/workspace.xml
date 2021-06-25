@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2014-11-03-quick-and-easy-console-logging-trace/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2014-11-03-quick-and-easy-console-logging-trace/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,18 +36,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2014-10-07-knockoutjs-easy-line-clamping" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2012-12-31-restaurant-order-system" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\sianb\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7442.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\dev\blog\sites\blog\content\posts\2014-10-07-knockoutjs-easy-line-clamping" />
+      <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-31-restaurant-order-system" />
       <recent name="C:\dev\blog\sites\blog\content\posts" />
+      <recent name="C:\dev\blog\sites\blog\content\posts\2013-03-01-murdoch-university" />
+      <recent name="C:\dev\blog\sites\blog\content\posts\2014-10-07-knockoutjs-easy-line-clamping" />
       <recent name="C:\dev\blog\sites\blog\content\posts\2014-11-03-quick-and-easy-console-logging-trace" />
-      <recent name="C:\dev\blog\sites\blog\content\posts\2014-11-04-downgrading-from-visual-studio-2013" />
-      <recent name="C:\dev\blog\sites\blog\content\posts\2016-02-18-getting-mvc-6-and-net-core-running-on" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -62,7 +62,7 @@
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
       <workItem from="1624544537787" duration="3843000" />
-      <workItem from="1624599580755" duration="11359000" />
+      <workItem from="1624599580755" duration="12601000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624613248651</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="migrated line clamping blog post">
+      <created>1624614221646</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624614221646</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +164,7 @@
     <MESSAGE value="added mvc6 on ubuntu blog post" />
     <MESSAGE value="added visual studio downgrade blog" />
     <MESSAGE value="added trace blogpost" />
-    <option name="LAST_COMMIT_MESSAGE" value="added trace blogpost" />
+    <MESSAGE value="migrated line clamping blog post" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrated line clamping blog post" />
   </component>
 </project>
