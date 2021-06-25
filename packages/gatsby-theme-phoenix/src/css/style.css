@@ -234,12 +234,19 @@ blockquote cite {
   @apply my-8;
 }
 
-.content ul {
+.content ul, .content ol {
   @apply my-10 ml-10 text-lg;
+}
+
+.content ul {
   list-style: circle;
 }
 
-.content ul li {
+.content ol {
+  list-style: decimal;
+}
+
+.content ul li, .content ol li {
   @apply mb-4 items-center;
 }
 
@@ -252,7 +259,7 @@ blockquote cite {
   margin-bottom: auto;
 }
 
-.mode-dark .content ul li {
+.mode-dark .content ul li, .mode-dark .content ol li {
   @apply text-white;
 }
 

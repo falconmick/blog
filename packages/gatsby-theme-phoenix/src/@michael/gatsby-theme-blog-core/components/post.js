@@ -48,6 +48,7 @@ export default ({ title, excerpt, image, tags, caption, date, body }) => {
                 fluid={image.full.fluid}
                 className="rounded-sm"
                 style={{ height: "100%", width: "100%" }}
+                imgStyle={{ objectFit: "contain" }}
                 title={title}
                 alt={caption || title}
               />
