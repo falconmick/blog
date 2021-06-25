@@ -1,0 +1,42 @@
+﻿[
+  {
+    "fromPath": "/2012/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2012/12/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2013/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2013/03/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2014/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2014/10/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2014/11/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2016/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/2016/02/",
+    "toPath": "/blog"
+  },
+  {
+    "fromPath": "/search*",
+    "toPath": "/blog"
+  }
+]
