@@ -12,7 +12,7 @@ export default ({ title, excerpt, image, tags, caption, date, body }) => {
         return (
           <span key={`tag-${i}`}>
             <Link
-              to={`/blog/tags/${slugify(tag.toLowerCase())}`}
+              to={`/blog/tags/${slugify(tag.toLowerCase())}/`}
               className="text-dark font-bold underline dark:text-white"
             >
               {tag}

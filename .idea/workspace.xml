@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="" />
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +62,7 @@
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
       <workItem from="1624544537787" duration="3843000" />
-      <workItem from="1624599580755" duration="22038000" />
+      <workItem from="1624599580755" duration="22372000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -222,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624642378795</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added trailing slash">
+      <created>1624642769108</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1624642769108</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +274,7 @@
     <MESSAGE value="removed home so redirect works" />
     <MESSAGE value="setup tailwind purge" />
     <MESSAGE value="disabled purge again as broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="disabled purge again as broken" />
+    <MESSAGE value="added trailing slash" />
+    <option name="LAST_COMMIT_MESSAGE" value="added trailing slash" />
   </component>
 </project>

@@ -162,7 +162,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   // Create tag pages.
   tags.forEach(tag => {
     actions.createPage({
-      path: `${basePath}/tags/${slugify(tag.name.toLowerCase())}`,
+      path: `${basePath}/tags/${slugify(tag.name.toLowerCase())}/`,
       component: require.resolve(`./src/templates/tag-query.js`),
       context: {
         ...tag,
