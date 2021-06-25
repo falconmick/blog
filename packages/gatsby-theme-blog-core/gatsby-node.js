@@ -81,7 +81,7 @@ exports.onCreateNode = async (
   const postDate = new Date(node.frontmatter.date);
   const postYear = postDate.getFullYear();
   const postMonth = (postDate.getMonth() + 1).toString().padStart(2, "0");
-  const path = `${basePath}/${postYear}/${postMonth}/${slug}`;
+  const path = `${basePath}/${postYear}/${postMonth}/${slug}/`;
 
   // Create Post nodes from Mdx nodes.
   if (nodeType) {
