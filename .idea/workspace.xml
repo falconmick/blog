@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="" />
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/tailwind.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +62,7 @@
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
       <workItem from="1624544537787" duration="3843000" />
-      <workItem from="1624599580755" duration="20386000" />
+      <workItem from="1624599580755" duration="21073000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -187,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624640918121</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="redirect home to blog while home is built">
+      <created>1624640998176</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640998176</updated>
+    </task>
+    <task id="LOCAL-00020" summary="removed home so redirect works">
+      <created>1624641240951</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1624641240951</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +242,8 @@
     <MESSAGE value="modifed base slug system to mirror blogger" />
     <MESSAGE value="finished redirects" />
     <MESSAGE value="madd blog post redirects perma" />
-    <option name="LAST_COMMIT_MESSAGE" value="madd blog post redirects perma" />
+    <MESSAGE value="redirect home to blog while home is built" />
+    <MESSAGE value="removed home so redirect works" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed home so redirect works" />
   </component>
 </project>
