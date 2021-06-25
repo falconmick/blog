@@ -338,4 +338,5 @@ textarea {
 
 .post-image .svg-img {
   width: 100%;
+  object-fit: contain;
 }
