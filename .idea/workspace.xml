@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/my-coding-life.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my-coding-life.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-page-core/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-page-core/gatsby-node.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
       <workItem from="1624370466102" duration="7534000" />
       <workItem from="1624544537787" duration="3843000" />
       <workItem from="1624599580755" duration="22372000" />
-      <workItem from="1624693002311" duration="1726000" />
+      <workItem from="1624693002311" duration="2035000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -238,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624642769108</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="finished up rss">
+      <created>1624694874679</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1624694874679</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +286,8 @@
     <MESSAGE value="setup tailwind purge" />
     <MESSAGE value="disabled purge again as broken" />
     <MESSAGE value="added trailing slash" />
-    <option name="LAST_COMMIT_MESSAGE" value="added trailing slash" />
+    <MESSAGE value="finished up rss" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished up rss" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
