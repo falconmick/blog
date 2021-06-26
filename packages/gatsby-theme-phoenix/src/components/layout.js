@@ -17,7 +17,8 @@ const mdxComponents = {
   code: CodeBlock,
 }
 
-export default ({ pageTitle, pageExcerpt, children }) => {
+export default (props) => {
+  const { pageTitle, pageTitleSeo, pageExcerpt, children } = props;
   const [mode, setMode] = useState(
     typeof localStorage !== "undefined"
       ? localStorage.getItem("mode") || "light"
@@ -64,7 +65,7 @@ export default ({ pageTitle, pageExcerpt, children }) => {
   return (
     <>
       <Seo
-        title={pageTitle || title}
+        title={pageTitleSeo || pageTitle || title}
         description={pageExcerpt || description}
         htmlAttributes={{
           class: mode === "dark" ? "mode-dark" : "",

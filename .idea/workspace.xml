@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624695071429</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="got purge css working">
+      <created>1624720462303</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1624720462303</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +307,8 @@
     <MESSAGE value="added trailing slash" />
     <MESSAGE value="finished up rss" />
     <MESSAGE value="added forward slash for pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added forward slash for pages" />
+    <MESSAGE value="got purge css working" />
+    <option name="LAST_COMMIT_MESSAGE" value="got purge css working" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

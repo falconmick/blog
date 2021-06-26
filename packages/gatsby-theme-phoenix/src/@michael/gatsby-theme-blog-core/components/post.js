@@ -5,7 +5,8 @@ import slugify from "slugify"
 import { Link } from "gatsby"
 import Layout from "../../../components/layout"
 
-export default ({ title, excerpt, image, tags, caption, date, body }) => {
+export default (props) => {
+  const { title, excerpt, image, tags, caption, date, body } = props;
   const tagLinks = tags
     ? tags.map((tag, i) => {
         const divider = i < tags.length - 1 && <span>{`, `}</span>
@@ -24,7 +25,7 @@ export default ({ title, excerpt, image, tags, caption, date, body }) => {
     : null
 
   return (
-    <Layout>
+    <Layout pageTitleSeo={title}>
       <article className="post mb-12 md:mb-24">
         <div className="text-center lg:w-4/5 mx-auto px-4">
           <p className="small">{date}</p>

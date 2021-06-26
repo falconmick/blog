@@ -55,5 +55,17 @@ module.exports = {
         pixel: true
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `My Coding Life`,
+        short_name: `My Coding Life`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `assets/images/icon.png`
+      },
+    },
   ],
 }
