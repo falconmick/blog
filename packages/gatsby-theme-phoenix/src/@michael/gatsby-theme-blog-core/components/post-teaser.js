@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 
 export default ({ title, slug, image, date, excerpt }) => {
   excerpt = excerpt.length > 150 ? excerpt.substr(0, 150) + "..." : excerpt;
-  console.log({image})
   return (
     <Link
       to={slug}

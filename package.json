@@ -2,6 +2,7 @@
   "private": true,
   "workspaces": ["sites/*", "packages/*"],
   "scripts": {
-    "start": "yarn workspace @michael/blog start"
+    "start": "yarn workspace @michael/blog start",
+    "prod": "yarn workspace @michael/blog build && yarn workspace @michael/blog serve"
   }
 }

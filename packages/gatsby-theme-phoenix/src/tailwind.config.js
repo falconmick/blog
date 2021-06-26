@@ -1,5 +1,10 @@
+const path = require('path');
+
 module.exports = {
   prefix: "",
+  purge: [
+    path.join(process.cwd(), '../../', 'node_modules/@michael/gatsby-theme-phoenix/src/**/!(*.d).{ts,js,jsx,tsx}')
+  ],
   important: false,
   separator: ":",
   theme: {
