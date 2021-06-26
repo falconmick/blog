@@ -45,6 +45,15 @@ module.exports = {
     },
     `@michael/gatsby-theme-page-core`,
     `@michael/gatsby-theme-phoenix`,
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-goatcounter`,
+      options: {
+        code: 'mcrook',
+        head: false,
+        allowLocal: false,
+        pixel: true
+      },
+    },
   ],
 }
