@@ -50,7 +50,7 @@ const Header = ({ siteName, menuLinks, socialLinks, mode, setMode }) => {
 
               <li className="ml-6">
                 <a
-                  href="/rss.xml"
+                  href="/feeds/posts/default"
                   className="text-dark hover:text-primary dark:text-white"
                   title="RSS feed"
                   aria-label="RSS feed"

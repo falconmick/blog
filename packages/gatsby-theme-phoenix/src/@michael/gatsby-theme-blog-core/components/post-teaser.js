@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 export default ({ title, slug, image, date, excerpt }) => {
-  excerpt = excerpt.length > 150 ? excerpt.substr(0, 150) + "..." : excerpt
+  excerpt = excerpt.length > 150 ? excerpt.substr(0, 150) + "..." : excerpt;
   return (
     <Link
       to={slug}
@@ -12,7 +12,14 @@ export default ({ title, slug, image, date, excerpt }) => {
     >
       <article className="flex-col md:flex md:flex-row justify-between">
         <div className="md:w-1/2 md:pr-4 lg:pr-10">
-          {image && (
+          {image && image.extension === "svg" ? (
+            <img
+              src={image.publicURL}
+              className="rounded-sm"
+              alt={`Image for ${title}`}
+              title={title}
+              />
+          ) : (
             <Img
               fluid={image.thumbnail.fluid}
               className="rounded-sm"

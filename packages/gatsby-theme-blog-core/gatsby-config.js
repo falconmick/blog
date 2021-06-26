@@ -75,7 +75,7 @@ module.exports = themeOptions => {
                   } 
                 }
               `,
-              output: `${basePath}/rss.xml`,
+              output: `/feeds/posts/default`,
               title: `RSS Feed`,
             },
           ],

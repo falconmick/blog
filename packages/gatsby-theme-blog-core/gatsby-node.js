@@ -71,14 +71,17 @@ exports.onCreateNode = async (
   const { basePath } = withDefaults(themeOptions)
   const nodeType = `Post`
 
-  let slug = `${basePath}/${
-    node.frontmatter.slug || slugify(parent.relativeDirectory)
-  }`
+  let slug = node.frontmatter.slug || slugify(parent.relativeDirectory);
 
   // Allow theme consumer to customize the slug.
   if (themeOptions.slugResolver) {
     slug = themeOptions.slugResolver(node, parent)
   }
+
+  const postDate = new Date(node.frontmatter.date);
+  const postYear = postDate.getFullYear();
+  const postMonth = (postDate.getMonth() + 1).toString().padStart(2, "0");
+  const path = `${basePath}/${postYear}/${postMonth}/${slug}/`;
 
   // Create Post nodes from Mdx nodes.
   if (nodeType) {
@@ -87,7 +90,7 @@ exports.onCreateNode = async (
       title: node.frontmatter.title,
       date: node.frontmatter.date,
       excerpt: node.frontmatter.excerpt,
-      slug,
+      slug: path,
       image: node.frontmatter.image,
       caption: node.frontmatter.caption,
       tags: node.frontmatter.tags,
@@ -159,7 +162,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   // Create tag pages.
   tags.forEach(tag => {
     actions.createPage({
-      path: `${basePath}/tags/${slugify(tag.name.toLowerCase())}`,
+      path: `${basePath}/tags/${slugify(tag.name.toLowerCase())}/`,
       component: require.resolve(`./src/templates/tag-query.js`),
       context: {
         ...tag,

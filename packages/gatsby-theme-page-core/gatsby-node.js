@@ -113,7 +113,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create pages.
   pages.forEach(page => {
     actions.createPage({
-      path: page.is_front ? "/" : page.slug,
+      path: page.is_front ? "/" : page.slug + "/",
       component: require.resolve(`./src/templates/page-query.js`),
       context: {
         id: page.id,

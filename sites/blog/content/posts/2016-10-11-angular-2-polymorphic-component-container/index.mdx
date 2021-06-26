@@ -1,0 +1,194 @@
+---
+title: Angular 2 - Polymorphic Component Container using ContentChildren
+date: 2016-10-11
+excerpt: Legacy blog post from blogger platform about Angular 2
+image: ./angular.svg
+tags: ["angular", "javascript", "typescript", "legacy-blog-post"]
+---
+
+> This post is outdated and only exists for historical reasons
+
+As I do a deep dive into Angular 2 I've been finding some amazing features,
+one which really stands out being the Decorator [ContentChildren](https://angular.io/api/core/ContentChildren).
+ContentChildren allows a component to access it's children components
+which are placed between it's selector. An example of such a setup is as follows:
+
+```html
+<parent>
+  <child></child>
+  <child></child>
+</parent>
+```
+
+now inside of the parent's component it can define the following:
+
+```ts
+@ContentChildren(ChildComponent) editors: QueryList<ChildComponent>;
+
+ngAfterViewInit() {
+  let myChildComponents = this.editors.toArray();
+}
+```
+
+
+
+NOTE: you cannot access the child components inside of ngOnInit as the
+child components have not become available yet. ContentChildren and
+QueryList are both found inside of @angular/core.
+
+
+The benefit of ContentChildren over the traditional AngularJs's transclude
+is that the child component need not know about the parent component.
+This is great because a common design pattern is top down (example a tab component).
+
+
+The real hidden gem here though is creating a system where you can have an
+abstract base class for your child components. Through doing so you can achieve a
+polymorphic system which lets you combine multiple like components with a base class.
+
+Lets say for example, you have a dropdown of question types that a user can
+choose to answer with. You could either couple all of the editors and have
+them hard coded into the component that produces this part of your website,
+OR you could have a container ccomponent which accepts any number of different
+editors which are just placed in and magically work! I much prefer magic,
+so lets have a look at the markup that could achieve this
+
+```html
+<question-editor>
+  <foo-editor></foo-editor>
+  <bar-editor></bar-editor>
+</question-editor>
+```
+
+
+the contents of question-editor don't matter yet, so lets have a think of what
+information we would require from each of our editors (foo and bar).
+first we would need to be able to hide then when they are in-active,
+then get some sort of human friendly name and finally get the value
+that the form has extracted from the user. this contract could be
+forfilled with the following abstract class
+(using abstract class over interface as interfaces are compile time only,
+and I need something injectable!)
+
+```ts
+export abstract class BaseEditor {
+  constructor(private privateEditorName: string, public isSelected: boolean = false) {}
+  get editorName(): string {
+    return this.privateEditorName;
+  }
+  public value: string;
+}
+```
+
+as you can see, this base class exposes a getter for the editorName,
+the value and also isSelected (used to toggle visibility)
+
+A class would then implement this base class like so
+
+```ts
+import { Component, forwardRef } from '@angular/core';
+import { BaseEditor } from 'app/editor/base-editor.ts';
+
+@Component({
+  selector: 'bar-editor',
+  template: `
+  <div style="color: blue" *ngIf="isSelected">
+    <p>bar editor</p>
+    <input [(ngModel)]="value">
+  </div>
+  `,
+  providers: [{provide: BaseEditor, useExisting: forwardRef(() => BarEditorComponent)}]
+})
+export class BarEditorComponent extends BaseEditor {
+  constructor() {
+    super('bar editor', false)
+  }
+}
+```
+
+
+as this editor is a test editor, there is no complicated editor logic inside of the component,
+but theoretically in a real world situation there would be.
+What makes this editor unique to the foo editor is that it allows the user to enter an
+answer via an input field which we can see inside of the template.
+
+The other thing to notice here, is that we are providing the angular
+DI system an implementation of the BaseEditor through use of the ExistingProvider provider
+(as seen inside of @Component's providers array). This provider basically tells angular,
+if somebody asks about BaseEditor, I'm your man! As we are defining this provide at the
+component level, we don't have to worry about breaking the DI every time we define
+a new editor either as the provide is scoped to this component and under.
+
+next we have a look at the question-editor
+
+```ts
+import { Component, OnInit, AfterViewInit, ContentChildren, QueryList, Output, EventEmitter } from '@angular/core'
+import { BaseEditor } from 'app/editor/base-editor.ts';
+
+@Component({
+    templateUrl: 'app/editor/editor.component.html', // unfortunatly need full uri
+    selector: 'question-editor'
+})
+export class EditorComponent implements OnInit, AfterViewInit {
+  @Output() formValueChange: EventEmitter<string> = new EventEmitter<string>();
+  @ContentChildren(BaseEditor) editors: QueryList<BaseEditor>;
+
+  onQuestionChange(newQuestion: string) {
+    // reset editors
+    this.hideAllEditors();
+    let editorFilter = this.editors.filter(editor => editor.editorName === newQuestion);
+    let editor = editorFilter[0];
+
+    if(editor == null) {
+      throw new Error(`Cannot find question editor for: ${newQuestion}`)
+    }
+
+    editor.isSelected = true;
+  }
+
+  onClickSubmit() {
+    let currentEditor = this.editors.filter(editor => editor.isSelected)[0];
+    console.log(`submitting: ${currentEditor.value}`);
+    this.formValueChange.emit(currentEditor.value);
+  }
+
+  private hideAllEditors(): void {
+    this.editors.forEach(editor => {
+      editor.isSelected = false;
+    })
+  }
+}
+```
+
+the part to take note of is the @ContentChildren. As you can see,
+we request all children of this component which have the type of BaseEditor.
+Both FooEditor and BarEditor have setup their DI to point all requests for
+BaseEditor to themselves, so as we scan over the components,
+each editor is picked upa as a BaseEditor and placed inside the array for editors.
+The remainder of the code in the component are used to hide, display and gather
+input from the editors.
+
+The html for this component is as follows:
+
+```html
+<div>
+  <select (change)="onQuestionChange($event.target.value)">
+    <option *ngFor="let editor of editors" [value]="editor.editorName">{{ editor.editorName }}</option>
+  </select>
+</div>
+<div>
+  <ng-content></ng-content>
+</div>
+<div>
+  <button (click)="onClickSubmit()">submit</button>
+</div>
+```
+
+as you can see, we are using our list of editors to create options for our select,
+then displaying it inside of our component via ng-content.
+
+In summary: @ContentChildren is an amazing new tool for every angular developers utility belt.
+It allows for creating top down architectures and with some DI wizardry,
+it also allows for polymorphic designs to be created!
+
+(no longer) Working example over here on [Plunker](http://plnkr.co/edit/MNU0tn?p=preview&preview)

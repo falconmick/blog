@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="removed px4">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="" />
+  </component>
   <component name="ProjectId" id="1tOmW4ET9cxS7mGQWleIioiVbMW" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -37,10 +43,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\Michael\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7142.46\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="ts.external.directory.path" value="C:\Users\sianb\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7442.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\blog\sites" />
+      <recent name="C:\dev\blog\sites\blog" />
+      <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-20-my-first-post" />
+      <recent name="C:\dev\blog\sites\blog\content\posts" />
+      <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-24-merry-christmas-to-all" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -53,7 +69,9 @@
       <workItem from="1622648541415" duration="323000" />
       <workItem from="1623907049549" duration="647000" />
       <workItem from="1624370466102" duration="7534000" />
-      <workItem from="1624544537787" duration="3524000" />
+      <workItem from="1624544537787" duration="3843000" />
+      <workItem from="1624599580755" duration="22372000" />
+      <workItem from="1624693002311" duration="2659000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -90,7 +108,161 @@
       <option name="project" value="LOCAL" />
       <updated>1624377481744</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added polymorphic component container blog post&#10;\">
+      <created>1624606690551</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624606690551</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added mvc6 on ubuntu blog post">
+      <created>1624609525654</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624609525654</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added visual studio downgrade blog">
+      <created>1624610183229</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624610183229</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added trace blogpost">
+      <created>1624613248651</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624613248651</updated>
+    </task>
+    <task id="LOCAL-00010" summary="migrated line clamping blog post">
+      <created>1624614221646</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624614221646</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added final blog posts that needed migrating">
+      <created>1624615505544</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624615505544</updated>
+    </task>
+    <task id="LOCAL-00012" summary="removed demo blog post">
+      <created>1624616154959</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624616154959</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added remaining blog posts">
+      <created>1624616662104</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624616662104</updated>
+    </task>
+    <task id="LOCAL-00014" summary="started on redirects">
+      <created>1624639577840</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624639577840</updated>
+    </task>
+    <task id="LOCAL-00015" summary="modifed base slug system to mirror blogger">
+      <created>1624639597238</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624639597238</updated>
+    </task>
+    <task id="LOCAL-00016" summary="finished redirects">
+      <created>1624640697659</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640697659</updated>
+    </task>
+    <task id="LOCAL-00017" summary="madd blog post redirects perma">
+      <created>1624640907294</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640907295</updated>
+    </task>
+    <task id="LOCAL-00018" summary="madd blog post redirects perma">
+      <created>1624640918121</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640918121</updated>
+    </task>
+    <task id="LOCAL-00019" summary="redirect home to blog while home is built">
+      <created>1624640998176</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1624640998176</updated>
+    </task>
+    <task id="LOCAL-00020" summary="removed home so redirect works">
+      <created>1624641240951</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1624641240951</updated>
+    </task>
+    <task id="LOCAL-00021" summary="setup tailwind purge">
+      <created>1624641894092</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1624641894092</updated>
+    </task>
+    <task id="LOCAL-00022" summary="setup tailwind purge">
+      <created>1624641901725</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1624641901725</updated>
+    </task>
+    <task id="LOCAL-00023" summary="disabled purge again as broken">
+      <created>1624642378795</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1624642378795</updated>
+    </task>
+    <task id="LOCAL-00024" summary="added trailing slash">
+      <created>1624642769108</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1624642769108</updated>
+    </task>
+    <task id="LOCAL-00025" summary="finished up rss">
+      <created>1624694874679</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1624694874679</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added forward slash for pages">
+      <created>1624695071429</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1624695071429</updated>
+    </task>
+    <task id="LOCAL-00027" summary="got purge css working">
+      <created>1624720462303</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1624720462303</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,11 +281,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="in process of migrating to latest n gratest" />
     <MESSAGE value="deleted accidentally added node_modules" />
     <MESSAGE value="added git ignore for node_modules" />
     <MESSAGE value="completed migration to yarn workspaces" />
     <MESSAGE value="removed px4" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed px4" />
+    <MESSAGE value="added polymorphic component container blog post&#10;\" />
+    <MESSAGE value="added mvc6 on ubuntu blog post" />
+    <MESSAGE value="added visual studio downgrade blog" />
+    <MESSAGE value="added trace blogpost" />
+    <MESSAGE value="migrated line clamping blog post" />
+    <MESSAGE value="added final blog posts that needed migrating" />
+    <MESSAGE value="removed demo blog post" />
+    <MESSAGE value="added remaining blog posts" />
+    <MESSAGE value="started on redirects" />
+    <MESSAGE value="modifed base slug system to mirror blogger" />
+    <MESSAGE value="finished redirects" />
+    <MESSAGE value="madd blog post redirects perma" />
+    <MESSAGE value="redirect home to blog while home is built" />
+    <MESSAGE value="removed home so redirect works" />
+    <MESSAGE value="setup tailwind purge" />
+    <MESSAGE value="disabled purge again as broken" />
+    <MESSAGE value="added trailing slash" />
+    <MESSAGE value="finished up rss" />
+    <MESSAGE value="added forward slash for pages" />
+    <MESSAGE value="got purge css working" />
+    <option name="LAST_COMMIT_MESSAGE" value="got purge css working" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
