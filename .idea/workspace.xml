@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
-    </list>
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +65,7 @@
       <workItem from="1624544537787" duration="3843000" />
       <workItem from="1624599580755" duration="22372000" />
       <workItem from="1624693002311" duration="2659000" />
-      <workItem from="1624777874895" duration="2366000" />
+      <workItem from="1624777874895" duration="3628000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -269,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624722903973</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="seo stuff">
+      <created>1624781028542</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1624781028542</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
