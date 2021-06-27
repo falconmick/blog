@@ -125,7 +125,7 @@ module.exports = {
       text: ["Open Sans", "Arial", "sans-serif"],
       heading: ["Alegreya Sans", "sans-serif"],
       serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
-      branding: ["Bowlby One SC", "cursive"],
+      branding: ["Bowlby One SC", "Impact", "cursive"],
       mono: [
         "Menlo",
         "Monaco",
