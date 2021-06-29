@@ -38,7 +38,6 @@ export default ({
       }}
       bodyAttributes={bodyAttributes}
     >
-      <link rel="canonical" href={absoluteUrl(url) || site.siteUrl} />
       <meta
         name="description"
         content={striptags(description || site.description)}

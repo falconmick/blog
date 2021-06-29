@@ -40,7 +40,8 @@ module.exports = {
     {
       resolve: `@michael/gatsby-theme-blog-core`,
       options: {
-        slugResolver: (node, parentNode) => slugWithoutDate(parentNode.relativeDirectory)
+        slugResolver: (node, parentNode) => slugWithoutDate(parentNode.relativeDirectory),
+        pageTitle: "Michael's Coding Blog"
       }
     },
     `@michael/gatsby-theme-page-core`,

@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="C:\Users\sianb\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7442.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -51,11 +48,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world" />
       <recent name="C:\dev\blog\sites" />
       <recent name="C:\dev\blog\sites\blog" />
       <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-20-my-first-post" />
       <recent name="C:\dev\blog\sites\blog\content\posts" />
-      <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-24-merry-christmas-to-all" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,6 +69,7 @@
       <workItem from="1624544537787" duration="3843000" />
       <workItem from="1624599580755" duration="22372000" />
       <workItem from="1624693002311" duration="2659000" />
+      <workItem from="1624777874895" duration="7894000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -262,7 +260,42 @@
       <option name="project" value="LOCAL" />
       <updated>1624720462303</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="seo stuff">
+      <created>1624722903973</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1624722903973</updated>
+    </task>
+    <task id="LOCAL-00029" summary="seo stuff">
+      <created>1624781028542</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1624781028542</updated>
+    </task>
+    <task id="LOCAL-00030" summary="removed harmfull canonical link">
+      <created>1624782516721</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1624782516721</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added robots.txt and sitemap">
+      <created>1624783050799</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1624783050799</updated>
+    </task>
+    <task id="LOCAL-00032" summary="made fallback font a lil closer to the custom web font">
+      <created>1624783568109</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1624783568109</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,10 +316,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="in process of migrating to latest n gratest" />
-    <MESSAGE value="deleted accidentally added node_modules" />
-    <MESSAGE value="added git ignore for node_modules" />
-    <MESSAGE value="completed migration to yarn workspaces" />
     <MESSAGE value="removed px4" />
     <MESSAGE value="added polymorphic component container blog post&#10;\" />
     <MESSAGE value="added mvc6 on ubuntu blog post" />
@@ -308,7 +337,11 @@
     <MESSAGE value="finished up rss" />
     <MESSAGE value="added forward slash for pages" />
     <MESSAGE value="got purge css working" />
-    <option name="LAST_COMMIT_MESSAGE" value="got purge css working" />
+    <MESSAGE value="seo stuff" />
+    <MESSAGE value="removed harmfull canonical link" />
+    <MESSAGE value="added robots.txt and sitemap" />
+    <MESSAGE value="made fallback font a lil closer to the custom web font" />
+    <option name="LAST_COMMIT_MESSAGE" value="made fallback font a lil closer to the custom web font" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
