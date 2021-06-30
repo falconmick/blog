@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import Layout from "../../../components/layout"
 
 export default (props) => {
-  const { title, excerpt, image, tags, caption, date, body } = props;
+  const { title, excerpt, image, tags, caption, date, body, embeddedImagesLocal } = props;
   const tagLinks = tags
     ? tags.map((tag, i) => {
         const divider = i < tags.length - 1 && <span>{`, `}</span>
@@ -61,7 +61,7 @@ export default (props) => {
         )}
 
         <div className="lg:w-4/5 my-6 mx-auto content px-4 prism-code-px-4">
-          {body && <MDXRenderer>{body}</MDXRenderer>}
+          {body && <MDXRenderer localImages={embeddedImagesLocal}>{body}</MDXRenderer>}
         </div>
 
         <div className="lg:w-4/5 mx-auto px-4">

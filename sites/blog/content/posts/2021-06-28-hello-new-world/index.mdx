@@ -4,4 +4,49 @@ date: 2021-06-28
 excerpt: Welcome to the all new and (mostly) improved My Coding Life blog, after many years of procrastinating the Gatsby based rebuild is complete
 image: ./gatsby.svg
 tags: ["gatsby", "javascript", "tailwind", "mdx", "gaotcounter"]
+embeddedImagesLocal:
+  - ./gatsby.svg                           # 0
+  - ./technologyUsed/styled-components.png # 1
+  - ./technologyUsed/mdx.png               # 2
+  - ./technologyUsed/yarn.png              # 3
+  - ./technologyUsed/goat-counter.svg      # 4
+  - ./technologyUsed/netlify-logo.svg      # 5
+  - ./technologyUsed/prismjs.svg           # 6
+  - ./technologyUsed/tailwindcss.svg       # 7
 ---
+import Img from "gatsby-image";
+import { Gallery } from "./gallery";
+import { getAlt } from "./util.js"
+
+This blog post has been a long way coming but after many re-attempts to build the blogging platform
+of my desires, I have finally settled on this one! Welcome all to My (new) Coding Life!
+
+### Technology
+
+<Gallery>
+  {props.localImages.map((image, index) =>
+    image && image.extension === "svg" ? (
+      <img
+        key={`image-${index}`}
+        style={{maxHeight: "120px"}}
+        src={image.publicURL}
+        alt={getAlt(index)}
+      />
+    ) : (
+      <Img
+        key={`image-${index}`}
+        imgStyle={{objectFit: "contain"}}
+        style={{maxHeight: "120px", maxWidth: "default"}}
+        fluid={image.full.fluid}
+        alt={console.log(getAlt(index)) || getAlt(index)}
+      />
+  ))}
+</Gallery>
+
+### How we got there
+
+One of the reasons this project has taken so long to complete has been because of technology
+more specifically the choice of what packages and structure I was going to use to form my
+new blog as a gatsby.
+
+The Journey started with a fairly \

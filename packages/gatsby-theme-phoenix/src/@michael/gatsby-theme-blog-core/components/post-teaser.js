@@ -23,6 +23,7 @@ export default ({ title, slug, image, date, excerpt }) => {
             <Img
               fluid={image.thumbnail.fluid}
               className="rounded-sm"
+              imgStyle={{objectFit: "contain"}}
               alt={`Image for ${title}`}
               title={title}
             />

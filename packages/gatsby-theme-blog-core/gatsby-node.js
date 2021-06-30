@@ -24,6 +24,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       image: File @fileByRelativePath
       caption: String
       tags: [String]
+      embeddedImagesLocal: [File!] @fileByRelativePath
     }
   `)
 }
@@ -95,6 +96,7 @@ exports.onCreateNode = async (
       caption: node.frontmatter.caption,
       tags: node.frontmatter.tags,
       url: node.frontmatter.url,
+      embeddedImagesLocal: node.frontmatter.embeddedImagesLocal,
       parent: node.id,
       internal: {
         type: nodeType,

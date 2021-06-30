@@ -10,6 +10,16 @@ export const fragment = graphql`
     slug
     tags
     caption
+    embeddedImagesLocal {
+      full: childImageSharp {
+        fluid(maxWidth: 960, quality: 100) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+      extension
+      publicURL
+    }
     image {
       full: childImageSharp {
         fluid(maxWidth: 960, maxHeight: 540, cropFocus: CENTER, quality: 100) {
