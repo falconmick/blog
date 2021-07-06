@@ -40,7 +40,7 @@
     "@michael/gatsby-theme-page-core": "1.0.0",
     "@michael/gatsby-theme-phoenix": "1.0.0",
     "gatsby-plugin-goatcounter": "^0.4.0",
-    "gatsby-plugin-manifest": "^3.8.0",
+    "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-netlify": "^3.8.0"
   }
 }
