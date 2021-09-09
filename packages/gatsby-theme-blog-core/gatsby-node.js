@@ -23,7 +23,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       body: String!
       image: File @fileByRelativePath
       caption: String
+      githubEditPath: String
       tags: [String]
+      embeddedImagesLocal: [File!] @fileByRelativePath
     }
   `)
 }
@@ -82,6 +84,7 @@ exports.onCreateNode = async (
   const postYear = postDate.getFullYear();
   const postMonth = (postDate.getMonth() + 1).toString().padStart(2, "0");
   const path = `${basePath}/${postYear}/${postMonth}/${slug}/`;
+  const githubEditPath = `${themeOptions.repoBaseUrl}/edit/${themeOptions.repoDefaultBranch}/sites/blog/content/posts/${parent.relativePath}`;
 
   // Create Post nodes from Mdx nodes.
   if (nodeType) {
@@ -95,6 +98,8 @@ exports.onCreateNode = async (
       caption: node.frontmatter.caption,
       tags: node.frontmatter.tags,
       url: node.frontmatter.url,
+      embeddedImagesLocal: node.frontmatter.embeddedImagesLocal,
+      githubEditPath: githubEditPath,
       parent: node.id,
       internal: {
         type: nodeType,

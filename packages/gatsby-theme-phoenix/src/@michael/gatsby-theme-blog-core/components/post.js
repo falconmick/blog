@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import Layout from "../../../components/layout"
 
 export default (props) => {
-  const { title, excerpt, image, tags, caption, date, body } = props;
+  const { title, excerpt, image, tags, caption, date, body, embeddedImagesLocal, githubEditPath } = props;
   const tagLinks = tags
     ? tags.map((tag, i) => {
         const divider = i < tags.length - 1 && <span>{`, `}</span>
@@ -61,15 +61,24 @@ export default (props) => {
         )}
 
         <div className="lg:w-4/5 my-6 mx-auto content px-4 prism-code-px-4">
-          {body && <MDXRenderer>{body}</MDXRenderer>}
+          {body && <MDXRenderer localImages={embeddedImagesLocal} githubEditPath={githubEditPath}>{body}</MDXRenderer>}
         </div>
 
         <div className="lg:w-4/5 mx-auto px-4">
-          {tags && (
-            <div className="text-sm mt-8 pt-8 md:mt-16 md:pt-16 border-t border-offwhite dark:border-text text-text dark:text-white">
-              Tagged with {tagLinks}
-            </div>
-          )}
+          <div className="text-sm mt-8 pt-8 md:mt-16 md:pt-16 border-t border-offwhite dark:border-text text-text dark:text-white">
+            {tags && <>Tagged with {tagLinks}</>}
+            <br />
+            <br />
+            something not right?&nbsp;
+            <a
+              href={githubEditPath}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="text-dark font-bold underline dark:text-white"
+            >
+              Open a PR
+            </a>
+          </div>
         </div>
       </article>
     </Layout>

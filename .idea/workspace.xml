@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="did some more work towards hello new world + github edit link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post-teaser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/technologyUsed" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="C:\Users\sianb\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7442.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -48,12 +49,43 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world\technologyUsed" />
       <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world" />
       <recent name="C:\dev\blog\sites" />
       <recent name="C:\dev\blog\sites\blog" />
       <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-20-my-first-post" />
-      <recent name="C:\dev\blog\sites\blog\content\posts" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world\technologyUsed" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/sites/blog/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/sites/blog/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -295,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624783568109</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="did some more work towards hello new world + github edit link">
+      <created>1631199591706</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1631199591706</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +355,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed px4" />
     <MESSAGE value="added polymorphic component container blog post&#10;\" />
     <MESSAGE value="added mvc6 on ubuntu blog post" />
     <MESSAGE value="added visual studio downgrade blog" />
@@ -341,7 +379,26 @@
     <MESSAGE value="removed harmfull canonical link" />
     <MESSAGE value="added robots.txt and sitemap" />
     <MESSAGE value="made fallback font a lil closer to the custom web font" />
-    <option name="LAST_COMMIT_MESSAGE" value="made fallback font a lil closer to the custom web font" />
+    <MESSAGE value="did some more work towards hello new world + github edit link" />
+    <option name="LAST_COMMIT_MESSAGE" value="did some more work towards hello new world + github edit link" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js</url>
+          <line>89</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="js.build_tools.npm">
+        <watch expression="node" language="JavaScript" />
+        <watch expression="parent" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
