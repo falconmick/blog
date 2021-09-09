@@ -61,7 +61,7 @@ export default (props) => {
         )}
 
         <div className="lg:w-4/5 my-6 mx-auto content px-4 prism-code-px-4">
-          {body && <MDXRenderer localImages={embeddedImagesLocal}>{body}</MDXRenderer>}
+          {body && <MDXRenderer localImages={embeddedImagesLocal} githubEditPath={githubEditPath}>{body}</MDXRenderer>}
         </div>
 
         <div className="lg:w-4/5 mx-auto px-4">

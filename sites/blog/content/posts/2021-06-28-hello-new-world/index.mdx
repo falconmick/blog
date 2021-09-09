@@ -22,10 +22,10 @@ import { getAlt } from "./util.js"
 This blog post has been a long way coming but after many re-attempts to build the blogging platform
 of my desires, I have finally settled on this one! Welcome all to My (new) Coding Life!
 
-### Technology
+## Technology
 
 <Gallery>
-  {props.localImages.slice(0, 7).map((image, index) =>
+  {props.localImages.slice(0, 8).map((image, index) =>
     image && image.extension === "svg" ? (
       <img
         key={`image-${index}`}
@@ -44,21 +44,101 @@ of my desires, I have finally settled on this one! Welcome all to My (new) Codin
   ))}
 </Gallery>
 
-### How we got there
+### Why Gatsby
+One of the biggest downsides to running a blog through a blogging platform is that your hosting options can be tied
+down to that provider. I wanted the ability to run my site anywhere (which came in handy when Netlify's build config
+broke and I could just lift and shift to Cloudflare Sites)
+
+There is also the whole speed thing. Gatsby sites are super fast and all rendered ahead of time, meaning that
+it can be placed in a CDN and delivered to my readers as fast as possible.
+
+Finally I am a Full Stack developer who spends most his day developing for React, so obviously I want to take
+advantage of those skills of which Gatsby is the go-to static site generator!
+
+### Why Tailwind
+Because the last 3-5 attempts I made to build the site from scratch ended up getting bogged down in the low level
+implementation details and not getting my blog up and running. So I ended up basing my entire stack around
+the wonderful [arshad/gatsby-starter-phoenix](https://github.com/arshad/gatsby-starter-phoenix).
+I plan to over time phase out Tailwind and replace with Styled-Components.
+
+The original author that I based my themes off of never solved the purging side of tailwind and by golly was this an
+un-enjoyable issue to solve. So at least I've got that going for me.
+
+### Why MarkDown/MDX
+The point of a blogging platform is to have a place to be able to site down and write. I didn't want to use a CMS/Blogging
+platform as a data source as I wanted to be able to let readers truly get involved and be able to <a href={props.githubEditPath}>submit a PR</a>
+
+MDX is a particularly powerful MarkDown library as it allows me to define react components for each MarkDown element
+(the headers, code sections, lists, etc). Also it allows me to insert jsx into my blog posts! The Gallery component and "submit a PR" link
+are both inline jsx!
+
+### Why Yarn Workspaces + Gatsby Themes
+I wanted to be able to split up each individual core pillar of my website into an individual packaged Gatsby theme.
+This allows me to have a clear separation of concerns and also allows me the future possibility of swapping
+out these packages without any direct coupling. For example I might decide I absolutely detest my theme, no problem
+just create a new theme and swap out gatsby-theme-phoenix inside of sites/blog/gatsby-config.js. All of the core
+functionality and my blog posts/pages are all defined in separate packages and thus will be un-effected + I can maintain
+both versions until I am ready to move over forever.
+
+## Hosting
+Originally I thought this was going to be clear cut. Netlify has a monopoly on the static site hosting ecosystem and for good reason.
+`Free`, `github PR build previews`, `super fast CDN`, `easy to setup`.
+
+However when I attempted to change some settings recently to push the almost ready version of this blog onto a subdomain,
+I was unable to due to a bug in which I couldn't change my primary domain. No problem I thought, I will just delete the
+site and re-create it. However at this moment I am unable to do this as each time I save my build settings they are wiped
+out and I cannot even define a netlify.toml as a workaround. There is a good chance I have made a mistake, however I cannot
+for the life of me find the cause of the issue. When Netlify get back to me If the issue is resolved I might move back
+as there is allot of really good tooling available on the platform.
+
+Next I attempted the other big name in static site hosting, Github Pages. I thought that this would be simple enough,
+define some config then bam Github would build and deploy? No. To get Github Pages working I had to setup a github action
+that ran the install and build and then pushed the artifact to a new branch of which Github could then deploy for me. No
+PR Actions, No Build preview.
+
+The straw that broke the camels back in th end was no support for 301/302/308 HTTP status codes. As I am migrating from
+an existing platform which had a URL structure I didn't like, I needed the ability to do redirects properly as so that
+existing links to my site didn't get lost.
+
+Finally I remembered hearing about a new offering from my DNS provider, Cloudflare Pages. This ticked all of the core
+goodies that I wanted: `free`, `github PR build previews`, `super fast CDN`, `easy to setup` + also had the added bonus
+of having about 1/10'th the config options + integrated with my NS so the setup was even easier. I was even able to setup
+a cloudflare worker that applies a noindex header to my dev subdomain! The only real downside to Cloudflare pages is the
+lack of _header file support. This means that unlike Netlify, I am unable to define js/css/image download hints to the
+browser as they start to download the HTML for my page. This downside is probably enough for me to move back to Netlify
+if I am able to get my site back up and running.
+
+### Analytics?
+I am currently undecided on this front, I know I don't want google analytics and It's currently between Goat Counter and
+Cloudflare's solution. Originally I had my heart set on Goat Counter as it's a privacy focused free analytics platform however
+Cloudflare is a very tempting solution as it also is advertising itself as privacy focused (not sure if I trust that)
+but doesn't need any client side code (I believe)!
+
+For Now I am running both and will switch one or the other off after a while. I wonder if Cloudflare Analytics will understand
+react client side page transitions without a js library or if I will need to do something about that.
+
+## What next?
+1. Minor styling  bugs (next arrows on mobile for example)
+2. Pick between Goat Counter and Cloudflare
+3. Update my Image component to use the new fandangled one that Gatsby build always complains to me about.
+4. Remove Tailwind
+5. Keep writing posts (I am thinking about writing about Discriminated Unions in dotnet and why you should be excited)
+
+## How we got to this end result?
 
 One of the reasons this project has taken so long to complete has been because of technology
 more specifically the choice of what packages and structure I was going to use to form my
 new blog as a gatsby.
 
-The Journey started with a fairly simple idea: "Why don't I just re-build my blog from scratch from the ground up using gatsby themes"
+The Journey started with a fairly simple idea: "Why don't I just re-build my blog from scratch from the ground up using gatsby"
 I mean how hard could it be...
 
 The first 1-2 attempts to build my blog all ended up just fizzling out due to a combination of leaving it too
 long between sessions of work and just loosing my flow as well as a few major changes to Gatsby of
 which it ended up being easier to just start again.
 
-My second latest go at getting my blog up and running was prior to themes getting announced so my first attempts
-was to just simply to get a Gatsby site up and running utilising a MarkDown rendering engine (at the time remark)
+Prior to themes getting announced my first attempt was to just simply to get a Gatsby site up and running utilising a
+MarkDown rendering engine (at the time remark)
 and a css-in-js library (emotion) however I was yet to discover the truly hardest part of writing your blog from
 scratch... Actually finishing it before all of the code becomes irrelevant (well at least in my eyes, probably would
 have been fine!)
@@ -67,7 +147,7 @@ In this second last real attempt I ended up getting really bogged down in splitt
 theme based layer. This was truly a grand mistake as I ended up spending the majority of my time trying to architect
 the perfect abstraction instead of just delivering what mattered, which was the actual implementation of the blog.
 
-I gave up shortly after bogging myself down with non critical issues and didn't try again until Gatsby Themes were announced. For those
+I didn't try again until Gatsby Themes were announced. For those
 who are not in the know, Gatsby Themes is a combination of using mono repos and wordpress inspired file shadowing.
 Shadowing can be super powerful as it allows you to define a base implementation of which child themes can overwrite.
 this allows creation of pipeline themes that render placeholders which give a child theme
@@ -75,7 +155,7 @@ the opportunity to define what a page will look like and then to create a blog p
 This would allow me to split my codebase into layers and build up from pieces
 the exact blog platform I desired. For more information check out the [release announcement from Gatsby](https://www.gatsbyjs.com/blog/2019-07-03-announcing-stable-release-gatsby-themes/)
 
-Which is what led me to the platform that you are (unless I re-built it since) reading on now. For this time around
+Which is what led me to the platform that you are reading on now. For this time around
 I had a change of priorities. Instead of building the entire website from scratch finessing each and every style, package
 and layout to my hearts content, I instead looked for somebody who had already done what I wanted to do. I wanted to use
 gatsby themes to split my website up into four main parts:
@@ -84,8 +164,7 @@ utilise this template with 0 config) This will allow for construction of content
 2. Mdx Blog Engine (if a site/theme implements this they can define a series of templates: post, post-teaser, archive page, tag page
 and will allow for creation of blog posts when placed within posts directory) which allows for creation of blog posts
 in a structured way.
-3. Theme that implements the Page and Blog engine thus providing the HTML/CSS and all of the above goodies to the implementor
-of this theme.
+3. A theme that provides the HTML/CSS and layout through use of the building blocks 1 and 2
 4. The actual site, of which implements the Theme and only defines content as such as pages and posts.
 
 <Img

@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="did some more work towards hello new world + github edit link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624783568109</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="did some more work towards hello new world + github edit link">
+      <created>1631199591706</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1631199591706</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +355,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed px4" />
     <MESSAGE value="added polymorphic component container blog post&#10;\" />
     <MESSAGE value="added mvc6 on ubuntu blog post" />
     <MESSAGE value="added visual studio downgrade blog" />
@@ -375,7 +379,8 @@
     <MESSAGE value="removed harmfull canonical link" />
     <MESSAGE value="added robots.txt and sitemap" />
     <MESSAGE value="made fallback font a lil closer to the custom web font" />
-    <option name="LAST_COMMIT_MESSAGE" value="made fallback font a lil closer to the custom web font" />
+    <MESSAGE value="did some more work towards hello new world + github edit link" />
+    <option name="LAST_COMMIT_MESSAGE" value="did some more work towards hello new world + github edit link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
