@@ -13,6 +13,7 @@ embeddedImagesLocal:
   - ./technologyUsed/netlify-logo.svg      # 5
   - ./technologyUsed/prismjs.svg           # 6
   - ./technologyUsed/tailwindcss.svg       # 7
+  - ./coding-life-structure.png            # 8
 ---
 import Img from "gatsby-image";
 import { Gallery } from "./gallery";
@@ -24,7 +25,7 @@ of my desires, I have finally settled on this one! Welcome all to My (new) Codin
 ### Technology
 
 <Gallery>
-  {props.localImages.map((image, index) =>
+  {props.localImages.slice(0, 7).map((image, index) =>
     image && image.extension === "svg" ? (
       <img
         key={`image-${index}`}
@@ -38,7 +39,7 @@ of my desires, I have finally settled on this one! Welcome all to My (new) Codin
         imgStyle={{objectFit: "contain"}}
         style={{maxHeight: "120px", maxWidth: "default"}}
         fluid={image.full.fluid}
-        alt={console.log(getAlt(index)) || getAlt(index)}
+        alt={getAlt(index)}
       />
   ))}
 </Gallery>
@@ -49,4 +50,58 @@ One of the reasons this project has taken so long to complete has been because o
 more specifically the choice of what packages and structure I was going to use to form my
 new blog as a gatsby.
 
-The Journey started with a fairly \
+The Journey started with a fairly simple idea: "Why don't I just re-build my blog from scratch from the ground up using gatsby themes"
+I mean how hard could it be...
+
+The first 1-2 attempts to build my blog all ended up just fizzling out due to a combination of leaving it too
+long between sessions of work and just loosing my flow as well as a few major changes to Gatsby of
+which it ended up being easier to just start again.
+
+My second latest go at getting my blog up and running was prior to themes getting announced so my first attempts
+was to just simply to get a Gatsby site up and running utilising a MarkDown rendering engine (at the time remark)
+and a css-in-js library (emotion) however I was yet to discover the truly hardest part of writing your blog from
+scratch... Actually finishing it before all of the code becomes irrelevant (well at least in my eyes, probably would
+have been fine!)
+
+In this second last real attempt I ended up getting really bogged down in splitting the HTML markdown + css layer from a higher up
+theme based layer. This was truly a grand mistake as I ended up spending the majority of my time trying to architect
+the perfect abstraction instead of just delivering what mattered, which was the actual implementation of the blog.
+
+I gave up shortly after bogging myself down with non critical issues and didn't try again until Gatsby Themes were announced. For those
+who are not in the know, Gatsby Themes is a combination of using mono repos and wordpress inspired file shadowing.
+Shadowing can be super powerful as it allows you to define a base implementation of which child themes can overwrite.
+this allows creation of pipeline themes that render placeholders which give a child theme
+the opportunity to define what a page will look like and then to create a blog post without any config.
+This would allow me to split my codebase into layers and build up from pieces
+the exact blog platform I desired. For more information check out the [release announcement from Gatsby](https://www.gatsbyjs.com/blog/2019-07-03-announcing-stable-release-gatsby-themes/)
+
+Which is what led me to the platform that you are (unless I re-built it since) reading on now. For this time around
+I had a change of priorities. Instead of building the entire website from scratch finessing each and every style, package
+and layout to my hearts content, I instead looked for somebody who had already done what I wanted to do. I wanted to use
+gatsby themes to split my website up into four main parts:
+1. Basic Mdx Page Engine (if a site/theme implements this they can define a page layout and mdx files will automatically
+utilise this template with 0 config) This will allow for construction of content pages without the need of a CMS
+2. Mdx Blog Engine (if a site/theme implements this they can define a series of templates: post, post-teaser, archive page, tag page
+and will allow for creation of blog posts when placed within posts directory) which allows for creation of blog posts
+in a structured way.
+3. Theme that implements the Page and Blog engine thus providing the HTML/CSS and all of the above goodies to the implementor
+of this theme.
+4. The actual site, of which implements the Theme and only defines content as such as pages and posts.
+
+<Img
+  imgStyle={{objectFit: "contain"}}
+  style={{maxHeight: "600px", maxWidth: "default"}}
+  fluid={props.localImages[8].full.fluid}
+  alt="diagram showing how the blog is structured as a series of core components which layer upon each other"
+  style={{paddingBottom: "16px"}}
+/>
+
+
+I wanted this approach as it was a way to clearly separate core functionality from layout and implementation. This way
+in a years time when I've decided that I don't like my theme one bit and want to start from scratch, I don't actually
+have to start from scratch, I just implement a new Theme layer and keep my Page + Blog engine and my content just implements the new
+theme. I could even theoretically run two theme layers at once and allow users to swap between domains and get the same
+core content.
+
+4 attempts and 3 years later and the day to swap from blogspot to my very own Gatsby blog has finally arrived. If you
+read this far then thanks :) feel free to open a PR with any spelling errors or corrections!

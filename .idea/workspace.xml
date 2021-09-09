@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +60,34 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world\technologyUsed" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/sites/blog/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/sites/blog/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -343,6 +376,24 @@
     <MESSAGE value="added robots.txt and sitemap" />
     <MESSAGE value="made fallback font a lil closer to the custom web font" />
     <option name="LAST_COMMIT_MESSAGE" value="made fallback font a lil closer to the custom web font" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js</url>
+          <line>89</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="js.build_tools.npm">
+        <watch expression="node" language="JavaScript" />
+        <watch expression="parent" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

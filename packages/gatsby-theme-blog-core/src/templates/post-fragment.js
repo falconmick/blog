@@ -10,6 +10,7 @@ export const fragment = graphql`
     slug
     tags
     caption
+    githubEditPath
     embeddedImagesLocal {
       full: childImageSharp {
         fluid(maxWidth: 960, quality: 100) {
