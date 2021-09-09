@@ -1,4 +1,4 @@
-﻿const altTags = [
+const altTags = [
   "gatsby logo",
   "styled components logo",
   "mdx logo",
