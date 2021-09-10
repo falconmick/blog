@@ -14,7 +14,7 @@ const Header = ({ siteName, menuLinks, socialLinks, mode, setMode }) => {
         <div className="flex-col md:flex md:flex-row justify-center md:justify-between">
           <div className="flex md:inline-block justify-between">
             <Link
-              to="/"
+              to="/blog"
               className="font-branding text-3xl md:text-5xl h-12 md:h-18 text-dark dark:text-white hover:text-primary hover:no-underline dark-hover:no-underline dark-hover:text-primary"
               aria-label={`${siteName}, Back to homepage`}
             >
