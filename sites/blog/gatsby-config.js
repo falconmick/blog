@@ -19,7 +19,7 @@ module.exports = {
     menuLinks: [
       {
         name: `Home`,
-        link: `/`,
+        link: `/blog?coming=soon`,
       },
       {
         name: `Blog`,
