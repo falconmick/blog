@@ -48,6 +48,7 @@ module.exports = {
     },
     `@michael/gatsby-theme-page-core`,
     `@michael/gatsby-theme-phoenix`,
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-goatcounter`,
