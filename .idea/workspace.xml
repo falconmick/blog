@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="did some more work towards hello new world + github edit link">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +331,28 @@
       <option name="project" value="LOCAL" />
       <updated>1631199591706</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="#125 added a home page to solve 404 issue &#10;&#10;it will never be reached thanks to the 302 redirect, but it creates a page-data file so gatsby is happy">
+      <created>1631287358520</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1631287358520</updated>
+    </task>
+    <task id="LOCAL-00035" summary="#125 updated copy as client side routing reaches here">
+      <created>1631287854321</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1631287854321</updated>
+    </task>
+    <task id="LOCAL-00036" summary="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download">
+      <created>1631287982404</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1631287982404</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,9 +373,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added polymorphic component container blog post&#10;\" />
-    <MESSAGE value="added mvc6 on ubuntu blog post" />
-    <MESSAGE value="added visual studio downgrade blog" />
     <MESSAGE value="added trace blogpost" />
     <MESSAGE value="migrated line clamping blog post" />
     <MESSAGE value="added final blog posts that needed migrating" />
@@ -380,7 +395,10 @@
     <MESSAGE value="added robots.txt and sitemap" />
     <MESSAGE value="made fallback font a lil closer to the custom web font" />
     <MESSAGE value="did some more work towards hello new world + github edit link" />
-    <option name="LAST_COMMIT_MESSAGE" value="did some more work towards hello new world + github edit link" />
+    <MESSAGE value="#125 added a home page to solve 404 issue &#10;&#10;it will never be reached thanks to the 302 redirect, but it creates a page-data file so gatsby is happy" />
+    <MESSAGE value="#125 updated copy as client side routing reaches here" />
+    <MESSAGE value="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download" />
+    <option name="LAST_COMMIT_MESSAGE" value="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,7 +406,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js</url>
           <line>89</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
