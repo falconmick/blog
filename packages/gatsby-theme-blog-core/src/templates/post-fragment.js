@@ -14,7 +14,7 @@ export const fragment = graphql`
     embeddedImagesLocal {
       full: childImageSharp {
         fluid(maxWidth: 960, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }

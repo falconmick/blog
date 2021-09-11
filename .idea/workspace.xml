@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="trial to pre-load not working so far dupe download">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +40,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/technologyUsed" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../my-gatsby-project" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="ts.external.directory.path" value="C:\Users\sianb\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7442.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Michael\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.4746.80\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -99,6 +101,7 @@
       <workItem from="1624599580755" duration="22372000" />
       <workItem from="1624693002311" duration="2659000" />
       <workItem from="1624777874895" duration="7894000" />
+      <workItem from="1631325015860" duration="4600000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -352,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631287982404</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="trial to pre-load not working so far dupe download">
+      <created>1631295148568</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1631295148568</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +383,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added trace blogpost" />
     <MESSAGE value="migrated line clamping blog post" />
     <MESSAGE value="added final blog posts that needed migrating" />
     <MESSAGE value="removed demo blog post" />
@@ -398,7 +407,8 @@
     <MESSAGE value="#125 added a home page to solve 404 issue &#10;&#10;it will never be reached thanks to the 302 redirect, but it creates a page-data file so gatsby is happy" />
     <MESSAGE value="#125 updated copy as client side routing reaches here" />
     <MESSAGE value="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download" />
-    <option name="LAST_COMMIT_MESSAGE" value="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download" />
+    <MESSAGE value="trial to pre-load not working so far dupe download" />
+    <option name="LAST_COMMIT_MESSAGE" value="trial to pre-load not working so far dupe download" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
