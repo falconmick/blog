@@ -14,7 +14,7 @@ export default (props) => {
           <span key={`tag-${i}`}>
             <Link
               to={`/blog/tags/${slugify(tag.toLowerCase())}/`}
-              className="text-dark font-bold underline dark:text-white"
+              className="text-dark font-semibold underline dark:text-white"
             >
               {tag}
             </Link>
@@ -73,7 +73,7 @@ export default (props) => {
               href={githubEditPath}
               rel="noopener noreferrer"
               target="_blank"
-              className="text-dark font-bold underline dark:text-white"
+              className="text-dark font-semibold underline dark:text-white"
             >
               Open a PR
             </a>
