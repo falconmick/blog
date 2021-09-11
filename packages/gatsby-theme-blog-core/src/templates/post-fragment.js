@@ -14,7 +14,7 @@ export const fragment = graphql`fragment PostFragment on Post {
     childImageSharp {
       gatsbyImageData(
         width: 736
-        quality: 100
+        quality: 70
         placeholder: NONE
         layout: CONSTRAINED
       )
@@ -25,7 +25,7 @@ export const fragment = graphql`fragment PostFragment on Post {
   image {
     childImageSharp {
       gatsbyImageData(
-        quality: 100
+        quality: 70
         placeholder: BLURRED
         transformOptions: {cropFocus: CENTER}
         layout: FULL_WIDTH

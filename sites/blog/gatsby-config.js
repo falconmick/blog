@@ -48,16 +48,8 @@ module.exports = {
     },
     `@michael/gatsby-theme-page-core`,
     `@michael/gatsby-theme-phoenix`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-goatcounter`,
-      options: {
-        code: 'mcrook',
-        head: false,
-        allowLocal: false,
-        pixel: true
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -70,5 +62,15 @@ module.exports = {
         icon: `assets/images/icon.png`
       },
     },
+    // { // we have added gatsby-ssr to serve this up as we are using no-javascript
+    //   resolve: `gatsby-plugin-goatcounter`,
+    //   options: {
+    //     code: 'mcrook',
+    //     head: false,
+    //     allowLocal: false,
+    //     pixel: true
+    //   },
+    // },
+    'gatsby-plugin-no-javascript'
   ],
 }

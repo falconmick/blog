@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="trial to pre-load not working so far dupe download">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="got gatsby-plugin-image working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-page-core/src/templates/page-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-page-core/src/templates/page-fragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +104,7 @@
       <workItem from="1624599580755" duration="22372000" />
       <workItem from="1624693002311" duration="2659000" />
       <workItem from="1624777874895" duration="7894000" />
-      <workItem from="1631325015860" duration="4600000" />
+      <workItem from="1631325015860" duration="17969000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -362,7 +365,28 @@
       <option name="project" value="LOCAL" />
       <updated>1631295148568</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="started fixes for gatsby image to work without js">
+      <created>1631334078379</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1631334078379</updated>
+    </task>
+    <task id="LOCAL-00039" summary="migrated to gatsby-plugin-immage">
+      <created>1631346544080</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1631346544080</updated>
+    </task>
+    <task id="LOCAL-00040" summary="got gatsby-plugin-image working">
+      <created>1631371632844</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1631371632844</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,9 +407,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="migrated line clamping blog post" />
-    <MESSAGE value="added final blog posts that needed migrating" />
-    <MESSAGE value="removed demo blog post" />
     <MESSAGE value="added remaining blog posts" />
     <MESSAGE value="started on redirects" />
     <MESSAGE value="modifed base slug system to mirror blogger" />
@@ -408,7 +429,10 @@
     <MESSAGE value="#125 updated copy as client side routing reaches here" />
     <MESSAGE value="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download" />
     <MESSAGE value="trial to pre-load not working so far dupe download" />
-    <option name="LAST_COMMIT_MESSAGE" value="trial to pre-load not working so far dupe download" />
+    <MESSAGE value="started fixes for gatsby image to work without js" />
+    <MESSAGE value="migrated to gatsby-plugin-immage" />
+    <MESSAGE value="got gatsby-plugin-image working" />
+    <option name="LAST_COMMIT_MESSAGE" value="got gatsby-plugin-image working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

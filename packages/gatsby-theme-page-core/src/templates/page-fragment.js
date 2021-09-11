@@ -11,9 +11,9 @@ export const fragment = graphql`fragment PageFragment on Page {
   image {
     childImageSharp {
       gatsbyImageData(
-        width: 960
+        width: 736
         height: 540
-        quality: 100
+        quality: 70
         placeholder: BLURRED
         transformOptions: {cropFocus: CENTER}
         layout: CONSTRAINED
