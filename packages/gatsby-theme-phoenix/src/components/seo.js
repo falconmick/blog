@@ -52,11 +52,6 @@ export default ({
       />
       <meta name="og:site_name" content={site.title} />
       <meta name="theme-color" content={site.color} />
-      <link rel="preload" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Open+Sans:300,400,600|Bowlby+One+SC&amp;display=swap" as="style" crossOrigin />
-      <link rel="preload" href="https://fonts.gstatic.com/s/bowlbyonesc/v12/DtVlJxerQqQm37tzN3wMug9P_g_2og.woff2" as="font" type="font/woff2" crossOrigin />
-      <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v23/mem8YaGs126MiZpBA-UFVZ0b.woff2" as="font" type="font/woff2" crossOrigin />
-      <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v23/mem5YaGs126MiZpBA-UNirkOUuhp.woff2" as="font" type="font/woff2" crossOrigin />
-      <link rel="preload" href="https://fonts.gstatic.com/s/alegreyasans/v14/5aUu9_-1phKLFgshYDvh6Vwt5eFIqEp2iw.woff2" as="font" type="font/woff2" crossOrigin />
     </Helmet>
   );
 }
