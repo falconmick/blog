@@ -38,7 +38,7 @@ of my desires, I have finally settled on this one! Welcome all to My (new) Codin
         key={`image-${index}`}
         imgStyle={{objectFit: "contain"}}
         style={{maxHeight: "120px", maxWidth: "default"}}
-        image={image.full.gatsbyImageData}
+        image={image.childImageSharp.gatsbyImageData}
         alt={getAlt(index)}
       />
   ))}
@@ -170,7 +170,7 @@ in a structured way.
 <GatsbyImage
   imgStyle={{objectFit: "contain"}}
   style={{maxHeight: "600px", maxWidth: "default"}}
-  image={props.localImages[8].full.gatsbyImageData}
+  image={props.localImages[8].childImageSharp.gatsbyImageData}
   alt="diagram showing how the blog is structured as a series of core components which layer upon each other"
   style={{paddingBottom: "16px"}}
 />

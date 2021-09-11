@@ -9,7 +9,7 @@ export const fragment = graphql`fragment PageFragment on Page {
   is_front
   body
   image {
-    full: childImageSharp {
+    childImageSharp {
       gatsbyImageData(
         width: 960
         height: 540
@@ -18,22 +18,6 @@ export const fragment = graphql`fragment PageFragment on Page {
         transformOptions: {cropFocus: CENTER}
         layout: CONSTRAINED
       )
-    }
-    thumbnail: childImageSharp {
-      fluid(maxWidth: 456, maxHeight: 325, cropFocus: CENTER, quality: 100) {
-        base64
-        aspectRatio
-        src
-        srcSet
-        srcWebp
-        srcSetWebp
-        sizes
-      }
-    }
-    fixed: childImageSharp {
-      fixed(width: 960, quality: 100) {
-        src
-      }
     }
     extension
     publicURL

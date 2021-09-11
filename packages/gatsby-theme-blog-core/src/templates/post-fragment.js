@@ -11,9 +11,9 @@ export const fragment = graphql`fragment PostFragment on Post {
   caption
   githubEditPath
   embeddedImagesLocal {
-    full: childImageSharp {
+    childImageSharp {
       gatsbyImageData(
-        width: 960
+        width: 736
         quality: 100
         placeholder: NONE
         layout: CONSTRAINED
@@ -23,31 +23,13 @@ export const fragment = graphql`fragment PostFragment on Post {
     publicURL
   }
   image {
-    full: childImageSharp {
+    childImageSharp {
       gatsbyImageData(
-        width: 960
-        height: 540
         quality: 100
         placeholder: BLURRED
         transformOptions: {cropFocus: CENTER}
-        layout: CONSTRAINED
+        layout: FULL_WIDTH
       )
-    }
-    thumbnail: childImageSharp {
-      fluid(maxWidth: 456, maxHeight: 325, cropFocus: CENTER, quality: 100) {
-        base64
-        aspectRatio
-        src
-        srcSet
-        srcWebp
-        srcSetWebp
-        sizes
-      }
-    }
-    fixed: childImageSharp {
-      fixed(width: 960, quality: 100) {
-        src
-      }
     }
     extension
     publicURL

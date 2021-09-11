@@ -46,7 +46,7 @@ export default (props) => {
               />
             ) : (
               <GatsbyImage
-                image={image.full.childImageSharp.gatsbyImageData}
+                image={image.childImageSharp.gatsbyImageData}
                 className="rounded-sm"
                 style={{ height: "100%", width: "100%" }}
                 imgStyle={{ objectFit: "contain" }}

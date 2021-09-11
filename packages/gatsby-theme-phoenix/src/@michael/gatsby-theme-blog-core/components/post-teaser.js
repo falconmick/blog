@@ -21,7 +21,7 @@ export default ({ title, slug, image, date, excerpt }) => {
               />
           ) : (
             <GatsbyImage
-              image={image.thumbnail.fluid}
+              image={image.childImageSharp.gatsbyImageData}
               className="rounded-sm"
               imgStyle={{objectFit: "contain"}}
               alt={`Image for ${title}`}
