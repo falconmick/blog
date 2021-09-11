@@ -1,9 +1,15 @@
 {
   "private": true,
-  "workspaces": ["sites/*", "packages/*"],
+  "workspaces": [
+    "sites/*",
+    "packages/*"
+  ],
   "scripts": {
     "start": "yarn workspace @michael/blog start",
-    "prod": "yarn workspace @michael/blog build && yarn workspace @michael/blog serve",
+    "prod": "yarn workspace @michael/blog clean && yarn workspace @michael/blog build && yarn workspace @michael/blog serve",
     "clean": "yarn workspace @michael/blog clean"
+  },
+  "devDependencies": {
+    "syncpack": "^5.8.15"
   }
 }
