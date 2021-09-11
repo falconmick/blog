@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="got gatsby-plugin-image working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-blog-core/src/templates/post-fragment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-page-core/src/templates/page-fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-page-core/src/templates/page-fragment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

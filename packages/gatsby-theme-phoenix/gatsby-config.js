@@ -5,16 +5,15 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-transformer-sharp`,
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: [
-            "Alegreya Sans:500,700",
-            "Open Sans:300,400,600,700",
-            "Bowlby One SC",
-          ],
-        },
-      },
+        fonts: [
+          `Alegreya Sans\:700`,
+          `Open Sans\:300,400,600`,
+          `Bowlby One SC`,
+        ],
+        display: 'swap'
+      }
     },
     {
       resolve: `gatsby-plugin-postcss`,
