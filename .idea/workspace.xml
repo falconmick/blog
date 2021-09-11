@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="removed bad seo">
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="added preload on fonts">
       <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/seo.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/components/seo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -395,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631377163151</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="added preload on fonts">
+      <created>1631378451989</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1631378451989</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +423,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="modifed base slug system to mirror blogger" />
     <MESSAGE value="finished redirects" />
     <MESSAGE value="madd blog post redirects perma" />
     <MESSAGE value="redirect home to blog while home is built" />
@@ -441,7 +447,8 @@
     <MESSAGE value="got gatsby-plugin-image working" />
     <MESSAGE value="swapped font loader and remove 2 unnecessary weights" />
     <MESSAGE value="removed bad seo" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed bad seo" />
+    <MESSAGE value="added preload on fonts" />
+    <option name="LAST_COMMIT_MESSAGE" value="added preload on fonts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
