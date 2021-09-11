@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default ({ title, slug, image, date, excerpt }) => {
   excerpt = excerpt.length > 150 ? excerpt.substr(0, 150) + "..." : excerpt;
@@ -20,13 +20,12 @@ export default ({ title, slug, image, date, excerpt }) => {
               title={title}
               />
           ) : (
-            <Img
-              fluid={image.thumbnail.fluid}
+            <GatsbyImage
+              image={image.thumbnail.fluid}
               className="rounded-sm"
               imgStyle={{objectFit: "contain"}}
               alt={`Image for ${title}`}
-              title={title}
-            />
+              title={title} />
           )}
         </div>
         <div className="mx-4 md:mx-0 md:w-1/2 py-4 md:py-0 lg:py-6 md:pl-4 lg:pl-2">
@@ -42,5 +41,5 @@ export default ({ title, slug, image, date, excerpt }) => {
         </div>
       </article>
     </Link>
-  )
+  );
 }

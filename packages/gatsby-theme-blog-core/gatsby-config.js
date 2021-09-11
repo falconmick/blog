@@ -6,9 +6,10 @@ module.exports = themeOptions => {
   return {
     plugins: [
       `@michael/gatsby-theme-core`,
+      `gatsby-transformer-remark`,
+      `gatsby-plugin-image`,
       `gatsby-plugin-sharp`,
       `gatsby-transformer-sharp`,
-      `gatsby-transformer-remark`,
       `gatsby-image`,
       {
         resolve: `gatsby-source-filesystem`,
