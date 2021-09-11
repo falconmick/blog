@@ -52,6 +52,7 @@ export default ({
       />
       <meta name="og:site_name" content={site.title} />
       <meta name="theme-color" content={site.color} />
+      <link rel="preload" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Open+Sans:300,400,600|Bowlby+One+SC&amp;display=swap" as="style" />
     </Helmet>
   );
 }
