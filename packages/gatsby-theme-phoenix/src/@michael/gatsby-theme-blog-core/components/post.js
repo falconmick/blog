@@ -50,6 +50,7 @@ export default (props) => {
                 className="rounded-sm"
                 style={{ height: "100%", width: "100%" }}
                 imgStyle={{ objectFit: "contain" }}
+                placeholder="none"
                 title={title}
                 alt={caption || title} />
             )}
