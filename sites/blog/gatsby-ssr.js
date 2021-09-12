@@ -1,4 +1,18 @@
 ﻿const React = require("react");
+const Gatsby = require("gatsby");
+
+const HeadComponents = [
+  <script
+    key="lazy-ios-poly-js"
+    async
+    src={Gatsby.withPrefix("loading-attribute-polyfill.umd.js")}
+  />,
+  <script
+    key="lazy-ios-poly-css"
+    async
+    src={Gatsby.withPrefix("loading-attribute-polyfill.css")}
+  />,
+];
 
 const PostBodyComponents = [
   <script
@@ -7,10 +21,12 @@ const PostBodyComponents = [
     async
     src="https://gc.zgo.at/count.js"
   />
-]
+];
 
 exports.onRenderBody = ({
+                          setHeadComponents,
                           setPostBodyComponents
                         }, pluginOptions) => {
-  setPostBodyComponents(PostBodyComponents)
+  setHeadComponents(HeadComponents);
+  setPostBodyComponents(PostBodyComponents);
 }
