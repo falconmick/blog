@@ -41,7 +41,7 @@
     "gatsby-plugin-robots-txt": "^1.6.10",
     "gatsby-plugin-sitemap": "^4.9.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-transformer-sharp": "^3.13.0",
+    "gatsby-transformer-sharp": "^3.14.0",
     "postcss-color-function": "^4.1.0",
     "prismjs": "^1.24.1",
     "react-helmet": "^6.1.0",
