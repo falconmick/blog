@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="did some more work towards hello new world + github edit link">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="added some cheekier preload" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,9 +21,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="NamedScopeManager">
     <scope name="Unnamed" pattern="" />
   </component>
@@ -42,10 +36,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/technologyUsed" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../my-gatsby-project" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="ts.external.directory.path" value="C:\Users\sianb\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7442.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Michael\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.4746.80\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -57,7 +51,6 @@
       <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-20-my-first-post" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dev\my-coding-life\sites\blog\content\posts\2022-02-17-syntax-podcast-two-letter-type-challenge" />
       <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world\technologyUsed" />
     </key>
   </component>
@@ -104,6 +97,7 @@
       <workItem from="1624599580755" duration="22372000" />
       <workItem from="1624693002311" duration="2659000" />
       <workItem from="1624777874895" duration="7894000" />
+      <workItem from="1631325015860" duration="17969000" />
     </task>
     <task id="LOCAL-00001" summary="in process of migrating to latest n gratest">
       <created>1624373536551</created>
@@ -336,7 +330,84 @@
       <option name="project" value="LOCAL" />
       <updated>1631199591706</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="#125 added a home page to solve 404 issue &#10;&#10;it will never be reached thanks to the 302 redirect, but it creates a page-data file so gatsby is happy">
+      <created>1631287358520</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1631287358520</updated>
+    </task>
+    <task id="LOCAL-00035" summary="#125 updated copy as client side routing reaches here">
+      <created>1631287854321</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1631287854321</updated>
+    </task>
+    <task id="LOCAL-00036" summary="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download">
+      <created>1631287982404</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1631287982404</updated>
+    </task>
+    <task id="LOCAL-00037" summary="trial to pre-load not working so far dupe download">
+      <created>1631295148568</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1631295148568</updated>
+    </task>
+    <task id="LOCAL-00038" summary="started fixes for gatsby image to work without js">
+      <created>1631334078379</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1631334078379</updated>
+    </task>
+    <task id="LOCAL-00039" summary="migrated to gatsby-plugin-immage">
+      <created>1631346544080</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1631346544080</updated>
+    </task>
+    <task id="LOCAL-00040" summary="got gatsby-plugin-image working">
+      <created>1631371632844</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1631371632844</updated>
+    </task>
+    <task id="LOCAL-00041" summary="swapped font loader and remove 2 unnecessary weights">
+      <created>1631376238283</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1631376238283</updated>
+    </task>
+    <task id="LOCAL-00042" summary="removed bad seo">
+      <created>1631377163151</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1631377163151</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added preload on fonts">
+      <created>1631378451989</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1631378451989</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added some cheekier preload">
+      <created>1631378794883</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1631378794883</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,21 +423,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added polymorphic component container blog post&#10;\" />
-    <MESSAGE value="added mvc6 on ubuntu blog post" />
-    <MESSAGE value="added visual studio downgrade blog" />
-    <MESSAGE value="added trace blogpost" />
-    <MESSAGE value="migrated line clamping blog post" />
-    <MESSAGE value="added final blog posts that needed migrating" />
-    <MESSAGE value="removed demo blog post" />
-    <MESSAGE value="added remaining blog posts" />
-    <MESSAGE value="started on redirects" />
-    <MESSAGE value="modifed base slug system to mirror blogger" />
-    <MESSAGE value="finished redirects" />
     <MESSAGE value="madd blog post redirects perma" />
     <MESSAGE value="redirect home to blog while home is built" />
     <MESSAGE value="removed home so redirect works" />
@@ -381,7 +442,18 @@
     <MESSAGE value="added robots.txt and sitemap" />
     <MESSAGE value="made fallback font a lil closer to the custom web font" />
     <MESSAGE value="did some more work towards hello new world + github edit link" />
-    <option name="LAST_COMMIT_MESSAGE" value="did some more work towards hello new world + github edit link" />
+    <MESSAGE value="#125 added a home page to solve 404 issue &#10;&#10;it will never be reached thanks to the 302 redirect, but it creates a page-data file so gatsby is happy" />
+    <MESSAGE value="#125 updated copy as client side routing reaches here" />
+    <MESSAGE value="#125 found better solution for 404 bug&#10;&#10;just removed the link that pointed to a page that doesn't exist (that way gatsby doesn't try to pre-download" />
+    <MESSAGE value="trial to pre-load not working so far dupe download" />
+    <MESSAGE value="started fixes for gatsby image to work without js" />
+    <MESSAGE value="migrated to gatsby-plugin-immage" />
+    <MESSAGE value="got gatsby-plugin-image working" />
+    <MESSAGE value="swapped font loader and remove 2 unnecessary weights" />
+    <MESSAGE value="removed bad seo" />
+    <MESSAGE value="added preload on fonts" />
+    <MESSAGE value="added some cheekier preload" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some cheekier preload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

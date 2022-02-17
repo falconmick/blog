@@ -34,18 +34,19 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@michael/gatsby-theme-core": "1.0.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@michael/gatsby-theme-core": "1.0.0",
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-image": "^3.8.0",
-    "gatsby-plugin-feed": "^3.8.0",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-feed": "^3.13.0",
+    "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-mdx": "^2.8.0",
-    "gatsby-plugin-sharp": "^3.8.0",
+    "gatsby-plugin-sharp": "^3.13.0",
     "gatsby-remark-images": "^5.5.0",
-    "gatsby-source-filesystem": "^3.8.0",
+    "gatsby-source-filesystem": "^3.13.0",
     "gatsby-transformer-remark": "^4.5.0",
-    "gatsby-transformer-sharp": "^3.8.0",
+    "gatsby-transformer-sharp": "^3.13.0",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.24.0"
   }

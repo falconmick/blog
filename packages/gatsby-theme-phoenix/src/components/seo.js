@@ -53,5 +53,5 @@ export default ({
       <meta name="og:site_name" content={site.title} />
       <meta name="theme-color" content={site.color} />
     </Helmet>
-  )
+  );
 }

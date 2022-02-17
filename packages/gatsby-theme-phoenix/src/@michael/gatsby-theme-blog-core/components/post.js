@@ -1,6 +1,6 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import slugify from "slugify"
 import { Link } from "gatsby"
 import Layout from "../../../components/layout"
@@ -14,7 +14,7 @@ export default (props) => {
           <span key={`tag-${i}`}>
             <Link
               to={`/blog/tags/${slugify(tag.toLowerCase())}/`}
-              className="text-dark font-bold underline dark:text-white"
+              className="text-dark font-semibold underline dark:text-white"
             >
               {tag}
             </Link>
@@ -45,14 +45,13 @@ export default (props) => {
                 alt={caption || title}
               />
             ) : (
-              <Img
-                fluid={image.full.fluid}
+              <GatsbyImage
+                image={image.childImageSharp.gatsbyImageData}
                 className="rounded-sm"
                 style={{ height: "100%", width: "100%" }}
                 imgStyle={{ objectFit: "contain" }}
                 title={title}
-                alt={caption || title}
-              />
+                alt={caption || title} />
             )}
             {caption && (
               <figcaption dangerouslySetInnerHTML={{ __html: caption }} />
@@ -74,7 +73,7 @@ export default (props) => {
               href={githubEditPath}
               rel="noopener noreferrer"
               target="_blank"
-              className="text-dark font-bold underline dark:text-white"
+              className="text-dark font-semibold underline dark:text-white"
             >
               Open a PR
             </a>
@@ -82,5 +81,5 @@ export default (props) => {
         </div>
       </article>
     </Layout>
-  )
+  );
 }
