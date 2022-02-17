@@ -71,6 +71,6 @@ module.exports = {
     //     pixel: true
     //   },
     // },
-    'gatsby-plugin-no-javascript'
+    // 'gatsby-plugin-no-javascript' // disabled while we fix iOS
   ],
 }
