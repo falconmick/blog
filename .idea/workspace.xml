@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d14d05b-e024-4ead-bf13-d2347531bc03" name="Default Changelist" comment="did some more work towards hello new world + github edit link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/@michael/gatsby-theme-blog-core/components/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/sites/blog/content/posts/2021-06-28-hello-new-world/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/gatsby-theme-phoenix/src/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="NamedScopeManager">
     <scope name="Unnamed" pattern="" />
@@ -56,6 +57,7 @@
       <recent name="C:\dev\blog\sites\blog\content\posts\2012-12-20-my-first-post" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\my-coding-life\sites\blog\content\posts\2022-02-17-syntax-podcast-two-letter-type-challenge" />
       <recent name="C:\dev\blog\sites\blog\content\posts\2021-06-28-hello-new-world\technologyUsed" />
     </key>
   </component>
@@ -350,7 +352,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -388,7 +389,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/gatsby-theme-blog-core/gatsby-node.js</url>
           <line>89</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
