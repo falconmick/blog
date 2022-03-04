@@ -24,25 +24,7 @@ of my desires, I have finally settled on this one! Welcome all to My (new) Codin
 
 ## Technology
 
-<Gallery>
-  {props.localImages.slice(0, 8).map((image, index) =>
-    image && image.extension === "svg" ? (
-      <img
-        key={`image-${index}`}
-        style={{maxHeight: "120px"}}
-        src={image.publicURL}
-        alt={getAlt(index)}
-      />
-    ) : (
-      <GatsbyImage
-        key={`image-${index}`}
-        imgStyle={{objectFit: "contain"}}
-        style={{maxHeight: "120px", maxWidth: "default"}}
-        image={getImage(image)}
-        alt={getAlt(index)}
-      />
-  ))}
-</Gallery>
+<Gallery localImages={props.localImages} />
 
 ### Why Gatsby
 One of the biggest downsides to running a blog through a blogging platform is that your hosting options can be tied

@@ -1,6 +1,9 @@
+import React from 'react';
 import styled from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getAlt } from "./util.js"
 
-export const Gallery = styled.div`
+const GalleryDiv = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,3 +21,26 @@ export const Gallery = styled.div`
     flex: 2 0 200px;
   }
 `;
+
+export const Gallery = ({ localImages }) => (
+  <GalleryDiv>
+    {localImages.slice(0, 8).map((image, index) => {
+      return image && image.extension === "svg" ? (
+        <img
+          key={`image-${index}`}
+          style={{maxHeight: "120px"}}
+          src={image.publicURL}
+          alt={getAlt(index)}
+        />
+      ) : (
+        <GatsbyImage
+          key={`image-${index}`}
+          imgStyle={{objectFit: "contain"}}
+          style={{maxHeight: "120px", maxWidth: "default"}}
+          image={getImage(image)}
+          alt={getAlt(index)}
+        />
+      );
+    })}
+  </GalleryDiv>
+)
