@@ -39,7 +39,7 @@
     "@michael/gatsby-theme-core": "1.0.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^1.13.0",
-    "gatsby-plugin-mdx": "^2.8.0",
+    "gatsby-plugin-mdx": "^2.13.0",
     "gatsby-plugin-sharp": "^3.13.0",
     "gatsby-remark-images": "^5.5.0",
     "gatsby-source-filesystem": "^3.13.0",
