@@ -6,10 +6,11 @@
   ],
   "scripts": {
     "start": "yarn workspace @michael/blog start",
-    "prod": "yarn workspace @michael/blog clean && yarn workspace @michael/blog build && yarn workspace @michael/blog serve",
+    "prod": "yarn build && yarn workspace @michael/blog serve",
+    "build": "yarn workspace @michael/blog clean && yarn workspace @michael/blog build",
     "clean": "yarn workspace @michael/blog clean"
   },
   "devDependencies": {
-    "syncpack": "^5.8.15"
+    "syncpack": "^6.2.0"
   }
 }

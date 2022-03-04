@@ -13,4 +13,4 @@ updates:
     reviewers:
       - "falconmick"
     schedule:
-      interval: "daily"
+      interval: "monthly"

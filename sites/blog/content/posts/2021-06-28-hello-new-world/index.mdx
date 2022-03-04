@@ -15,7 +15,7 @@ embeddedImagesLocal:
   - ./technologyUsed/tailwindcss.svg       # 7
   - ./coding-life-structure.png            # 8
 ---
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Gallery } from "./gallery";
 import { getAlt } from "./util.js"
 
@@ -24,25 +24,7 @@ of my desires, I have finally settled on this one! Welcome all to My (new) Codin
 
 ## Technology
 
-<Gallery>
-  {props.localImages.slice(0, 8).map((image, index) =>
-    image && image.extension === "svg" ? (
-      <img
-        key={`image-${index}`}
-        style={{maxHeight: "120px"}}
-        src={image.publicURL}
-        alt={getAlt(index)}
-      />
-    ) : (
-      <GatsbyImage
-        key={`image-${index}`}
-        imgStyle={{objectFit: "contain"}}
-        style={{maxHeight: "120px", maxWidth: "default"}}
-        image={image.childImageSharp.gatsbyImageData}
-        alt={getAlt(index)}
-      />
-  ))}
-</Gallery>
+<Gallery localImages={props.localImages} />
 
 ### Why Gatsby
 One of the biggest downsides to running a blog through a blogging platform is that your hosting options can be tied
@@ -170,7 +152,7 @@ in a structured way.
 <GatsbyImage
   imgStyle={{objectFit: "contain"}}
   style={{maxHeight: "600px", maxWidth: "default"}}
-  image={props.localImages[8].childImageSharp.gatsbyImageData}
+  image={getImage(props.localImages[8])}
   alt="diagram showing how the blog is structured as a series of core components which layer upon each other"
   style={{paddingBottom: "16px"}}
 />
