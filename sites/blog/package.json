@@ -39,7 +39,7 @@
     "@michael/gatsby-theme-blog-core": "1.0.0",
     "@michael/gatsby-theme-page-core": "1.0.0",
     "@michael/gatsby-theme-phoenix": "1.0.0",
-    "babel-plugin-styled-components": "^1.13.2",
+    "babel-plugin-styled-components": "^2.0.6",
     "gatsby-plugin-goatcounter": "^0.4.0",
     "gatsby-plugin-manifest": "^4.9.0",
     "gatsby-plugin-netlify": "^4.1.0",

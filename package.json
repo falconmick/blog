@@ -11,6 +11,6 @@
     "clean": "yarn workspace @michael/blog clean"
   },
   "devDependencies": {
-    "syncpack": "^5.8.15"
+    "syncpack": "^6.2.0"
   }
 }
