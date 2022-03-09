@@ -6,7 +6,6 @@ module.exports = themeOptions => {
   return {
     plugins: [
       `@michael/gatsby-theme-core`,
-      `gatsby-transformer-remark`,
       `gatsby-plugin-image`,
       `gatsby-plugin-sharp`,
       `gatsby-transformer-sharp`,
@@ -22,6 +21,8 @@ module.exports = themeOptions => {
         resolve: `gatsby-plugin-mdx`,
         options: {
           gatsbyRemarkPlugins: [
+            `gatsby-remark-embed-snippet`,
+            `gatsby-remark-prismjs`,
             {
               resolve: `gatsby-remark-images`,
               options: {

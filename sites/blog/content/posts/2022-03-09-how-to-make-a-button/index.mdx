@@ -1,0 +1,22 @@
+﻿---
+title: How to make a button
+date: 2022-03-09
+excerpt: Writing a good button for your website doesn't need to be hard, this post will show you the way!
+image: ./syntax-ts.png
+tags: ["css", "design"]
+---
+
+import { ShadowRoot } from './source/shadowRoot';
+import { FinalComponent, FinalStyle } from './source/final';
+
+It feels like making a reusable button that just works for everything should be easy; but if you have never
+made one or if you've never had time thoughtfully build one from scratch they can be a plain and simple pain
+to maintain.
+
+To save you from solving to the end of the post here is what we are working toward:
+
+`embed:test.js`
+
+<ShadowRoot renderStyle={() => <FinalStyle />}>
+  <FinalComponent />
+</ShadowRoot>
