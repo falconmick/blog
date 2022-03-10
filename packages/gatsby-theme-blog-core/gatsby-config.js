@@ -21,8 +21,6 @@ module.exports = themeOptions => {
         resolve: `gatsby-plugin-mdx`,
         options: {
           gatsbyRemarkPlugins: [
-            `gatsby-remark-embed-snippet`,
-            `gatsby-remark-prismjs`,
             {
               resolve: `gatsby-remark-images`,
               options: {

@@ -43,7 +43,6 @@
     "gatsby-plugin-sharp": "^4.9.0",
     "gatsby-remark-images": "^6.9.0",
     "gatsby-source-filesystem": "^4.9.0",
-    "gatsby-transformer-remark": "^5.9.0",
     "gatsby-transformer-sharp": "^4.9.0",
     "remark-slug": "^6.0.0"
   }

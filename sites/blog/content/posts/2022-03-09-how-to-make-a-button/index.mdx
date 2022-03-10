@@ -7,7 +7,8 @@ tags: ["css", "design"]
 ---
 
 import { ShadowRoot } from './source/shadowRoot';
-import { FinalComponent, FinalStyle } from './source/final';
+import { CodeExample } from './source/codeExample';
+import { FinalComponent, FinalStyle, FinalPrism } from './source/final';
 
 It feels like making a reusable button that just works for everything should be easy; but if you have never
 made one or if you've never had time thoughtfully build one from scratch they can be a plain and simple pain
@@ -15,8 +16,9 @@ to maintain.
 
 To save you from solving to the end of the post here is what we are working toward:
 
-`embed:test.js`
-
-<ShadowRoot renderStyle={() => <FinalStyle />}>
-  <FinalComponent />
-</ShadowRoot>
+<CodeExample>
+  <FinalPrism />
+  <ShadowRoot renderStyle={() => <FinalStyle />}>
+    <FinalComponent />
+  </ShadowRoot>
+</CodeExample>
