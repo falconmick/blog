@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import styled from "styled-components";
+﻿import styled from "styled-components";
 
 export const CodeExample = styled.section`
   position: relative;
@@ -16,4 +15,4 @@ export const CodeExample = styled.section`
     border: 1px solid #333;
     pointer-events: none;
   }
-`
+`;
