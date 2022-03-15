@@ -13,11 +13,11 @@ const FinalStyle = () => (
 );
 
 const FinalComponent = () => (
-  <div style={{ display: 'flex', marginLeft: '-8px', padding: '16px 0' }}>
-    <button style={{ marginLeft: '8px' }} className="button-btn btn">&lt;button /&gt;</button>
-    <a style={{ marginLeft: '8px' }} href="#" className="anchor-btn btn">&lt;a href /&gt;</a>
-    <a style={{ marginLeft: '8px' }} href="#" className="anchor-btn btn btn-green">&lt;a href class="className" /&gt;</a>
-    <a style={{ marginLeft: '8px', '--background-color': '#ff0021' }} href="#"  className="anchor-btn btn">&lt;a href style="--background-color: #ff0021" /&gt;</a>
+  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', margin: '-8px -8px 0', padding: '16px 0' }}>
+    <button style={{ margin: '8px 8px 0' }} className="button-btn btn">&lt;button /&gt;</button>
+    <a style={{ margin: '8px 8px 0' }} href="#" className="anchor-btn btn">&lt;a href /&gt;</a>
+    <a style={{ margin: '8px 8px 0' }} href="#" className="anchor-btn btn btn-green">&lt;a href class="btn-green" /&gt;</a>
+    <a style={{ margin: '8px 8px 0', '--background-color': '#ff0021' }} href="#"  className="anchor-btn btn">&lt;a href style="--background-color: #ff0021" /&gt;</a>
   </div>
 );
 
