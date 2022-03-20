@@ -1,0 +1,17 @@
+﻿/* normalise base element */
+.anchor-btn {
+  --btn-color: #FFFFFF;
+  display: inline-block;
+  text-decoration: unset;
+  color: var(--btn-color);
+}
+
+.button-btn {
+  --btn-color: #FFFFFF;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--btn-color);
+}

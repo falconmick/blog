@@ -8,7 +8,7 @@ export const ShadowRoot = ({children, renderStyle}) => {
     <div className="shadow-root-container">
       {!isSSR && (
         <React.Suspense fallback={<>{children}</>}>
-          <ReactShadowRoot mode="closed">
+          <ReactShadowRoot delegatesFocus={true} mode="open">
             {renderStyle?.()}
             {children}
           </ReactShadowRoot>

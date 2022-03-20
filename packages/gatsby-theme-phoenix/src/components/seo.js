@@ -2,6 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import striptags from "striptags"
+import useDarkModeContext from "../context/darkMode";
 
 export default ({
   title,
@@ -9,7 +10,6 @@ export default ({
   image,
   url,
   type = `article`,
-  htmlAttributes,
   bodyAttributes,
 }) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +24,11 @@ export default ({
       }
     }
   `)
+
+  const { isDark } = useDarkModeContext();
+  const htmlAttributes = {
+    class: isDark ? "mode-dark" : "",
+  };
 
   const { site } = data.site
   const absoluteUrl = path => (path ? `${site.siteUrl}/${path}` : site.siteUrl)
