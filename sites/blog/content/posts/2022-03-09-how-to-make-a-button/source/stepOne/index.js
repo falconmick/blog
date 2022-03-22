@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { CodeBlock } from "@michael/gatsby-theme-blog-core";
 import { CodeExample } from "../preview/codeExample";
-import { ShadowRoot } from "../preview/shadowRoot";
+import { convertToShadowStyle, ShadowRoot } from "../preview/shadowRoot";
 import useDarkModeContext from "@michael/gatsby-theme-phoenix/src/context/darkMode";
 const style = require("!!raw-loader!./index.css");
 
@@ -9,7 +9,7 @@ const stepOneCss = style.default.toString();
 
 const StepOneStyle = () => (
   <style>
-    {stepOneCss}
+    {convertToShadowStyle(stepOneCss)}
   </style>
 );
 
@@ -19,10 +19,10 @@ const StepOneComponent = () => {
   const color = isDark ? 'white' : 'black';
 
   return (
-    <div style={{ padding: '16px 0' }}>
-      <button style={{ '--btn-color': color }} className="button-btn btn">&lt;button /&gt;</button>
+    <div style={{ padding: '16px 0', '--btn-color': color }}>
+      <button className="button-btn btn">&lt;button /&gt;</button>
       <span style={{ color }}>&lt;span /&gt;</span>
-      <a style={{ '--btn-color': color }} href="" className="anchor-btn btn">&lt;a href /&gt;</a>
+      <a href="" className="anchor-btn btn">&lt;a /&gt;</a>
     </div>
   );
 }

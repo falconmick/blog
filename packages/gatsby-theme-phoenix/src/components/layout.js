@@ -19,7 +19,7 @@ const mdxComponents = {
 }
 
 export default (props) => {
-  const { pageTitle, pageTitleSeo, pageExcerpt, pageExcerptSeo, children } = props;
+  const { pageTitle, pageTitleSeo, pageExcerpt, pageExcerptSeo, image, imageSeo, children } = props;
 
   const data = useStaticQuery(graphql`
     {
@@ -57,6 +57,7 @@ export default (props) => {
       <Seo
         title={pageTitleSeo || pageTitle || title}
         description={pageExcerptSeo || pageExcerpt || description}
+        image={imageSeo || image}
         bodyAttributes={{
           class: "antialiased bg-white dark:bg-dark",
         }}

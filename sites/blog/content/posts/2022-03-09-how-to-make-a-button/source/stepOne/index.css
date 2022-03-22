@@ -1,13 +1,16 @@
-﻿/* normalise base element */
-.anchor-btn {
+﻿/* define default button theme on root */
+:root {
   --btn-color: #FFFFFF;
+}
+
+/* normalise base element */
+.anchor-btn {
   display: inline-block;
   text-decoration: unset;
   color: var(--btn-color);
 }
 
 .button-btn {
-  --btn-color: #FFFFFF;
   display: inline-block;
   background: none;
   border: none;

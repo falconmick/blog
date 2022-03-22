@@ -8,7 +8,6 @@ export default ({
   title,
   description,
   image,
-  url,
   type = `article`,
   bodyAttributes,
 }) => {
@@ -31,7 +30,7 @@ export default ({
   };
 
   const { site } = data.site
-  const absoluteUrl = path => (path ? `${site.siteUrl}/${path}` : site.siteUrl)
+  const absoluteUrl = path => (path ? `${site.siteUrl}${path}` : site.siteUrl)
 
   return (
     <Helmet
@@ -49,8 +48,7 @@ export default ({
       />
       <meta name="og:title" content={striptags(title || site.title)} />
       <meta name="og:type" content={type} />
-      <meta name="og:url" content={absoluteUrl(url)} />
-      <meta name="og:image" content={absoluteUrl(image)} />
+      {image && <meta name="og:image" content={absoluteUrl(image)} />}
       <meta
         name="og:description"
         content={striptags(description || site.description)}

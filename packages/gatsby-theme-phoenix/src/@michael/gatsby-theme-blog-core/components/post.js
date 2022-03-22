@@ -25,7 +25,7 @@ export default (props) => {
     : null
 
   return (
-    <Layout pageTitleSeo={title} pageExcerptSeo={excerpt}>
+    <Layout pageTitleSeo={title} pageExcerptSeo={excerpt} imageSeo={image.publicURL}>
       <article className="post mb-12 md:mb-24">
         <div className="text-center lg:w-4/5 mx-auto px-4">
           <p className="small">{date}</p>

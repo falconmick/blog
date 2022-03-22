@@ -43,10 +43,3 @@
 .btn:hover {
   background-color: var(--btn-background-color-hover);
 }
-
-/* customised buttons */
-.btn.btn-green {
-  --btn-color: #232323;
-  --btn-background-color: #5cdb5c;
-  --btn-background-color-hover: #7ce27c;
-}

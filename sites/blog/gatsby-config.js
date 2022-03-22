@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `My Coding Life`,
     description: `Michael's personal site and blog`,
-    siteUrl: process.env.SITE_URL || `http://localhost`,
+    siteUrl: process.env.SITE_URL || `http://localhost:8000`,
     startUrl: `/`,
     copyright: ``,
     icon: `assets/images/icon.png`,

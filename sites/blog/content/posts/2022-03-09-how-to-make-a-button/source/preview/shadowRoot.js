@@ -10,10 +10,15 @@ export const ShadowRoot = ({children, renderStyle}) => {
         <React.Suspense fallback={<>{children}</>}>
           <ReactShadowRoot delegatesFocus={true} mode="open">
             {renderStyle?.()}
-            {children}
+            <div id="shadow-root"> {/* utilised to mimic :root */}
+              {children}
+            </div>
           </ReactShadowRoot>
         </React.Suspense>
       )}
     </div>
   );
 };
+
+// :root doesn't work inside of shadow dom, so I am creating a synthetic one via #shadow-root
+export const convertToShadowStyle = (styleString) => styleString.replace(':root', '#shadow-root');
