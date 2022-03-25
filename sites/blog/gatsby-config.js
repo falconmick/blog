@@ -54,6 +54,11 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `My Coding Life`,
+        headers: {
+          "*blog-ctg.pages.dev*": [
+            "X-Robots-Tag: noindex",
+          ],
+        },
         short_name: `My Coding Life`,
         start_url: `/`,
         background_color: `#f7f0eb`,
