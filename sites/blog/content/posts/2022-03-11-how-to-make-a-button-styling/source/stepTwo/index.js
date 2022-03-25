@@ -1,8 +1,8 @@
 ﻿import React from 'react';
 import { CodeBlock } from "@michael/gatsby-theme-blog-core";
-import { CodeExample } from "../preview/codeExample";
-import { convertToShadowStyle, ShadowRoot } from "../preview/shadowRoot";
 import useDarkModeContext from "@michael/gatsby-theme-phoenix/src/context/darkMode";
+import { CodeExample } from "../../../../../src/codeExample";
+import { convertToShadowStyle, ShadowRoot } from "../../../../../src/shadowRoot";
 const style = require("!!raw-loader!./index.css");
 
 const stepTwoCss = style.default.toString();

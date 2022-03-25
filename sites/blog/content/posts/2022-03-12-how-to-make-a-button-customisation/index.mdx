@@ -1,0 +1,135 @@
+﻿---
+title: How to make a button
+date: 2022-03-12
+excerpt: Writing a good button for your website doesn't need to be hard, this post will show you the way!
+image: ./button.svg
+tags: ["css", "design", "html", "--css-variables"]
+---
+
+import StepThreeDemo from './source/stepThree';
+import { Link } from "gatsby"
+
+### Final Step 3: Customisation
+
+Throughout this blog post there have been multiple occurrences in which I have utilised css variables with some quick wins
+but nothing too substantial coming from it. This is where it all comes together, this is where we really see the benefits of
+css variables and how they play such a key role!
+
+Instead of showing the final demo again I am simply going to highlight ways in which you can customise your buttons, if you
+want the full code <Link to="/blog/2022/03/how-to-make-a-button/">click here to go to the top</Link> First up is creating a new class to
+create a new type of button:
+
+<StepThreeDemo
+  demoOne
+  code={`
+.btn.btn-green {
+  --btn-color: #232323;
+  --btn-background-color: #5cdb5c;
+  --btn-background-color-hover: #7ce27c;
+}
+  `}
+/>
+<br />
+
+This is what button perfection looks like in my eyes, you setup your styles in such a way that when you want to have a new
+color theme you literally just tell the button what color you want the button to be. The best part is if all you wanted to
+do is change the hover color for one button, you would only need to set the one variable and all of the others would default
+back to however they are defined!
+
+There is one downside to this approach which is made very obvous by "anchor-btn btn btn-green" this is quite the mouth full
+however there is a solution! css preprocessing! The most common of which being sass, in which there are two approaches:
+
+1. define mixins for each of our classes from above, then create single class implementations for each you desire to use.
+
+```scss
+@mixin button-btn {
+// ...
+}
+@mixin anchor-btn {
+// ...
+}
+@mixin btn {
+// ...
+}
+@mixin btn-green {
+// ...
+}
+
+.anchor-btn {
+  @include anchor-btn;
+  @include btn;
+}
+.button-btn {
+  @include button-btn;
+  @include btn;
+}
+button.btn-green {
+  @include button-btn;
+  @include btn;
+  @include btn-green;
+}
+button.btn-green {
+  @include anchor-btn;
+  @include btn;
+  @include btn-green;
+}
+```
+<br />
+
+2. using extend: similar to the above, except you just create the btn, button-btn and anchor-btn classes and inside you
+simply "`@extend: .btn`" for the "`.button-btn`" and you "`@extend: .button-btn`" for the "`.btn-green`".
+
+do note that the order in which you include or extend does matter! The order is normalise => base button => customisation
+it needs to be this way as this is the order in which the css classes are defined in the original example and order when
+you are using single class selectors is VERY important because specificity ends up being determined by what was written last
+and thus we need to re-create a pseudo specificity effect (when the lower inline styles overwrite the styles above them)
+inside of our single class solutions that mimics this.
+
+The next way you can customise your button's appearance is really helpful for once off changes that you want to make quick
+and dirty and looks like so:
+
+<StepThreeDemo
+  demoTwo
+  className="html"
+  code={`
+<a style="--btn-background-color: #ff0021" />
+  `}
+/>
+<br />
+
+Another cool thing you could do is say you are making a st-patricks day post and you wanted to give the CTA buttons
+that are a part of your blog post a special green theme, well you can just place the style tag wit the css variable
+on the main/article/div element that wraps your blog post and then automatiaclly all of your buttons become specially
+themed! You could also overwrite the entire page's buttons even those outside of your blogpost by defining another "`:root`"
+pseudo class, provided it is defined later in the document as the base css styling for your website, it will override all
+the buttons on the page! (you could even theme your entire website this way and allow users to easily create their own
+themes for your website with this method)
+
+# Wrapping up
+<br />
+
+This was quite the lengthy blog post, as I write this I am still deciding if I will split it up into three separate posts
+OR if I will just leave it whole (as that is how I would consume it). I really found writing this post super helpful as
+I ended up playing around with what I thought a good button was made of and in the process of doing so I one up'd my game.
+
+Prior to this post I defined the text color of a button on the styling class and NOT on the normalisation however after
+writing about it, I discovered actually the correct place to fix it is at the normalisation layer to account for pesky css
+styles written by other frameworks you may be working with.
+
+I also never used :root to define my css variables and instead I defined them as I used them. However, when I went to
+wrap a section of the example (not the button itself) I discovered that cool effect of overwriting the css variable via
+inheritance only worked if you pushed the definition all the way up to the root of the document and therefore learnt why
+all those pesky modern css frameworks were doing this.
+
+What's next? I plan on writing a follow-up to this piece explaining how I style buttons when I am using css-in-js libraries
+as such as emotion and styled-components. I will pull apart the classes from this blog post, turn them into mixins and rather
+similar to the sass pre-processing example I will build out my buttons that way. One benifit of using a css-in-js library
+however is you can tidy up the inline themeing like so:
+
+```jsx
+<button style="--btn-background-color: red"></button>
+{/* becomes */}
+<Button background"red"></Button>
+```
+
+Stay tuned for how exactly all of this is possible!

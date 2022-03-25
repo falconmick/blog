@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { CodeBlock } from "@michael/gatsby-theme-blog-core";
-import { CodeExample } from "../preview/codeExample";
-import { convertToShadowStyle, ShadowRoot } from "../preview/shadowRoot";
+import { CodeExample } from "../../../../../src/codeExample";
+import { convertToShadowStyle, ShadowRoot } from "../../../../../src/shadowRoot";
 const style = require("!!raw-loader!./index.css");
 
 const finalCss = style.default.toString();

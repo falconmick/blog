@@ -1,0 +1,102 @@
+﻿---
+title: How to make a button - Normalisation
+date: 2022-03-10
+excerpt: Writing a good button for your website doesn't need to be hard, this post will show you the way!
+image: ./button.svg
+tags: ["css", "design", "html", "--css-variables"]
+---
+
+import StepOneDemo from './source/stepOne';
+
+### Step 1: Normalisation
+
+This is the first and most important step in making convincing reusable buttons and also the one that people get
+wrong the most, as typically a developer will take a `<button class="cool-button" />` apply some padding + background + border and call
+it a day.
+
+This is the wrong approach because what happens 2 days later when that form submitting button that the managers
+just loved to pieces now needs to be used to create a link from /categories over to /categories/pop. Well what happens
+is the developer will start out with `<a class="cool-button" />` and all of a sudden realise that their button has a weird
+color when it's hovered, that it gets an underline and finally that the display is inline instead of an inline block. What
+they didn't discover is that once the user goes to that link the button text changes color to unfortunately a color very similar
+to their buttons custom styling, of which they never noticed because they were working backwards trying to force an element
+that already has pre-existing looks and feels into a class that was never designed for it. What is worse is depending on how this
+is done it could even end up making the original button not look right + when we start to use more than one different color
+button it can just get super hard to keep bending the unplanned css design to bend to the systems needs.
+
+This is why it's always best to start out with a baseline, that baseline being a normalised span of text with 0 browser
+styling and 0 custom styling (aka if you are using tailwind, it's time to apply some additional work to make sure your
+button looks as much like plain old boring text as possible.). see what that looks like here:
+
+<StepOneDemo />
+<br />
+
+As you can see, now the button and the anchor tag both look identical to the span tag, they are normalised and now ready
+to receive the button styling. You might have also noticed "`--btn-color: #FFFFFF`" and also "`color: var(--btn-color);`"
+what this is, is the starts to how we apply theming to our buttons, it basically boils down to: "`color: #FFFFFF`" however
+we use the css variable --brn-color as a way to allow future styles further down in the stylesheet (and therefore with a higher
+precedence to any style with the same specificity as such as .btn) can overwrite it's meaning and thus change the color of the
+text.
+
+But why do this in the reset instead of just doing it inside the button styling? It feels pretty redundant doing this work twice!
+HOWEVER there is some reason behind this madness, which is not everybody has a shadow dom like I do to render their butons inside of
+(maybe you using web components and do?) which means sometimes some pretty nasty styles can pollute the global styling of your
+elements. Say for example what if somebody decided to make something like so:
+
+```css
+a:hover {
+  color: red !important;
+}
+```
+
+This is such a big deal when it comes to our button (and in general all css, please for the love of all things holy just
+stop using !important and start planning out your specificity) because now our button styling must include a fix
+for the anchor tags un-normalised look and feel. This is an issue purely because it pollutes the styles of your button and
+makes it less and less about the buttons look and feel and more about one version of the buttons look and feel.
+
+By using css variables when we apply our normalisation fix on our anchor tag to fix the above:
+
+```css
+.anchor-btn {
+  --btn-color: #FFFFFF;
+  display: inline-block;
+  text-decoration: unset;
+  color: var(--btn-color);
+}
+a.anchor-btn:hover {
+  color: var(--btn-color) !important;
+}
+```
+
+What's also cool about using css variables here is that it also means that when somebody implements a custom button
+they don't get the bug where the quick fix for a bad important (as show above) takes precedence over their custom
+theme color and thus we automatically get a fixed button in the new color of button without having to write another
+fix for the "`!important`" code!
+
+If you are wondering what the "`:root`" thing is at the top, this is just a pseudo selector that selects the root of the
+document and defines your css variable globally. Your first gut reaction might be one of shock and horror, we just spent
+the last 10 years migrating to esm to get away from global name conflicts, and now we go and start standardising on them! The
+concern is correct HOWEVER the general rule of thumb with a best practice, is that as soon as you know why the best
+practice of avoiding globals exists (i.e. name clashing) you can feel some form of safety in using them provided you
+keep that in mind. This is why we didn't just call our "`--btn-color`" variable "`--color`", as the author of the website
+I take ownership of the global css variables and as such I would never allow for any other library to be utilised which
+haphazardly defined css variables which were overly generic and in doing so I am left free to use them.
+
+But with all the risks of this global definition of my button's variable what are the gains? Easy, the ability to
+customise theming of sections of my dom. Say for example I want to make the sidebar's button text color hot pink?
+easy I define the aside like so:
+
+```html
+<style>
+aside {
+  --btn-color: #FF69B4; // or <aside style="--btn-color: #FF69B4;">
+}
+</style>
+<aside>
+  Look at my <button class="btn button-btn">HOT PINK</button> button
+</aside>
+```
+
+You might notice that I don't actually set the cursor to default. This is because I know that I am
+100% going to be setting these in the next step so there is literally no point to, thus our button and anchor tags still
+have their pointer cursor.

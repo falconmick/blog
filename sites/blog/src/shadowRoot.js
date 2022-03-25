@@ -1,8 +1,9 @@
-﻿import React from 'react';
+﻿import React from "react";
+
 const ReactShadowRoot = React.lazy(() => import('react-shadow-root'));
 
-export const ShadowRoot = ({children, renderStyle}) => {
-  const isSSR = typeof window === "undefined"
+export const ShadowRoot = ({ children, renderStyle }) => {
+  const isSSR = typeof window === "undefined";
 
   return (
     <div className="shadow-root-container">
@@ -19,6 +20,5 @@ export const ShadowRoot = ({children, renderStyle}) => {
     </div>
   );
 };
-
 // :root doesn't work inside of shadow dom, so I am creating a synthetic one via #shadow-root
 export const convertToShadowStyle = (styleString) => styleString.replace(':root', '#shadow-root');
