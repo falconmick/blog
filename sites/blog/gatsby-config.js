@@ -43,7 +43,8 @@ module.exports = {
         slugResolver: (node, parentNode) => slugWithoutDate(parentNode.relativeDirectory),
         repoBaseUrl: "https://github.com/falconmick/blog",
         repoDefaultBranch: "main",
-        pageTitle: "Michael's Coding Blog"
+        pageTitle: "Michael's Coding Blog",
+        postsPerPage: 5
       }
     },
     `@michael/gatsby-theme-page-core`,

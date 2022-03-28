@@ -1,26 +1,29 @@
 ﻿---
-title: How to make a button
+title: How to make a button - Styling
 date: 2022-03-11
-excerpt: Writing a good button for your website doesn't need to be hard, this post will show you the way!
+excerpt: The look and feel of a button typically comes from a designer, but you the developer must preserve accessibility.
 image: ./button.svg
 tags: ["css", "design", "html", "--css-variables"]
 ---
 
 import StepTwoDemo from './source/stepTwo';
+import { Link } from "gatsby"
 
-### Step 2: Button styling
+## Step 2: Button styling
 
 Not too much to say about this part but here is the code:
 
 <StepTwoDemo />
 <br />
 
-Typically, how the button looks and interacts with hover is more of a design decision per application, but as you can see
+The look and feel of our buttons will typically come from a designer, but as you can see
 here we are setting some of these values with css variables as such as "`--btn-background-color`" and "`--btn-background-color-hover`"
-once again this is being done for the later steps, customisation.
+if you want to know more about this I go into depth <Link to="/blog/2022/03/how-to-make-a-button-normalisation/#root-and-global-css-variables">in an earlier post</Link>.
 
 The thing to take away from here is "`:focus`" and "`:focus-visible`", I see too often people wiping away inbuilt focus indicators
-with css as such as "`outline: none`" DO NOT DO THIS! Or if you are going to do this replace it with some other indicator of focus
+with css as such as "`outline: none`" DO NOT DO THIS! Or if you are going to do this replace it with some other indicator of focus,
 this is such a massive let down on the accessibility side and no matter how much your designer tells you that you don't need it
 you 100% do. If you cannot tab through your website and use it reliably you are letting people down! In my case I simply create
-a custom outline that looks nicer that the bog standard outline.
+a custom outline that looks nicer that the bog-standard outline.
+
+Next Up: <Link to="/blog/2022/03/how-to-make-a-button-customisation/">part 4 - customisation</Link>
