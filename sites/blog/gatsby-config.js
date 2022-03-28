@@ -31,7 +31,12 @@ module.exports = {
         name: `Github`,
         url: `https://github.com/falconmick/`,
         icon: `github`,
-      }
+      },
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/falconmick`,
+        icon: `twitter`,
+      },
     ],
   },
   plugins: [
