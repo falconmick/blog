@@ -3,7 +3,7 @@ import Layout from "../../../components/layout"
 import PostTeaser from "./post-teaser"
 import Pager from "../../../components/pager"
 
-export default ({
+const Posts = ({
   posts,
   previousPagePath,
   nextPagePath,
@@ -12,6 +12,8 @@ export default ({
 }) => (
   <Layout pageTitle={pageTitle} pageExcerpt={pageExcerpt}>
     {posts && posts.map(post => <PostTeaser {...post} key={post.id} />)}
-    <Pager {...{ previousPagePath, nextPagePath }}></Pager>
+    <Pager {...{ previousPagePath, nextPagePath }} />
   </Layout>
-)
+);
+
+export default Posts;

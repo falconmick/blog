@@ -40,11 +40,13 @@
     "@michael/gatsby-theme-page-core": "1.0.0",
     "@michael/gatsby-theme-phoenix": "1.0.0",
     "babel-plugin-styled-components": "^2.0.6",
+    "clsx": "^1.1.1",
     "gatsby-plugin-goatcounter": "^0.4.0",
     "gatsby-plugin-manifest": "^4.9.0",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-no-javascript": "^2.0.5",
     "gatsby-plugin-styled-components": "^5.9.0",
+    "react-shadow-root": "^6.1.1",
     "styled-components": "^5.3.3"
   }
 }

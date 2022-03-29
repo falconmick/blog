@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import Header from "./header"
@@ -8,6 +8,7 @@ import Seo from "./seo"
 import Icon from "./icon"
 import Button from "./button"
 import { CodeBlock } from "@michael/gatsby-theme-blog-core"
+import { DarkModeProvider } from "../context/darkMode";
 
 // Components available in MDX files.
 const mdxComponents = {
@@ -17,19 +18,8 @@ const mdxComponents = {
   code: CodeBlock,
 }
 
-export default (props) => {
-  const { pageTitle, pageTitleSeo, pageExcerpt, pageExcerptSeo, children } = props;
-  const [mode, setMode] = useState(
-    typeof localStorage !== "undefined"
-      ? localStorage.getItem("mode") || "light"
-      : "light"
-  )
-
-  React.useEffect(() => {
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem("mode", mode)
-    }
-  }, [mode])
+const Layout = (props) => {
+  const { pageTitle, pageTitleSeo, pageExcerpt, pageExcerptSeo, image, imageSeo, children } = props;
 
   const data = useStaticQuery(graphql`
     {
@@ -63,13 +53,11 @@ export default (props) => {
   } = data.allSite.nodes[0].siteMetadata
 
   return (
-    <>
+    <DarkModeProvider>
       <Seo
         title={pageTitleSeo || pageTitle || title}
         description={pageExcerptSeo || pageExcerpt || description}
-        htmlAttributes={{
-          class: mode === "dark" ? "mode-dark" : "",
-        }}
+        image={imageSeo || image}
         bodyAttributes={{
           class: "antialiased bg-white dark:bg-dark",
         }}
@@ -77,8 +65,6 @@ export default (props) => {
 
       <Header
         siteName={title}
-        mode={mode}
-        setMode={setMode}
         socialLinks={socialLinks}
         menuLinks={menuLinks}
       />
@@ -108,6 +94,8 @@ export default (props) => {
           {copyright.replace(/(Y{4})/, new Date().getFullYear())}
         </p>
       </Footer>
-    </>
+    </DarkModeProvider>
   )
-}
+};
+
+export default Layout;

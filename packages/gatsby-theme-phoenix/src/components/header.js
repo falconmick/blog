@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Icon from "./icon"
+import useDarkModeContext from "../context/darkMode";
 
-const Header = ({ siteName, menuLinks, socialLinks, mode, setMode }) => {
-  const isDark = mode === "dark"
+const Header = ({ siteName, menuLinks, socialLinks }) => {
+  const { isDark, setMode } = useDarkModeContext();
   const [navOpen, setNavOpen] = useState(false)
 
   return (
@@ -104,8 +105,6 @@ const Header = ({ siteName, menuLinks, socialLinks, mode, setMode }) => {
 
 Header.propTypes = {
   siteName: PropTypes.string.isRequired,
-  mode: PropTypes.string.isRequired,
-  setMode: PropTypes.func.isRequired,
   menuLinks: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

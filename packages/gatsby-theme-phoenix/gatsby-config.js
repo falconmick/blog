@@ -8,8 +8,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Alegreya Sans\:700`,
-          `Open Sans\:300,400,600`,
+          `Alegreya Sans:700`,
+          `Open Sans:300,400,600`,
           `Bowlby One SC`,
         ],
         display: 'swap'

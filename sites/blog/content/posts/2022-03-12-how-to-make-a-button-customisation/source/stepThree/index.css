@@ -1,0 +1,52 @@
+﻿/* define default button theme on root */
+:root {
+  --btn-color: #FFFFFF;
+  --btn-background-color: #EA4C89;
+  --btn-background-color-hover: #F082AC;
+}
+
+/* normalise base element */
+.anchor-btn {
+  display: inline-block;
+  text-decoration: unset;
+  color: var(--btn-color);
+}
+
+.button-btn {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--btn-color);
+}
+
+/* button styling */
+.btn {
+  background-color: var(--btn-background-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+.btn:focus, .btn:focus-visible {
+  outline: 2px dotted #999;
+  outline-offset: -2px;
+}
+
+.btn:hover {
+  background-color: var(--btn-background-color-hover);
+}
+
+/* customised buttons */
+.btn.btn-green {
+  --btn-color: #232323;
+  --btn-background-color: #5cdb5c;
+  --btn-background-color-hover: #7ce27c;
+}

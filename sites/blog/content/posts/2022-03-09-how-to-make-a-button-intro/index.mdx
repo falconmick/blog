@@ -1,0 +1,38 @@
+﻿---
+title: How to make a button
+date: 2022-03-09
+excerpt: Writing a good button for your website doesn't need to be hard, this post will show you the way!
+image: ./button.svg
+tags: ["css", "design", "html", "--css-variables"]
+---
+
+import FinalDemo from './source/final';
+import { Link } from "gatsby"
+
+It feels like making a reusable button that works for everything should be easy, but if you have never made one or if
+you've never had time to think while build one from scratch; they can be a pain to maintain.
+
+Over the next four blog posts, we will dig into the ins and outs of what it takes to build a reusable button that is
+sure to scale with the ever-increasing needs of your project as it matures. But what we learn here need not be used in
+isolation; there are plenty of other instances in which you want a component to work for any semantical element,
+and you can use the same principles there.
+
+Before we start, here is the result that we are working towards:
+
+<FinalDemo id="full-code-example" />
+<br />
+
+If you look at the comments in the css, you can see the three critical parts of designing reusable and consistent
+buttons that work for any HTML elements. Those steps consist of:
+
+1. Normalise the element to look like an un-styled span of text.
+2. Apply button styling
+3. Apply customisation for the individual button (as such as colour)
+
+We split the styling up into these three stages for ease of development and assurance that our buttons will look correct
+no matter what elements we end up utilising for the button. Using the right element for the button, be it input, button,
+OR anchor, is hypercritical if you want to build a website that the user's browser and accessibility tools can understand.
+It's not acceptable to have a button with an onclick event that triggers a route change, you should be giving your users
+an anchor tag, and it shouldn't look any different.
+
+Next Up: <Link to="/blog/2022/03/how-to-make-a-button-normalisation/">part 2 - normalisation</Link>

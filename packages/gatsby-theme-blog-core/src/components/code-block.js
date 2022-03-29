@@ -1,7 +1,8 @@
 import React from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
+import clsx from 'clsx';
 
-export default ({ theme, children, className }) => {
+const CodeBlock = ({ theme, children, className, preClassName, preStyle }) => {
   const language = className.replace(/language-/, "")
   return (
     <Highlight
@@ -11,7 +12,7 @@ export default ({ theme, children, className }) => {
       language={language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: "20px" }}>
+        <pre className={clsx(className, preClassName)} style={{ ...style, ...preStyle }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -23,4 +24,6 @@ export default ({ theme, children, className }) => {
       )}
     </Highlight>
   )
-}
+};
+
+export default CodeBlock;

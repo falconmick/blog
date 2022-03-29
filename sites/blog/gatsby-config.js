@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `My Coding Life`,
     description: `Michael's personal site and blog`,
-    siteUrl: process.env.SITE_URL || `http://localhost`,
+    siteUrl: process.env.SITE_URL || `http://localhost:8000`,
     startUrl: `/`,
     copyright: ``,
     icon: `assets/images/icon.png`,
@@ -31,7 +31,12 @@ module.exports = {
         name: `Github`,
         url: `https://github.com/falconmick/`,
         icon: `github`,
-      }
+      },
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/falconmick`,
+        icon: `twitter`,
+      },
     ],
   },
   plugins: [
@@ -43,13 +48,23 @@ module.exports = {
         slugResolver: (node, parentNode) => slugWithoutDate(parentNode.relativeDirectory),
         repoBaseUrl: "https://github.com/falconmick/blog",
         repoDefaultBranch: "main",
-        pageTitle: "Michael's Coding Blog"
+        pageTitle: "Michael's Coding Blog",
+        postsPerPage: 5
       }
     },
     `@michael/gatsby-theme-page-core`,
     `@michael/gatsby-theme-phoenix`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "*blog-ctg.pages.dev*": [
+            "X-Robots-Tag: noindex",
+          ],
+        },
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
