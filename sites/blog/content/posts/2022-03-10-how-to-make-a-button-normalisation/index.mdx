@@ -39,7 +39,7 @@ As you can see, the button and the anchor tag both look identical to the span ta
 receive the button styling. You might have also noticed "`--btn-color: #FFFFFF`" and also "`color: var(--btn-color);`"
 what this is, is the start of how we apply theming to our buttons. It boils down to: "`color: #FFFFFF`" however, we use
 the css variable "`--btn-color`" as a way to allow future styles further down in the stylesheet
-(and therefore with higher precedence to any style with the same specificity as such as .btn) to overwrite its meaning
+(and therefore with higher precedence) to overwrite its meaning
 and thus change the color of the text.
 
 But why not just do this in the button styling instead of the normalisation? It feels like the colour of a button should
