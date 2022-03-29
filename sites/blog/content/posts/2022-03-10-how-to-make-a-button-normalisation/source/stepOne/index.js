@@ -1,8 +1,9 @@
-﻿import React from 'react';
+import React from 'react';
 import { CodeBlock } from "@michael/gatsby-theme-blog-core";
 import useDarkModeContext from "@michael/gatsby-theme-phoenix/src/context/darkMode";
 import { CodeExample } from "../../../../../src/codeExample";
 import { convertToShadowStyle, ShadowRoot } from "../../../../../src/shadowRoot";
+// eslint-disable-next-line import/no-webpack-loader-syntax
 const style = require("!!raw-loader!./index.css");
 
 const stepOneCss = style.default.toString();
@@ -22,7 +23,7 @@ const StepOneComponent = () => {
     <div style={{ padding: '16px 0', '--btn-color': color }}>
       <button className="button-btn btn">&lt;button /&gt;</button>
       <span style={{ color }}>&lt;span /&gt;</span>
-      <a href="" className="anchor-btn btn">&lt;a /&gt;</a>
+      <a href="?click" onClick={(e) => e.preventDefault()} className="anchor-btn btn">&lt;a /&gt;</a>
     </div>
   );
 }

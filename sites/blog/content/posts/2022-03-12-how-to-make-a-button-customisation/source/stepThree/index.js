@@ -1,8 +1,8 @@
-﻿import React from 'react';
+import React from 'react';
 import { CodeBlock } from "@michael/gatsby-theme-blog-core";
-import useDarkModeContext from "@michael/gatsby-theme-phoenix/src/context/darkMode";
 import { CodeExample } from "../../../../../src/codeExample";
 import { convertToShadowStyle, ShadowRoot } from "../../../../../src/shadowRoot";
+// eslint-disable-next-line import/no-webpack-loader-syntax
 const style = require("!!raw-loader!./index.css");
 
 const StepThreeCss = style.default.toString();
@@ -17,8 +17,8 @@ const StepThreeStyle = () => (
 const StepThreeComponent = ({ demoOne, demoTwo }) => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', margin: '-8px -8px 0', padding: '16px 0' }}>
-      {demoOne && <a style={{ margin: '8px 8px 0' }} href="#" className="anchor-btn btn btn-green">&lt;a class="anchor-btn btn btn-green" /&gt;</a>}
-      {demoTwo && <a style={{ margin: '8px 8px 0', '--btn-background-color': '#ff0021' }} href=""  className="anchor-btn btn">&lt;a style="--btn-background-color: #ff0021" /&gt;</a>}
+      {demoOne && <a style={{ margin: '8px 8px 0' }} href="?click" onClick={(e) => e.preventDefault()} className="anchor-btn btn btn-green">&lt;a class="anchor-btn btn btn-green" /&gt;</a>}
+      {demoTwo && <a style={{ margin: '8px 8px 0', '--btn-background-color': '#ff0021' }} href="?click" onClick={(e) => e.preventDefault()} className="anchor-btn btn">&lt;a style="--btn-background-color: #ff0021" /&gt;</a>}
     </div>
   );
 }

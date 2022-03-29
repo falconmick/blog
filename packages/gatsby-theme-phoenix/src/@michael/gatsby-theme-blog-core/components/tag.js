@@ -2,7 +2,7 @@ import React from "react"
 import PostTeaser from "./post-teaser"
 import Layout from "../../../components/layout"
 
-export default ({ name, posts }) => (
+const Tag = ({ name, posts }) => (
   <Layout
     pageTitle={name}
     pageExcerpt={`${posts.length} post${
@@ -11,4 +11,6 @@ export default ({ name, posts }) => (
   >
     {posts && posts.map(post => <PostTeaser {...post} key={post.id} />)}
   </Layout>
-)
+);
+
+export default Tag;

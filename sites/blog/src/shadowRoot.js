@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 const ReactShadowRoot = React.lazy(() => import('react-shadow-root'));
 

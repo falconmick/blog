@@ -18,7 +18,7 @@ const mdxComponents = {
   code: CodeBlock,
 }
 
-export default (props) => {
+const Layout = (props) => {
   const { pageTitle, pageTitleSeo, pageExcerpt, pageExcerptSeo, image, imageSeo, children } = props;
 
   const data = useStaticQuery(graphql`
@@ -96,4 +96,6 @@ export default (props) => {
       </Footer>
     </DarkModeProvider>
   )
-}
+};
+
+export default Layout;

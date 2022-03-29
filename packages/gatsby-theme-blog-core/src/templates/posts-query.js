@@ -2,9 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import Posts from "../components/posts"
 
-export default ({ pageContext, data }) => (
+const PostsQuery = ({ pageContext, data }) => (
   <Posts posts={data.allPost.posts} {...pageContext} />
-)
+);
+
+export default PostsQuery;
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {

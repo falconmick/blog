@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Icon from "./icon"
 
-export default ({ previousPagePath, nextPagePath }) => {
+const Pager = ({ previousPagePath, nextPagePath }) => {
   return (
     <div className="flex items-center justify-between mt-16 md:w-4/5 mx-auto">
       {previousPagePath && (
@@ -19,4 +19,6 @@ export default ({ previousPagePath, nextPagePath }) => {
       )}
     </div>
   )
-}
+};
+
+export default Pager;

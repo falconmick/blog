@@ -1,7 +1,7 @@
 import React from "react"
 import icons from "../images/icons.svg"
 
-export default ({ name, color = `currentColor`, size = 24, ...restProps }) => (
+const Icon = ({ name, color = `currentColor`, size = 24, ...restProps }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -16,4 +16,6 @@ export default ({ name, color = `currentColor`, size = 24, ...restProps }) => (
   >
     <use xlinkHref={`${icons}#${name}`} />
   </svg>
-)
+);
+
+export default Icon;

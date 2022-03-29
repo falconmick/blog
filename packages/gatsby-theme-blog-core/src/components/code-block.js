@@ -2,7 +2,7 @@ import React from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import clsx from 'clsx';
 
-export default ({ theme, children, className, preClassName, preStyle }) => {
+const CodeBlock = ({ theme, children, className, preClassName, preStyle }) => {
   const language = className.replace(/language-/, "")
   return (
     <Highlight
@@ -24,4 +24,6 @@ export default ({ theme, children, className, preClassName, preStyle }) => {
       )}
     </Highlight>
   )
-}
+};
+
+export default CodeBlock;

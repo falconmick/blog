@@ -1,5 +1,6 @@
-﻿const React = require("react");
+const React = require("react");
 
+// noinspection JSUnresolvedLibraryURL
 const PostBodyComponents = [
   <script
     key="goat-counter"
@@ -10,7 +11,7 @@ const PostBodyComponents = [
 ]
 
 exports.onRenderBody = ({
-                          setPostBodyComponents
-                        }, pluginOptions) => {
+  setPostBodyComponents
+}) => {
   setPostBodyComponents(PostBodyComponents)
 }

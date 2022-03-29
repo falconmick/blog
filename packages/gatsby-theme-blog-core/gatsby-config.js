@@ -1,7 +1,7 @@
 const withDefaults = require(`./theme-options`)
 
 module.exports = themeOptions => {
-  const { contentPath, basePath } = withDefaults(themeOptions)
+  const { contentPath } = withDefaults(themeOptions)
 
   return {
     plugins: [

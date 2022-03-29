@@ -5,23 +5,23 @@ import slugify from "slugify"
 import { Link } from "gatsby"
 import Layout from "../../../components/layout"
 
-export default (props) => {
+const Post = (props) => {
   const { title, excerpt, image, tags, caption, date, body, embeddedImagesLocal, githubEditPath } = props;
   const tagLinks = tags
     ? tags.map((tag, i) => {
-        const divider = i < tags.length - 1 && <span>{`, `}</span>
-        return (
-          <span key={`tag-${i}`}>
+      const divider = i < tags.length - 1 && <span>{`, `}</span>
+      return (
+        <span key={`tag-${i}`}>
             <Link
               to={`/blog/tags/${slugify(tag.toLowerCase())}/`}
               className="text-dark font-semibold underline dark:text-white"
             >
               {tag}
             </Link>
-            {divider}
+          {divider}
           </span>
-        )
-      })
+      )
+    })
     : null
 
   return (
@@ -82,4 +82,6 @@ export default (props) => {
       </article>
     </Layout>
   );
-}
+};
+
+export default Post;

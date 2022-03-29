@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import striptags from "striptags"
 import useDarkModeContext from "../context/darkMode";
 
-export default ({
+const Seo = ({
   title,
   description,
   image,
@@ -57,4 +57,6 @@ export default ({
       <meta name="theme-color" content={site.color} />
     </Helmet>
   );
-}
+};
+
+export default Seo;

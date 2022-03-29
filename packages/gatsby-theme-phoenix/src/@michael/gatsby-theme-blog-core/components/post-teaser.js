@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 
-export default ({ title, slug, image, date, excerpt }) => {
+const PostTeaser = ({ title, slug, image, date, excerpt }) => {
   excerpt = excerpt.length > 150 ? excerpt.substr(0, 150) + "..." : excerpt;
   return (
     <Link
@@ -16,9 +16,9 @@ export default ({ title, slug, image, date, excerpt }) => {
             <img
               src={image.publicURL}
               className="rounded-sm"
-              alt={`Image for ${title}`}
+              alt={title}
               title={title}
-              />
+            />
           ) : (
             <GatsbyImage
               image={image.childImageSharp.gatsbyImageData}
@@ -42,4 +42,6 @@ export default ({ title, slug, image, date, excerpt }) => {
       </article>
     </Link>
   );
-}
+};
+
+export default PostTeaser;
