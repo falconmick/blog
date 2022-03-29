@@ -55,16 +55,20 @@ module.exports = {
     `@michael/gatsby-theme-page-core`,
     `@michael/gatsby-theme-phoenix`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-netlify`,
       options: {
-        name: `My Coding Life`,
         headers: {
           "*blog-ctg.pages.dev*": [
             "X-Robots-Tag: noindex",
           ],
         },
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `My Coding Life`,
         short_name: `My Coding Life`,
         start_url: `/`,
         background_color: `#f7f0eb`,
