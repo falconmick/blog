@@ -77,15 +77,15 @@ module.exports = {
         icon: `assets/images/icon.png`
       },
     },
-    // { // we have added gatsby-ssr to serve this up as we are using no-javascript
-    //   resolve: `gatsby-plugin-goatcounter`,
-    //   options: {
-    //     code: 'mcrook',
-    //     head: false,
-    //     allowLocal: false,
-    //     pixel: true
-    //   },
-    // },
+    { // we have added gatsby-ssr to serve this up as we are using no-javascript
+      resolve: `gatsby-plugin-goatcounter`,
+      options: {
+        code: 'mcrook',
+        head: false,
+        allowLocal: false,
+        pixel: true
+      },
+    },
     // 'gatsby-plugin-no-javascript' // disabled while we fix iOS
   ],
 }
