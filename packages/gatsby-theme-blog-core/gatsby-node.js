@@ -22,6 +22,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String!
       body: String!
       image: File @fileByRelativePath
+      socialImage: File @fileByRelativePath
       caption: String
       githubEditPath: String
       tags: [String]
@@ -95,6 +96,7 @@ exports.onCreateNode = async (
       excerpt: node.frontmatter.excerpt,
       slug: path,
       image: node.frontmatter.image,
+      socialImage: node.frontmatter.socialImage,
       caption: node.frontmatter.caption,
       tags: node.frontmatter.tags,
       url: node.frontmatter.url,

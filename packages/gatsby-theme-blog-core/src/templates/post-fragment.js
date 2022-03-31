@@ -34,5 +34,9 @@ export const fragment = graphql`fragment PostFragment on Post {
     extension
     publicURL
   }
+  socialImage {
+    extension
+    publicURL
+  }
 }
 `

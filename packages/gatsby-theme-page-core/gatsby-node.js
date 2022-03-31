@@ -20,6 +20,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       excerpt: String
       description: String
       image: File @fileByRelativePath
+      socialImage: File @fileByRelativePath
       slug: String!
       body: String!
       is_front: Boolean!
@@ -81,6 +82,7 @@ exports.onCreateNode = async ({
       description: node.frontmatter.description,
       slug: node.frontmatter.slug || slugify(parent.relativeDirectory),
       image: node.frontmatter.image,
+      socialImage: node.frontmatter.socialImage,
       is_front: node.frontmatter.is_front || false,
       parent: node.id,
       internal: {

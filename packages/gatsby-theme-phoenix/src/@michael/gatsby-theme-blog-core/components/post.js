@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import Layout from "../../../components/layout"
 
 const Post = (props) => {
-  const { title, excerpt, image, tags, caption, date, body, embeddedImagesLocal, githubEditPath } = props;
+  const { title, excerpt, image, socialImage, tags, caption, date, body, embeddedImagesLocal, githubEditPath } = props;
   const tagLinks = tags
     ? tags.map((tag, i) => {
       const divider = i < tags.length - 1 && <span>{`, `}</span>
@@ -25,7 +25,7 @@ const Post = (props) => {
     : null
 
   return (
-    <Layout pageTitleSeo={title} pageExcerptSeo={excerpt} imageSeo={image.publicURL}>
+    <Layout pageTitleSeo={title} pageExcerptSeo={excerpt} imageSeo={socialImage?.publicURL ?? image?.publicURL}>
       <article className="post mb-12 md:mb-24">
         <div className="text-center lg:w-4/5 mx-auto px-4">
           <p className="small">{date}</p>
