@@ -41,6 +41,6 @@
     "@michael/gatsby-theme-phoenix": "1.0.0",
     "gatsby-plugin-goatcounter": "^0.4.0",
     "gatsby-plugin-manifest": "^3.13.0",
-    "gatsby-plugin-netlify": "^3.14.0"
+    "gatsby-plugin-netlify": "^5.0.1"
   }
 }
