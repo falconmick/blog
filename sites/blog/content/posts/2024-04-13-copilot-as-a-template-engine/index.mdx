@@ -1,0 +1,42 @@
+---
+title: Copilot in the real world - Easy templating
+date: 2022-03-12
+excerpt: The promises of GPT powered coding assistance as such as copilot have been really lofty, but how can you actually extract value out of these tools
+tags: ["copilot", "Gherkin", "cucumber", "bdd", "testing", "C#", "dotnet"]
+---
+
+It has almost been two years since the announcement and initial release of Github Copilot, the new wonder tech solution that's going to
+take your and my job in the near future OR simply help us focus more on the problems and less on the boilerplate if you listen to 
+Github's marketing department and/or some common sense.
+
+for those of you not in the know Copilot is a Generative Pre-trained Transformer (more colloquially known as a GPT or AI) which has a multitude
+of tools that let the developer using it interact through Chat, line level code completion or through the CLI. What makes Copilot special 
+and unique to the offerings of a more generic GPT can be best summed up by two key differences:
+
+1. The models is a fine tuned variant of OpenAI's GPT 3.5 which has been further refined by the entirety of the appropriately licensed Github
+ecosystem. This allows Copilot to take GPT 3.5's ability to hold a "conversation" with you while also giving it just about every possible
+example of how code is written (bot good and bad) thanks to it's vast data-set.
+2. Copilot is delivered to the user through their IDE, be that VS Code, Visual Studio or the Intellij platform via an extension. This extension
+then provides a chat window and code completion support but at the same time also bundles up a bunch of context around what files the user
+has open (and their contents) which then allows the user to both transparently get improved results tailored to what they're working on as well
+as allowing then to specifically call out files and have them submitted as context around the prompts they're making.
+
+Now that we have a basic understanding of what Copilot is, lets talk about what I believe it is not. 
+
+Allot of the demo's that you will see for Copilot is how you can ask it to create a bubble search algorithm OR generate you some HTML. There's 
+just one problem with that, these are demo's and not actual code that we would want written. Why would I use a GPT to write an algorithm I 
+didn't fully understand? That sounds like a recipe for disaster as I don't know if the solution is good enough. Ok What if I do understand the
+algorithm? Why am I even writing/generating my own where I know for sure there will be a better bubble sort algorithm in my package manager or
+even inbuilt in the language. 
+
+What about the more boilerplate example of the HTML? It's amazing how I can ask for a little details like plant emoji's or for it to be in a
+table and for the result to be more or less what I wanted. But This type of generation only really works in a more realistic project if we
+are using a utility based css framework like tailwind, otherwise the odd's that it will re-use the custom classes for your system OR generate
+the appropriately constructed CSS rules is very low and only really good for an example.
+
+That's the crux of the problem, It's a great demo tool but not as amazing for real work in my experiences. It will on occasion provide me a
+line completion for soothing obvious (which is a bonus) and if I really needed some code explained I theoretically could ask it, but at that point
+the issue is not that I need a tool to explain to me the code I'm working on but instead probably that I need to talk/work with the developer
+who created it so that we can simplify it such that it doesn't need explaining. 
+
+There is still one way in which Copilot can help save large chunks of effort and provide actual value and that is with adhoc Template creation.
