@@ -26,6 +26,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       caption: String
       githubEditPath: String
       tags: [String]
+      videoSrcURL: String
+      videoTitle: String
       embeddedImagesLocal: [File!] @fileByRelativePath
     }
   `)
@@ -99,6 +101,8 @@ exports.onCreateNode = async (
       socialImage: node.frontmatter.socialImage,
       caption: node.frontmatter.caption,
       tags: node.frontmatter.tags,
+      videoSrcURL: node.frontmatter.videoSrcURL,
+      videoTitle: node.frontmatter.videoTitle,
       url: node.frontmatter.url,
       embeddedImagesLocal: node.frontmatter.embeddedImagesLocal,
       githubEditPath: githubEditPath,

@@ -9,6 +9,8 @@ export const fragment = graphql`fragment PostFragment on Post {
   slug
   tags
   caption
+  videoSrcURL
+  videoTitle
   githubEditPath
   embeddedImagesLocal {
     childImageSharp {
