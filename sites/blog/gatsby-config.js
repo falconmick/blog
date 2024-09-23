@@ -37,6 +37,11 @@ module.exports = {
         url: `https://twitter.com/falconmick`,
         icon: `twitter`,
       },
+      {
+        name: `Email`,
+        url: `mailto:contact@mcrook.com`,
+        icon: `mail`,
+      },
     ],
   },
   plugins: [
