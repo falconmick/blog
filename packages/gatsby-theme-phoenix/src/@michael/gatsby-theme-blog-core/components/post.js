@@ -4,9 +4,10 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import slugify from "slugify"
 import { Link } from "gatsby"
 import Layout from "../../../components/layout"
+import Video from "../../../components/video"
 
 const Post = (props) => {
-  const { title, excerpt, image, socialImage, tags, caption, date, body, embeddedImagesLocal, githubEditPath } = props;
+  const { title, excerpt, image, socialImage, tags, caption, date, body, videoTitle, videoSrcURL, embeddedImagesLocal, githubEditPath } = props;
   const tagLinks = tags
     ? tags.map((tag, i) => {
       const divider = i < tags.length - 1 && <span>{`, `}</span>
@@ -24,6 +25,8 @@ const Post = (props) => {
     })
     : null
 
+  const isVlog = videoTitle && videoSrcURL;
+
   return (
     <Layout pageTitleSeo={title} pageExcerptSeo={excerpt} imageSeo={socialImage?.publicURL ?? image?.publicURL}>
       <article className="post mb-12 md:mb-24">
@@ -35,7 +38,7 @@ const Post = (props) => {
           {excerpt && <p className="lead mt-4">{excerpt}</p>}
         </div>
 
-        {image.publicURL && (
+        {!isVlog && image.publicURL && (
           <figure className="mt-8 mb-10 md:mt-16 mt:mb-20 post-image">
             {image.extension === "svg" ? (
               <img
@@ -59,12 +62,20 @@ const Post = (props) => {
           </figure>
         )}
 
+
+        {isVlog && (
+          <div className="lg:w-4/5 my-6 mx-auto content px-4 prism-code-px-4">
+            <Video videoSrcURL={videoSrcURL} videoTitle={videoTitle}/>
+          </div>
+        )}
+
         <div className="lg:w-4/5 my-6 mx-auto content px-4 prism-code-px-4">
           {body && <MDXRenderer localImages={embeddedImagesLocal} githubEditPath={githubEditPath}>{body}</MDXRenderer>}
         </div>
 
         <div className="lg:w-4/5 mx-auto px-4">
-          <div className="text-sm mt-8 pt-8 md:mt-16 md:pt-16 border-t border-offwhite dark:border-text text-text dark:text-white">
+            <div
+                className="text-sm mt-8 pt-8 md:mt-16 md:pt-16 border-t border-offwhite dark:border-text text-text dark:text-white">
             {tags && <>Tagged with {tagLinks}</>}
             <br />
             <br />

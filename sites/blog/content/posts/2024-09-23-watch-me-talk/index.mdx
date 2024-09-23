@@ -1,0 +1,31 @@
+﻿---
+title: The way you write dotnet is about to fundamentally change
+date: 2024-09-23
+excerpt: Recently I was lucky enough to finally get the opportunity to give my talk on Discriminating Unions!
+image: ./dddmelb.jpg
+socialImage: ./dddmelb.jpg
+tags: ["dotnetcore", "c#", "api-design", "conference-talk"]
+videoSrcURL: https://www.youtube-nocookie.com/embed/TxpJjf1B1tQ
+videoTitle: The way you write dotnet is about to fundamentally change
+---
+
+I had so much fun being able to get out in front of all my peers at this years DDDMelbourne and finally getting the chance
+to talk about this much anticipated feature coming to dotnet.
+
+Discriminating Unions enables cleaner code and opens up the possibility of better designed public APIs which cause fewer
+runtime bugs, what are Unions and how do they enable safer code?
+
+Over the last two releases of C# more and more functional paradigms have made their way into the language.
+We are now able to easily work with immutable data via records which avoid entire classes of bug types through immutable guarantees.
+Following down the functional path, we also got pattern matching and most critically, pattern matching with switch expressions.
+
+All of these changes that the language has seen over the last few years have been growing to a point of critical
+mass in which all that is needed is a final push for a fundamental re-working on how every day C# is written.
+I believe that Discriminating Unions is the final piece to this equation and when it becomes a part of the language,
+an entirely new way of writing API's and consuming them will take over the industry.
+With this one feature we will finally be able to rid ourselves of code that compiles but fails due to unhandled edge cases and start to write truly reliable code.
+
+In this talk I highlighted how recent additions to the language have enabled safer, more elegant code to be written,
+but also their limitations and why maybe you are yet to see any of your team working on them.
+Next we will do a deep dive into a currently in progress feature: Discriminating Unions: What are they?
+What is the syntax going to look like? Finally, how can we use all of these together. The future is bright and it has a lot of hidden Exceptions no longer being thrown!
