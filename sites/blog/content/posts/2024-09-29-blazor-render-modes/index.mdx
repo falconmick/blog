@@ -1,0 +1,38 @@
+﻿---
+title: Mixing and matching dotnet 8 blazor render modes
+date: 2024-09-29
+excerpt: When you are first getting started with the rendering options of blazor it can sometimes be hard to understand what to use
+image: ./dddmelb.jpg
+socialImage: ./dddmelb.jpg
+tags: ["dotnetcore", "c#", "blazor"]
+---
+
+I decided to start taking a deeper look into blazor now that it's finally with dotnet 8 getting the killer feature of
+wasm based rendering. What I discovered as a somebody who primarily has used react up until now for more user interactivity
+intensive front end applications is that the render modes and where what certain parts of the app are rendered and when
+I should choose one over the other to be allot more complicated than I had expected. I decided that it could be a good
+idea to take what I discovered and turn that into this very blog post. I expect I will make mistakes, so I would strongly
+suggest using this post as a kicking off into your own deep dive into the docs and other resources. Once your an expect
+I would love any feedback via any of the socials OR you could even go to the bottom of this page and click the link
+to submit a PR to correct anything that's not quite right.
+
+## The four ways to render
+The first thing that I stumbled on when getting started was trying to understand what rendering mode I should pick
+and what that would actually give me. It had not clicked yet that there are two main mechanisms of how content is
+rendered and then mutated through user interactions. Those two mechanisms are **Page Rendering** and **Render Mode**.
+(great change here for a PR with more accurate to the ecosystem names!)
+
+## Render Modes
+[Render Modes as described by the docs](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/render-modes?view=aspnetcore-8.0&viewFallbackFrom=aspnetcore-6.0):
+|Name |	Description | 	Render location | 	Interactive |
+|-----|-------------|-------------------|----------------|
+|Static Server |	Static server-side rendering (static SSR) |	Server |	❌No|
+
+|Interactive Server 	Interactive server-side rendering (interactive SSR) using Blazor Server. 	Server 	✔️Yes|
+|Interactive WebAssembly 	Client-side rendering (CSR) using Blazor WebAssembly†. 	Client 	✔️Yes|
+|Interactive Auto 	Interactive SSR using Blazor Server initially and then CSR on subsequent visits after the Blazor bundle is downloaded. 	Server, then client 	✔️|
+
+
+
+### Page Rendering
+This is likely the
