@@ -1,0 +1,101 @@
+﻿---
+title: Test Driven Development by Example - My thoughts
+date: 2025-01-22
+excerpt: A book that defines a series of key TDD behaviors and shows them in action!
+image: ./tdd.png
+socialImage: ./tdd.png
+tags: ["book-review", "testing", "conference-talk"]
+embeddedImagesLocal:
+  - ./redgreenrefactor.png                           # 0
+---
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+Test Driven Development by Example has been widely recognised as the origins of the Detroit school of test driven 
+development which in itself givens the book a bunch of baggage I don't believe it deserves. I do not see this book
+as the holy bible for classicist development, but instead as a set of verses that exist in the new *test*-ament of TDD.
+I chose to read this book due mainly to it's renowned authority in the field of TDD but also at the same time as a
+mockist tester I wanted to read the book that countered my views on testing. In this review I will take several key 
+learings and with that show you that overall my assumption that I was going to be fighting the ideals brought forward by
+this book were completely wrong.
+
+Kent Beck the author of this book is well known as the father of extreme programming as well as being one of the original
+signatories of the Agile Manifesto alongside many other key thought leaders as such as Martin Fowler and Uncle Bob. 
+Over the years having continued his efforts to help raise up the entire profession have remained steady and to this day
+is a key leader in our space. 
+Test Driven Development by Example primarily exists as two end to end examples of how one can apply TDD in their coding
+flow starting out with a money example and followed through with an implementation of x-unit in python fully bootstrapped 
+by tests from the ground up. There is a third section with design patterns, however I found that the meat and potatoes 
+of this book was definitely those two sections with the Money example being the biggest. 
+
+# Key Lessons
+
+## Red Green Refactor
+
+You can summarise the book with the following
+
+<div style="max-width: 300px; margin: 0 auto;padding-bottom: 32px">
+    <GatsbyImage
+        imgStyle={{objectFit: "contain"}}
+        image={getImage(props.localImages[0])}
+        alt="diagram showing the three steps of TDD, red to green to refactor"
+        style={{paddingBottom: "16px"}}
+    />
+</div>
+
+#### Red
+Write some code that will fail a test. Doesn't compile? Even better
+
+#### Green
+Make the tests work with the minimum change required, sins permitted!
+
+#### Refactor
+Eliminate the duplication that was required to get the test working
+
+These three steps are some of the most well known and ignored steps to success with TDD or better yet with development 
+in general. Most developers will jump direct to Green and skip out on refactor but this is shown to be a key mistake
+in the book with an example of the construction of the Franc in which too large of a step was taken, effectively skipping
+over multiple cycles of Red Green Refactor. To resolve this all that was needed was for the large step to be wound back 
+and smaller cycles taken and the issue is solved.
+
+This shows us that not only do we need to follow red, green refactor we also need to be conscious of how big our green solution
+is vs the red issue we started with. This is a balancing act that cannot be explained and only really is learnt from experience.
+
+## Triangulation
+early bookmark + page 63 + 153
+
+## Taking Notes
+--- talk about how if you have a big ticket, you need to break it down into smaller tasks, as such as individual steps 
+like add equality checking, a special scenario to test, etc and also include that we need to add to this list as
+we are working as quite often we will find ourselves thinking of more edge cases as we work on turning red -> green
+and we must not get ahead of ourselves but instead write that down and work on it as a new red phase.
+
+## Write tests that speak to you
+page 20 talk about how we shouldn't be afraid to use non test code to setup test code, we just need to treat it 
+the same an make sure it's tested seperatly. Yes we are opening ourselves up to risk, if helper function fails it will 
+make a completely irrelivant part of the test suite fail causing confusion, but this is acceptable as we are writing
+good tested code.
+
+## TDD and legacy
+Page 29 go over writing the tests we wished we had if we want to start adding tdd into legacy. Add my own note that I like
+to temporarily break the code as I write tests such that my RGR cycle is complete. Its vital to validate failure conditions
+of tests are working.
+
+## TDD does not replace Performance, Stress and Usability testing
+page 86
+
+## Choosing what to test and when
+Page 105
+
+## Assert first
+this is a cool new pattern I found in the book, if your not sure how to write your test, start with assertions, move
+to executing (act) and finally the arrange step Page 128
+
+## Leave your codebase Broken
+page 148 talk about the cool trick of when your finished for the day or need to pop out, leave a test broken as it
+gives you an instant reminder into what it was you were trying to achieve
+
+# But is it any good?
+- overall impressions, what was good, what could be better
+- What new tools I took away
+- Who should read this
+- Final recommendation
