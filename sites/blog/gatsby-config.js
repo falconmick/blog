@@ -63,7 +63,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        headers: {},
+        headers: {
+          "https://:blog-ctg.pages.dev/*": [
+            "X-Robots-Tag: noindex",
+          ],
+        },
       }
     },
     {
