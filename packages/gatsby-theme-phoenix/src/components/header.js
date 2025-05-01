@@ -87,7 +87,6 @@ const Header = ({ siteName, menuLinks, socialLinks }) => {
                   <Link
                     to={link}
                     activeClassName="text-primary md:border-primary"
-                    partiallyActive={link !== "/"}
                     title={`Go to ${name}`}
                     className="block uppercase text-dark text-center dark:text-white dark-hover:text-primary font-semibold hover:text-primary hover:no-underline dark-hover:no-underline md:border-b-8 border-transparent py-2 md:pb-3"
                   >
