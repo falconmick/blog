@@ -25,6 +25,10 @@ module.exports = {
         name: `Blog`,
         link: `/blog`,
       },
+      {
+        name: `Talks`,
+        link: `/blog/tags/conference-talk/`,
+      },
     ],
     socialLinks: [
       {
