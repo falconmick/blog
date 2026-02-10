@@ -7,9 +7,9 @@ socialImage: ./button.png
 tags: ["css", "design", "html", "--css-variables"]
 ---
 
-import StepDemo from "@stubs/StepDemo.astro";
-import Link from "@stubs/Link.astro"
-import ButtonSeriesNavigation from "@stubs/ButtonSeriesNavigation.astro";
+import FinalDemo from './source/final';
+import { Link } from "gatsby"
+import ButtonSeriesNavigation from "../../../src/buttonSeriesNavigation";
 
 It feels like making a reusable button that works for everything should be easy, but if you have never made one or if
 you've never had time to think while build one from scratch; they can be a pain to maintain.
@@ -21,7 +21,7 @@ and you can use the same principles there.
 
 Before we start, here is the result that we are working towards:
 
-<StepDemo />
+<FinalDemo id="full-code-example" />
 <br />
 
 If you look at the comments in the css, you can see the three critical parts of designing reusable and consistent

@@ -8,7 +8,7 @@ tags: ["book-review", "testing"]
 embeddedImagesLocal:
   - ./redgreenrefactor.png                           # 0
 ---
-import GatsbyImage from "@stubs/GatsbyImage.astro";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 Test Driven Development by Example has been widely recognised as the origins of the Detroit school of testing
 which in itself givens the book a bunch of baggage I don't believe it deserves. I do not see this book
@@ -37,7 +37,7 @@ You can summarise most of the book with the following
 <div style="max-width: 300px; margin: 0 auto;padding-bottom: 32px">
     <GatsbyImage
         imgStyle={{objectFit: "contain"}}
-        image=""
+        image={getImage(props.localImages[0])}
         alt="diagram showing the three steps of TDD, red to green to refactor"
         style={{paddingBottom: "16px"}}
     />

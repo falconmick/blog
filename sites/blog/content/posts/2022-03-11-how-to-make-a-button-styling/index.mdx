@@ -7,9 +7,9 @@ socialImage: ./button.png
 tags: ["css", "design", "html", "--css-variables"]
 ---
 
-import StepDemo from "@stubs/StepDemo.astro";
-import Link from "@stubs/Link.astro"
-import ButtonSeriesNavigation from "@stubs/ButtonSeriesNavigation.astro";
+import StepTwoDemo from './source/stepTwo';
+import { Link } from "gatsby"
+import ButtonSeriesNavigation from "../../../src/buttonSeriesNavigation";
 
 <Link to="/blog/2022/03/how-to-make-a-button-intro/">Click here for the start of this series</Link>
 
@@ -17,7 +17,7 @@ import ButtonSeriesNavigation from "@stubs/ButtonSeriesNavigation.astro";
 
 Not too much to say about this part, but here is the code:
 
-<StepDemo />
+<StepTwoDemo />
 <br />
 
 The look and feel of our buttons will typically come from a designer, but as you can see here, we are setting some of

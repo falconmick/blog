@@ -15,15 +15,16 @@ embeddedImagesLocal:
   - ./technologyUsed/tailwindcss.svg       # 7
   - ./coding-life-structure.png            # 8
 ---
-import GatsbyImage from "@stubs/GatsbyImage.astro";
-import Gallery from "@stubs/Gallery.astro";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Gallery } from "./gallery";
+import { getAlt } from "./util.js"
 
 This blog post has been a long way coming but after many re-attempts to build the blogging platform
 of my desires, I have finally settled on this one! Welcome all to My (new) Coding Life!
 
 ## Technology
 
-<Gallery />
+<Gallery localImages={props.localImages} />
 
 ### Why Gatsby
 One of the biggest downsides to running a blog through a blogging platform is that your hosting options can be tied
@@ -47,7 +48,7 @@ un-enjoyable issue to solve. So at least I've got that going for me.
 
 ### Why MarkDown/MDX
 The point of a blogging platform is to have a place to be able to site down and write. I didn't want to use a CMS/Blogging
-platform as a data source as I wanted to be able to let readers truly get involved and be able to <a href="https://github.com">submit a PR</a>
+platform as a data source as I wanted to be able to let readers truly get involved and be able to <a href={props.githubEditPath}>submit a PR</a>
 
 MDX is a particularly powerful MarkDown library as it allows me to define react components for each MarkDown element
 (the headers, code sections, lists, etc). Also it allows me to insert jsx into my blog posts! The Gallery component and "submit a PR" link
@@ -151,7 +152,7 @@ in a structured way.
 <GatsbyImage
   imgStyle={{objectFit: "contain"}}
   style={{maxHeight: "600px", maxWidth: "default"}}
-  image=""
+  image={getImage(props.localImages[8])}
   alt="diagram showing how the blog is structured as a series of core components which layer upon each other"
   style={{paddingBottom: "16px"}}
 />
