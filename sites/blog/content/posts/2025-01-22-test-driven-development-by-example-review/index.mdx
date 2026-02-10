@@ -37,7 +37,7 @@ You can summarise most of the book with the following
 <div style="max-width: 300px; margin: 0 auto;padding-bottom: 32px">
     <GatsbyImage
         imgStyle={{objectFit: "contain"}}
-        image={getImage(props.localImages[0])}
+        image={getImage(props?.localImages?.[0])}
         alt="diagram showing the three steps of TDD, red to green to refactor"
         style={{paddingBottom: "16px"}}
     />
