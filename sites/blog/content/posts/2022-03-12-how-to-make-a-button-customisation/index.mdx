@@ -7,9 +7,9 @@ socialImage: ./button.png
 tags: ["css", "design", "html", "--css-variables"]
 ---
 
-import StepThreeDemo from './source/stepThree';
-import { Link } from "gatsby"
-import ButtonSeriesNavigation from "../../../src/buttonSeriesNavigation";
+import StepDemo from "@stubs/StepDemo.astro";
+import Link from "@stubs/Link.astro"
+import ButtonSeriesNavigation from "@stubs/ButtonSeriesNavigation.astro";
 
 <Link to="/blog/2022/03/how-to-make-a-button-intro/">Click here for the start of this series</Link>
 
@@ -24,7 +24,7 @@ here</Link> to go to the first post if you want the complete code.
 
 First up is creating a new class to create a new green themed button:
 
-<StepThreeDemo
+<StepDemo
   demoOne
   code={`
 .btn.btn-green {
@@ -93,7 +93,7 @@ Thus, we need to re-create this (when the lower inline styles overwrite the styl
 The following way you can customise your button's appearance is helpful for once-off changes that you want to make quick
 and dirty and looks like so:
 
-<StepThreeDemo
+<StepDemo
   demoTwo
   className="html"
   code={`
