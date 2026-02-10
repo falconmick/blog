@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getLegacyBlogPostPath } from '../utils/post-path';
 
 const posts = (await getCollection('posts')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
@@ -12,7 +13,7 @@ const posts = (await getCollection('posts')).sort(
     posts.map((post) => (
       <article>
         <h3>
-          <a href={`/blog/${post.id.replace(/\/index$/, '')}/`}>{post.data.title}</a>
+          <a href={getLegacyBlogPostPath({ id: post.id, date: post.data.date, frontmatterSlug: post.data.slug })}>{post.data.title}</a>
         </h3>
         <small>{post.data.date.toDateString()}</small>
         {post.data.excerpt && <p>{post.data.excerpt}</p>}

@@ -1,12 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { getLegacyBlogPostPath } from '../../utils/post-path';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
 
   return posts.map((post) => ({
-    params: { slug: post.id.replace(/\/index$/, '') },
+    params: {
+      slug: getLegacyBlogPostPath({
+        id: post.id,
+        date: post.data.date,
+        frontmatterSlug: post.data.slug
+      }).replace(/^\/blog\//, '').replace(/\/$/, '')
+    },
     props: { post }
   }));
 }
