@@ -88,7 +88,7 @@ PYTHON_VERSION=3.10
 VENV_NAME=fvdb-env
 
 TORCH_VERSION=2.10.0
-TORCH_CUDA=cu130
+TORCH_CUDA=cu128
 FVDB_CORE_VERSION="0.4.2+pt210.${TORCH_CUDA}"
 
 echo "[0/5] Checking GPU..."
@@ -139,7 +139,6 @@ x = torch.randn(1, device="cuda")
 print("OK:", x)
 EOF
 
-export PATH=$PATH:$(pwd)/fvdb-env/bin
 echo "DONE → source $VENV_NAME/bin/activate"
 ```
 
