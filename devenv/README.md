@@ -21,6 +21,7 @@ The run script keeps pnpm, npm, Corepack, XDG, and Codex runtime state under:
 These host-backed mounts keep the container read-only while still giving common tools writable state directories:
 
 ```sh
+/code/sites/new-blog/node_modules
 /tmp/corepack
 /tmp/npm-cache
 /tmp/pnpm-home
@@ -29,6 +30,14 @@ These host-backed mounts keep the container read-only while still giving common 
 /tmp/xdg-state
 /home/node/.codex
 ```
+
+The `sites/new-blog/node_modules` mount is backed by:
+
+```sh
+/tmp/node-headless-chrome-shell-pnpm/new-blog-node-modules
+```
+
+This hides any macOS-installed packages from the Ubuntu container while keeping pnpm's `.pnpm` store writable by the non-root `node` user.
 
 Inside the container, run the Astro migration app commands directly from `sites/new-blog`; do not use pnpm workspace commands from the repo root:
 

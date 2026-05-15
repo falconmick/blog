@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Video from '../../../../components/Video.astro';
-import { formatPostDate, getSortedPosts, slugify, tagUrl } from '../../../../lib/posts';
+import { formatPostDate, getSortedPosts, postDirectory, slugify, tagUrl } from '../../../../lib/posts';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -22,11 +22,11 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { post, imageUrl, embeddedImageUrls } = entry;
-const rendered = entry.manualContent || !('collection' in post) ? undefined : await render(post);
+const rendered = await render(post);
 const Content = rendered?.Content;
 const tags = post.data.tags ?? [];
 const isVlog = post.data.videoTitle && post.data.videoSrcURL;
-const githubEditPath = `https://github.com/falconmick/blog/edit/main/sites/blog/content/posts/${post.id}`;
+const githubEditPath = `https://github.com/falconmick/blog/edit/main/sites/blog/content/posts/${postDirectory(post)}/index.mdx`;
 ---
 <BaseLayout title={post.data.title} description={post.data.excerpt}>
   <article class="post mb-12 md:mb-24">
@@ -38,7 +38,7 @@ const githubEditPath = `https://github.com/falconmick/blog/edit/main/sites/blog/
 
     {
       !isVlog && imageUrl && (
-        <figure class:list={['post-image mt-8 mb-10 md:mt-16', entry.manualContent && 'post-image--manual']}>
+        <figure class="post-image mt-8 mb-10 md:mt-16">
           <img src={imageUrl} title={post.data.title} alt={post.data.caption || post.data.title} />
           {post.data.caption && <figcaption set:html={post.data.caption} />}
         </figure>
@@ -54,13 +54,7 @@ const githubEditPath = `https://github.com/falconmick/blog/edit/main/sites/blog/
     }
 
     <div class="content mx-auto my-6 px-4 lg:w-4/5">
-      {
-        entry.manualContent ? (
-          <Fragment set:html={entry.manualContent} />
-        ) : (
-          Content && <Content localImages={embeddedImageUrls} githubEditPath={githubEditPath} />
-        )
-      }
+      {Content && <Content localImages={embeddedImageUrls} githubEditPath={githubEditPath} />}
     </div>
 
     <div class="mx-auto px-4 lg:w-4/5">

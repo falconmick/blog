@@ -35,7 +35,7 @@ Name post directories with the existing date-slug pattern, for example `2025-05-
 
 ## Testing Guidelines
 
-There is no dedicated unit test suite configured. For Gatsby changes, run `yarn lint` and `yarn build`. For Astro changes, run `corepack pnpm run check` and `corepack pnpm run build` from `sites/new-blog`. For visual or content changes, preview the affected pages locally and include the URL or screenshots in review notes.
+There is no dedicated unit test suite configured. For Gatsby changes, run `yarn lint` and `yarn build`. For Astro changes, run `corepack pnpm run check` and `corepack pnpm run build` from `sites/new-blog`. For visual or content changes, preview the affected pages locally with `corepack pnpm run dev --host 0.0.0.0` from `sites/new-blog` so the developer can access the server from their machine, and include the URL or screenshots in review notes.
 
 ## Commit & Pull Request Guidelines
 
@@ -43,4 +43,4 @@ Recent local history includes short messages such as `more prep` and `updated ag
 
 ## Agent-Specific Instructions
 
-Do not mix package managers. Use Yarn for the root workspace and legacy Gatsby site. Use Corepack-managed pnpm only inside `sites/new-blog`, and run commands from that directory because it is not using pnpm for monorepo workspace behavior.
+Do not mix package managers. Use Yarn for the root workspace and legacy Gatsby site. Use Corepack-managed pnpm only inside `sites/new-blog`, and run commands from that directory because it is not using pnpm for monorepo workspace behavior. When starting the Astro dev server for the developer to test, always include the `--host` flag, preferably as `corepack pnpm run dev --host 0.0.0.0`.
