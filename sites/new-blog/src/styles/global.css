@@ -26,6 +26,11 @@ body {
   padding-bottom: 3rem;
 }
 
+.mode-dark body {
+  background: var(--color-dark);
+  color: white;
+}
+
 .container {
   width: 100%;
 }
@@ -87,6 +92,43 @@ h3 {
   font-size: 1.5rem;
 }
 
+.mode-dark h1,
+.mode-dark h2,
+.mode-dark h3,
+.mode-dark h4,
+.mode-dark .text-dark,
+.mode-dark .text-text {
+  color: white;
+}
+
+.mode-dark .text-light,
+.mode-dark .text-gray,
+.mode-dark small,
+.mode-dark .small {
+  color: var(--color-gray);
+}
+
+.mode-dark .hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+.mode-dark .hover\:bg-eggshell:hover {
+  background: var(--color-text);
+}
+
+.mode-dark .border-offwhite {
+  border-color: var(--color-text);
+}
+
+.mode-dark .theme-icon-moon,
+.theme-icon-sun {
+  display: none;
+}
+
+.mode-dark .theme-icon-sun {
+  display: block;
+}
+
 @media (min-width: 960px) {
   h1 {
     font-size: 4rem;
@@ -104,6 +146,12 @@ h3 {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.7;
+}
+
+.mode-dark .lead,
+.mode-dark p,
+.mode-dark li {
+  color: white;
 }
 
 .small {
@@ -180,6 +228,15 @@ h3 {
   background: var(--color-dark);
   color: white;
   text-decoration: none;
+}
+
+.mode-dark .button {
+  border-color: white;
+  color: white;
+}
+
+.mode-dark .button:hover {
+  background: var(--color-gray);
 }
 
 .video iframe {

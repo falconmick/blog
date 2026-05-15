@@ -20,12 +20,19 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
     <meta name="og:description" content={description} />
     <meta name="og:type" content="article" />
     <meta name="og:title" content={title} />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feeds/posts/default" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Open+Sans:300,400,600|Bowlby+One+SC&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      (() => {
+        const mode = localStorage.getItem('mode') || 'light';
+        document.documentElement.classList.toggle('mode-dark', mode === 'dark');
+      })();
+    </script>
     <title>{fullTitle}</title>
   </head>
   <body class="antialiased bg-white">
@@ -66,8 +73,15 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
                 </a>
               </li>
               <li>
-                <button class="ml-6 block text-dark hover:text-primary" type="button" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
+                <button
+                  class="ml-6 block text-dark hover:text-primary"
+                  type="button"
+                  aria-label="Toggle dark/light mode"
+                  title="Toggle dark/light mode"
+                  data-theme-toggle
+                >
+                  <svg class="theme-icon theme-icon-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
+                  <svg class="theme-icon theme-icon-sun" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
               </li>
             </ul>
@@ -98,5 +112,23 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
         <p class="small text-center"></p>
       </div>
     </footer>
+    <script is:inline>
+      (() => {
+        const toggle = document.querySelector('[data-theme-toggle]');
+        if (!toggle) {
+          return;
+        }
+
+        const setMode = (mode) => {
+          localStorage.setItem('mode', mode);
+          document.documentElement.classList.toggle('mode-dark', mode === 'dark');
+        };
+
+        toggle.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.contains('mode-dark');
+          setMode(isDark ? 'light' : 'dark');
+        });
+      })();
+    </script>
   </body>
 </html>
