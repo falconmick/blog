@@ -7,4 +7,4 @@ interface Props {
 
 const { alt = '', image = '', title } = Astro.props;
 ---
-<img src={image} alt={alt} title={title} />
+{image && <img src={image} alt={alt} title={title} />}

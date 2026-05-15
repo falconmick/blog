@@ -1,22 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import PostTeaser from '../components/PostTeaser.astro';
+import { getSortedPosts } from '../lib/posts';
 
-const posts = (await getCollection('posts')).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-);
+const posts = await getSortedPosts();
 ---
-<BaseLayout title="Michael's Coding Blog">
-  <h2>Blog</h2>
-  {
-    posts.map((post) => (
-      <article>
-        <h3>
-          <a href={`/blog/${post.id.replace(/\/index$/, '')}/`}>{post.data.title}</a>
-        </h3>
-        <small>{post.data.date.toDateString()}</small>
-        {post.data.excerpt && <p>{post.data.excerpt}</p>}
-      </article>
-    ))
-  }
+<BaseLayout title="Michael's Coding Blog" description="My Coding Life">
+  <div class="mx-auto mb-12 text-center md:w-4/5">
+    <h1>Michael's Coding Blog</h1>
+  </div>
+  {posts.slice(0, 5).map((entry) => <PostTeaser entry={entry} />)}
 </BaseLayout>

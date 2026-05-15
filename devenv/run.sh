@@ -30,6 +30,7 @@ docker run --rm -it \
   --user 1000:1000 \
   --workdir /code \
   --mount type=bind,src="$(pwd)",target=/code,bind-propagation=rprivate \
+  --mount type=volume,target=/code/sites/new-blog/node_modules \
   --mount type=bind,src="$PNPM_CACHE_ROOT/corepack",target=/tmp/corepack \
   --mount type=bind,src="$PNPM_CACHE_ROOT/npm-cache",target=/tmp/npm-cache \
   --mount type=bind,src="$PNPM_CACHE_ROOT/pnpm-home",target=/tmp/pnpm-home \

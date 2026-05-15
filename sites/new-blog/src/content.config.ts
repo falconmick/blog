@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const posts = defineCollection({
   loader: glob({
@@ -10,7 +11,13 @@ const posts = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     excerpt: z.string().optional(),
-    tags: z.array(z.string()).optional()
+    image: z.string().optional(),
+    socialImage: z.string().optional(),
+    caption: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    videoSrcURL: z.string().optional(),
+    videoTitle: z.string().optional(),
+    embeddedImagesLocal: z.array(z.string()).optional()
   })
 });
 

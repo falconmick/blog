@@ -1,0 +1,39 @@
+---
+import { formatPostDate, type BlogPostView } from '../lib/posts';
+
+interface Props {
+  entry: BlogPostView;
+}
+
+const { entry } = Astro.props;
+const { post, imageUrl, url } = entry;
+const excerpt =
+  post.data.excerpt && post.data.excerpt.length > 150
+    ? `${post.data.excerpt.slice(0, 150)}...`
+    : post.data.excerpt;
+---
+<a
+  href={url}
+  class="group block rounded md:-mx-8 md:p-8 hover:bg-eggshell hover:no-underline"
+  title={`Go to the &quot;${post.data.title}&quot; post`}
+>
+  <article class="flex-col justify-between md:flex md:flex-row">
+    <div class="md:w-1/2 md:pr-4 lg:pr-10">
+      {
+        imageUrl && (
+          <img
+            src={imageUrl}
+            class="rounded-sm"
+            alt={`Image for ${post.data.title}`}
+            title={post.data.title}
+          />
+        )
+      }
+    </div>
+    <div class="mx-4 py-4 md:mx-0 md:w-1/2 md:py-0 md:pl-4 lg:py-6 lg:pl-2">
+      <h2 class="text-text">{post.data.title}</h2>
+      <small class="mt-2 block">{formatPostDate(post.data.date)}</small>
+      {excerpt && <p class="mt-5 text-text">{excerpt}</p>}
+    </div>
+  </article>
+</a>

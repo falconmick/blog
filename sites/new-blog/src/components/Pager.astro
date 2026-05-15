@@ -1,0 +1,12 @@
+---
+interface Props {
+  previousPagePath?: string;
+  nextPagePath?: string;
+}
+
+const { previousPagePath, nextPagePath } = Astro.props;
+---
+<div class="mx-auto mt-16 flex items-center justify-between md:w-4/5">
+  {previousPagePath && <a href={previousPagePath} class="button">Previous</a>}
+  {nextPagePath && <a href={nextPagePath} class="button ml-auto">Next</a>}
+</div>

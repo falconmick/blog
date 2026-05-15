@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostTeaser from '../../../components/PostTeaser.astro';
+import { getAllTags, getSortedPosts, slugify, tagTitle } from '../../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getSortedPosts();
+  return getAllTags(posts).map((tag) => ({
+    params: { tag: slugify(tag) },
+    props: {
+      tag,
+      posts: posts.filter((entry) => (entry.post.data.tags ?? []).some((postTag) => slugify(postTag) === slugify(tag)))
+    }
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const description = `${posts.length} post${posts.length === 1 ? '' : 's'} tagged with "${slugify(tag)}"`;
+---
+<BaseLayout title={tagTitle(tag)} description={description}>
+  <div class="mx-auto mb-12 text-center md:w-4/5">
+    <h1>{tagTitle(tag)}</h1>
+    <p class="lead mt-4">{description}</p>
+  </div>
+  {posts.map((entry) => <PostTeaser entry={entry} />)}
+</BaseLayout>

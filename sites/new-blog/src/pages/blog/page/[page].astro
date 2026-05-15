@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Pager from '../../../components/Pager.astro';
+import PostTeaser from '../../../components/PostTeaser.astro';
+import { getSortedPosts, paginatePosts } from '../../../lib/posts';
+
+export async function getStaticPaths() {
+  const pages = paginatePosts(await getSortedPosts());
+
+  return pages.slice(1).map((posts, index) => {
+    const pageNumber = index + 2;
+    return {
+      params: { page: String(pageNumber) },
+      props: { posts, pageNumber, pageCount: pages.length }
+    };
+  });
+}
+
+const { posts, pageNumber, pageCount } = Astro.props;
+const previousPagePath = pageNumber === 2 ? '/blog/' : `/blog/page/${pageNumber - 1}/`;
+const nextPagePath = pageNumber < pageCount ? `/blog/page/${pageNumber + 1}/` : undefined;
+---
+<BaseLayout title="Michael's Coding Blog" description="My Coding Life">
+  <div class="mx-auto mb-12 text-center md:w-4/5">
+    <h1>Michael's Coding Blog</h1>
+  </div>
+  {posts.map((entry) => <PostTeaser entry={entry} />)}
+  <Pager previousPagePath={previousPagePath} nextPagePath={nextPagePath} />
+</BaseLayout>
