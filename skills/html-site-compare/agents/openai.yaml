@@ -1,0 +1,7 @@
+interface:
+  display_name: "HTML Site Compare"
+  short_description: "Diff rendered HTML across migrated sites"
+  default_prompt: "Use $html-site-compare to compare my legacy and new site pages and summarize the rendered HTML differences."
+
+policy:
+  allow_implicit_invocation: true
