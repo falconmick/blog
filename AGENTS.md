@@ -1,33 +1,45 @@
-# Agent Working Notes (Repo Scope)
+# Repository Guidelines
 
-## Legacy Solution Snapshot
-- The current live blog is a **Gatsby v4** site under `sites/blog`.
-- Content is file-based MDX in `sites/blog/content/posts/*` (and pages in `sites/blog/content/pages/*`).
-- Rendering and page generation behavior is mostly provided by local workspace theme packages in `packages/*`:
-  - `gatsby-theme-blog-core`
-  - `gatsby-theme-page-core`
-  - `gatsby-theme-phoenix`
-- The workspace root uses Yarn workspaces to combine `sites/*` and `packages/*`.
+## Project Structure & Module Organization
 
-## Astro Migration Notes
-- (To be expanded while implementing `sites/new-blog`.)
+This repository is a JavaScript blog workspace. The current Gatsby site lives in `sites/blog`, with MDX content in `sites/blog/content/posts/*` and pages in `sites/blog/content/pages/*`. Shared Gatsby behavior is implemented in local workspace packages under `packages/*`, especially `gatsby-theme-blog-core`, `gatsby-theme-page-core`, and `gatsby-theme-phoenix`.
 
-## Troubleshooting Notes
-- (Add issue/fix notes here if dev server or rendering problems are encountered.)
+The Astro migration lives in `sites/new-blog`. Treat it as a standalone pnpm project: run pnpm commands from that directory, not from the repository root. Development container files are in `devenv/`.
 
-## Astro Setup Findings (from docs)
-- Astro can be initialized via `create-astro`, but if template fetching is blocked, a minimal project can be created manually with:
-  - `astro` dependency + scripts in `package.json`
-  - `astro.config.mjs`
-  - `src/pages/*` entrypoints
-- MDX support in Astro is enabled by adding `@astrojs/mdx` and registering `mdx()` in `astro.config.mjs` integrations.
-- TypeScript path aliases can be set in `tsconfig.json` (`compilerOptions.paths`) and mirrored in Vite aliases for runtime resolution.
-- MDX files in Astro support top-level `import`/`export`; non-export variable declarations at the top level cause compile failures.
+## Build, Test, and Development Commands
 
-## Troubleshooting Notes
-- `yarn create astro ...` failed in this environment with `ENETUNREACH` reaching the GitHub template endpoint.
-  - Fix: manually scaffolded the Astro app files in `sites/new-blog`.
-- Initial Astro build failed because MDX files contained top-level `const` declarations.
-  - Fix: removed those declarations and simplified usages directly in MDX.
-- Astro build then failed with `Named export 'clsx' not found` due to workspace hoisting an older CommonJS `clsx`.
-  - Fix: added `clsx@^2` as a direct dependency in `sites/new-blog`.
+Root Gatsby workspace commands use Yarn:
+
+```sh
+yarn start      # run the legacy Gatsby dev server
+yarn build      # clean and build the legacy Gatsby site
+yarn clean      # clear Gatsby build caches
+yarn lint       # run ESLint over JS files
+```
+
+Astro migration commands must be run directly from `sites/new-blog`:
+
+```sh
+corepack pnpm install
+corepack pnpm run dev --host 0.0.0.0
+corepack pnpm run check
+corepack pnpm run build
+```
+
+Use `./devenv/run.sh` to start the containerized environment after building it with `docker build -f devenv/Dockerfile -t node-headless-chrome:secure .`.
+
+## Coding Style & Naming Conventions
+
+Follow the existing style in the package you edit. Gatsby code is CommonJS-oriented in the theme packages; `sites/new-blog` is ESM and Astro/TypeScript. Use two-space indentation for JSON, JS, TS, Astro, and MDX frontmatter. Name blog post directories with the existing date-slug pattern, for example `2025-05-01-watch-me-talk-again`.
+
+## Testing Guidelines
+
+There is no dedicated unit test suite configured. For Gatsby changes, run `yarn lint` and `yarn build`. For Astro changes, run `corepack pnpm run check` and `corepack pnpm run build` from `sites/new-blog`. Validate content changes by previewing the affected page locally.
+
+## Commit & Pull Request Guidelines
+
+Use concise, imperative commit messages such as `Update Astro image dependencies` or `Fix Gatsby post pagination`. Pull requests should describe the change, list commands run, link relevant issues, and include screenshots for visual or content-rendering changes.
+
+## Agent-Specific Instructions
+
+Do not mix package managers. Keep root and legacy Gatsby work on Yarn; keep `sites/new-blog` on Corepack-managed pnpm. Do not use pnpm workspace commands for `sites/new-blog`; its `pnpm-workspace.yaml` only stores pnpm build-script approvals.
