@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Page not found';
+const description = 'Oops! The page you are looking for has been removed or relocated.';
+---
+<BaseLayout title={title} description={description}>
+  <div class="mx-auto mb-12 px-4 text-center lg:w-4/5">
+    <h1>{title}</h1>
+    <p class="lead mt-4">{description}</p>
+  </div>
+  <article>
+    <div class="content mx-auto my-6 px-4 lg:w-4/5">
+      <div class="flex justify-center">
+        <a href="/" class="button">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+          Go back
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
