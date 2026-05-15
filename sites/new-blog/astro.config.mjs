@@ -3,6 +3,8 @@ import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath } from 'node:url';
 
+import cloudflare from '@astrojs/cloudflare';
+
 const blogPostsPath = fileURLToPath(new URL('../blog/content/posts', import.meta.url));
 const mdxStubsPath = fileURLToPath(new URL('./src/components/mdx', import.meta.url));
 
@@ -74,6 +76,7 @@ const legacyMdxStubPlugin = {
 
 export default defineConfig({
   integrations: [mdx()],
+
   vite: {
     plugins: [legacyMdxStubPlugin, tailwindcss()],
     resolve: {
@@ -96,5 +99,7 @@ export default defineConfig({
         }
       ]
     }
-  }
+  },
+
+  adapter: cloudflare()
 });

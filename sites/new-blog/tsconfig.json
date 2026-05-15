@@ -3,8 +3,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@posts/*": ["../blog/content/posts/*"],
-      "@stubs/*": ["src/components/mdx/*"]
+      "@posts/*": [
+        "../blog/content/posts/*"
+      ],
+      "@stubs/*": [
+        "src/components/mdx/*"
+      ]
     }
-  }
+  },
+  "include": [
+    "./worker-configuration.d.ts"
+  ]
 }
