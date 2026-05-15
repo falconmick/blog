@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 
 import cloudflare from '@astrojs/cloudflare';
 
+const isCloudflareBuild = process.env.CLOUDFLARE_BUILD === "1";
+
 const blogPostsPath = fileURLToPath(new URL('../blog/content/posts', import.meta.url));
 const mdxStubsPath = fileURLToPath(new URL('./src/components/mdx', import.meta.url));
 
@@ -94,12 +96,13 @@ export default defineConfig({
           replacement: fileURLToPath(new URL('./src/components/mdx/gatsby-plugin-image.ts', import.meta.url))
         },
         {
-          find: '@stubs',
-          replacement: mdxStubsPath
-        }
-      ]
-    }
+          find: "@stubs",
+          replacement: mdxStubsPath,
+        },
+      ],
+    },
   },
 
-  adapter: cloudflare()
+  ...(isCloudflareBuild ? { adapter: cloudflare() } : {}),
 });
+

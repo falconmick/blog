@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "cross-env": "^10.1.0",
     "typescript": "^6.0.3"
   },
   "overrides": {
