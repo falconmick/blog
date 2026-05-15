@@ -11,6 +11,8 @@ RUN apt-get update \
         dumb-init \
         ca-certificates \
         fonts-liberation \
+        curl \
+        git \
         libasound2 \
         libatk-bridge2.0-0 \
         libatk1.0-0 \
@@ -26,10 +28,12 @@ RUN apt-get update \
         libxdamage1 \
         libxrandr2 \
         python3 \
+        ripgrep \
         xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g pnpm@11 @openai/codex \
+RUN corepack enable \
+    && npm install -g @openai/codex \
     && mkdir -p /home/node/.codex \
     && chown -R node:node /home/node/.codex
 

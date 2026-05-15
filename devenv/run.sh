@@ -17,7 +17,10 @@ fi
 
 mkdir -p \
   "$PNPM_CACHE_ROOT/codex" \
-  "$PNPM_CACHE_ROOT/home" \
+  "$PNPM_CACHE_ROOT/corepack" \
+  "$PNPM_CACHE_ROOT/npm-cache" \
+  "$PNPM_CACHE_ROOT/pnpm-home" \
+  "$PNPM_CACHE_ROOT/xdg-config" \
   "$PNPM_CACHE_ROOT/xdg-cache" \
   "$PNPM_CACHE_ROOT/xdg-state"
 
@@ -27,13 +30,20 @@ docker run --rm -it \
   --user 1000:1000 \
   --workdir /code \
   --mount type=bind,src="$(pwd)",target=/code,bind-propagation=rprivate \
-  --mount type=bind,src="$PNPM_CACHE_ROOT/home",target=/tmp/pnpm-home \
+  --mount type=bind,src="$PNPM_CACHE_ROOT/corepack",target=/tmp/corepack \
+  --mount type=bind,src="$PNPM_CACHE_ROOT/npm-cache",target=/tmp/npm-cache \
+  --mount type=bind,src="$PNPM_CACHE_ROOT/pnpm-home",target=/tmp/pnpm-home \
+  --mount type=bind,src="$PNPM_CACHE_ROOT/xdg-config",target=/tmp/xdg-config \
   --mount type=bind,src="$PNPM_CACHE_ROOT/xdg-cache",target=/tmp/xdg-cache \
   --mount type=bind,src="$PNPM_CACHE_ROOT/xdg-state",target=/tmp/xdg-state \
   --mount type=bind,src="$PNPM_CACHE_ROOT/codex",target=/home/node/.codex \
   --mount type=bind,src="$CODEX_AUTH_FILE",target=/home/node/.codex/auth.json,readonly \
   --mount type=bind,src="$CODEX_CONFIG_FILE",target=/home/node/.codex/config.toml,readonly \
+  --env ASTRO_TELEMETRY_DISABLED=1 \
+  --env COREPACK_HOME=/tmp/corepack \
+  --env NPM_CONFIG_CACHE=/tmp/npm-cache \
   --env PNPM_HOME=/tmp/pnpm-home \
+  --env XDG_CONFIG_HOME=/tmp/xdg-config \
   --env XDG_CACHE_HOME=/tmp/xdg-cache \
   --env XDG_STATE_HOME=/tmp/xdg-state \
   --read-only \
@@ -46,4 +56,5 @@ docker run --rm -it \
   --cpus=2 \
   --network=bridge \
   -p 127.0.0.1:3000:3000 \
+  -p 127.0.0.1:4321:4321 \
   node-headless-chrome:secure
