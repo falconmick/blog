@@ -10,6 +10,7 @@
     "build:ci": "cross-env CLOUDFLARE_BUILD=1 astro check && cross-env CLOUDFLARE_BUILD=1 astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "test:perf": "playwright test",
     "generate-types": "wrangler types"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.60.0",
     "cross-env": "^10.1.0",
     "typescript": "^6.0.3"
   },

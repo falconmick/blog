@@ -1,6 +1,9 @@
 ---
+import type { ImageMetadata } from 'astro:assets';
+import OptimizedImage from '../OptimizedImage.astro';
+
 interface Props {
-  localImages?: string[];
+  localImages?: (ImageMetadata | string)[];
 }
 
 const { localImages = [] } = Astro.props;
@@ -18,7 +21,14 @@ const altTags = [
 <div class="gallery">
   {
     localImages.slice(0, 8).map((image, index) => (
-      <img src={image} alt={altTags[index] || ''} />
+      <OptimizedImage
+        src={image}
+        alt={altTags[index] || ''}
+        layout="constrained"
+        widths={[100, 160, 240]}
+        quality={70}
+        sizes="160px"
+      />
     ))
   }
 </div>

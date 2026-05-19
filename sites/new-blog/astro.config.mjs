@@ -79,6 +79,19 @@ const legacyMdxStubPlugin = {
 export default defineConfig({
   integrations: [mdx()],
 
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        jpeg: { quality: 100 },
+        webp: { quality: 100 }
+      }
+    },
+    layout: 'constrained',
+    objectFit: 'contain',
+    responsiveStyles: true
+  },
+
   vite: {
     plugins: [legacyMdxStubPlugin, tailwindcss()],
     resolve: {

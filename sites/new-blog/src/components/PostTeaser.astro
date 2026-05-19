@@ -1,4 +1,5 @@
 ---
+import OptimizedImage from './OptimizedImage.astro';
 import { formatPostDate, type BlogPostView } from '../lib/posts';
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { post, imageUrl, url } = entry;
+const { post, image, url } = entry;
 const excerpt =
   post.data.excerpt && post.data.excerpt.length > 150
     ? `${post.data.excerpt.slice(0, 150)}...`
@@ -20,12 +21,15 @@ const excerpt =
   <article class="flex-col justify-between md:flex md:flex-row">
     <div class="md:w-1/2 md:pr-4 lg:pr-10">
       {
-        imageUrl && (
-          <img
-            src={imageUrl}
+        image && (
+          <OptimizedImage
+            src={image}
             class="rounded-sm"
             alt={`Image for ${post.data.title}`}
             title={post.data.title}
+            layout="constrained"
+            widths={[320, 480, 640, 736]}
+            sizes="(min-width: 768px) 50vw, 100vw"
           />
         )
       }

@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import type { ImageMetadata } from 'astro:assets';
 
 export type BlogPost = CollectionEntry<'posts'>;
 
@@ -6,17 +7,16 @@ export interface BlogPostView {
   post: BlogPost;
   slug: string;
   url: string;
-  imageUrl?: string;
-  embeddedImageUrls: string[];
+  image?: ImageMetadata | string;
+  embeddedImages: (ImageMetadata | string)[];
 }
 
 const POSTS_PER_PAGE = 5;
 
 const imageModules = import.meta.glob('../../../blog/content/posts/**/*.{jpg,jpeg,png,webp,svg}', {
   eager: true,
-  import: 'default',
-  query: '?url'
-}) as Record<string, string>;
+  import: 'default'
+}) as Record<string, ImageMetadata | string>;
 
 export function slugify(value: string) {
   return value
@@ -65,10 +65,10 @@ export function toPostView(post: BlogPost): BlogPostView {
     post,
     slug: postSlug(post),
     url: postUrl(post),
-    imageUrl: resolvePostAsset(post, post.data.image),
-    embeddedImageUrls: (post.data.embeddedImagesLocal ?? [])
+    image: resolvePostAsset(post, post.data.image),
+    embeddedImages: (post.data.embeddedImagesLocal ?? [])
       .map((imagePath) => resolvePostAsset(post, imagePath))
-      .filter((imageUrl): imageUrl is string => Boolean(imageUrl))
+      .filter((image): image is ImageMetadata | string => Boolean(image))
   };
 }
 
