@@ -8,6 +8,7 @@ interface Props {
   class?: string;
   layout?: 'constrained' | 'fixed' | 'full-width' | 'none';
   widths?: number[];
+  height?: number;
   quality?: number;
   fit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
   loading?: 'eager' | 'lazy';
@@ -23,6 +24,7 @@ const {
   class: className,
   layout = 'constrained',
   widths,
+  height,
   quality = 70,
   fit = 'contain',
   loading,
@@ -44,6 +46,7 @@ const isLocalRasterImage =
       class={className}
       layout={layout}
       widths={widths}
+      height={height}
       quality={quality}
       format="webp"
       fit={fit}
@@ -61,6 +64,7 @@ const isLocalRasterImage =
         class={className}
         loading={loading}
         decoding={decoding}
+  style={{height: height ? `${height}px` : undefined}}
       />
     )
   )
