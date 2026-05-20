@@ -156,8 +156,6 @@ h1 span,
   background-position:
     100% 84%,
     0 67%;
-
-  background-blend-mode: darken;
 }
 
 .content :not(pre) > code,
