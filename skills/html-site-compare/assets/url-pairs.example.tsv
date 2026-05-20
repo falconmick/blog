@@ -1,3 +1,0 @@
-legacy_url	new_url	label
-http://localhost:8000/	http://localhost:4321/	home
-http://localhost:8000/blog/2025-05-01-watch-me-talk-again/	http://localhost:4321/blog/2025-05-01-watch-me-talk-again/	watch me talk again

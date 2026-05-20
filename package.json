@@ -1,24 +1,37 @@
 {
+  "name": "@michael/blog",
+  "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "sites/*",
-    "packages/*"
-  ],
+  "type": "module",
+  "packageManager": "pnpm@11.1.2",
   "scripts": {
-    "start": "yarn workspace @michael/blog start",
-    "prod": "yarn build && yarn workspace @michael/blog serve",
-    "build": "yarn workspace @michael/blog clean && yarn workspace @michael/blog build",
-    "clean": "yarn workspace @michael/blog clean",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint **/*.js --fix"
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:ci": "cross-env CLOUDFLARE_BUILD=1 astro check && cross-env CLOUDFLARE_BUILD=1 astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test:perf": "playwright test",
+    "report:migration": "node scripts/generate-migration-report.mjs",
+    "generate-types": "wrangler types"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.5.1",
+    "@astrojs/internal-helpers": "^0.9.1",
+    "@astrojs/mdx": "^5.0.6",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.3",
+    "clsx": "^2.1.1",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.3.0",
+    "wrangler": "^4.92.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/eslint-parser": "^7.17.0",
-    "eslint": "^8.12.0",
-    "eslint-config-react-app": "^7.0.0",
-    "syncpack": "^6.2.0",
-    "typescript": "^4.6.3"
+    "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.60.0",
+    "cross-env": "^10.1.0",
+    "typescript": "^6.0.3"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "overrides": {
+    "vite": "^7"
+  }
 }

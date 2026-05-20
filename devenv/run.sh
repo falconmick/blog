@@ -2,7 +2,7 @@
 set -eu
 
 PNPM_CACHE_ROOT="/tmp/node-headless-chrome-shell-pnpm"
-NEW_BLOG_NODE_MODULES="$PNPM_CACHE_ROOT/new-blog-node-modules"
+SITE_NODE_MODULES="$PNPM_CACHE_ROOT/site-node-modules"
 CODEX_AUTH_FILE="${HOME}/.codex/auth.json"
 CODEX_CONFIG_FILE="${HOME}/.codex/config.toml"
 
@@ -19,7 +19,7 @@ fi
 mkdir -p \
   "$PNPM_CACHE_ROOT/codex" \
   "$PNPM_CACHE_ROOT/corepack" \
-  "$NEW_BLOG_NODE_MODULES" \
+  "$SITE_NODE_MODULES" \
   "$PNPM_CACHE_ROOT/npm-cache" \
   "$PNPM_CACHE_ROOT/pnpm-home" \
   "$PNPM_CACHE_ROOT/xdg-config" \
@@ -32,7 +32,7 @@ docker run --rm -it \
   --user 1000:1000 \
   --workdir /code \
   --mount type=bind,src="$(pwd)",target=/code,bind-propagation=rprivate \
-  --mount type=bind,src="$NEW_BLOG_NODE_MODULES",target=/code/sites/new-blog/node_modules \
+  --mount type=bind,src="$SITE_NODE_MODULES",target=/code/node_modules \
   --mount type=bind,src="$PNPM_CACHE_ROOT/corepack",target=/tmp/corepack \
   --mount type=bind,src="$PNPM_CACHE_ROOT/npm-cache",target=/tmp/npm-cache \
   --mount type=bind,src="$PNPM_CACHE_ROOT/pnpm-home",target=/tmp/pnpm-home \

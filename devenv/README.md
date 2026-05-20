@@ -21,7 +21,7 @@ The run script keeps pnpm, npm, Corepack, XDG, and Codex runtime state under:
 These host-backed mounts keep the container read-only while still giving common tools writable state directories:
 
 ```sh
-/code/sites/new-blog/node_modules
+/code/node_modules
 /tmp/corepack
 /tmp/npm-cache
 /tmp/pnpm-home
@@ -31,18 +31,15 @@ These host-backed mounts keep the container read-only while still giving common 
 /home/node/.codex
 ```
 
-The `sites/new-blog/node_modules` mount is backed by:
+The `node_modules` mount is backed by:
 
 ```sh
-/tmp/node-headless-chrome-shell-pnpm/new-blog-node-modules
+/tmp/node-headless-chrome-shell-pnpm/site-node-modules
 ```
 
 This hides any macOS-installed packages from the Ubuntu container while keeping pnpm's `.pnpm` store writable by the non-root `node` user.
 
-Inside the container, run the Astro migration app commands directly from `sites/new-blog`; do not use pnpm workspace commands from the repo root:
-
 ```sh
-cd sites/new-blog
 corepack pnpm install
 corepack pnpm run check
 corepack pnpm run build
@@ -59,7 +56,7 @@ Port `3000` is also exposed for other app workflows.
 
 Astro telemetry is disabled by the container environment with `ASTRO_TELEMETRY_DISABLED=1`, so package scripts can stay as plain Astro commands.
 
-`sites/new-blog/pnpm-workspace.yaml` is present only for pnpm 11 build-script approvals:
+`pnpm-workspace.yaml` is present only for pnpm 11 build-script approvals:
 
 ```yaml
 allowBuilds:

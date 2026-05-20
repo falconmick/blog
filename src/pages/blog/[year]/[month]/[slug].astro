@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import OptimizedImage from '../../../../components/OptimizedImage.astro';
+import Video from '../../../../components/Video.astro';
+import { formatPostDate, getSortedPosts, postDirectory, slugify, tagUrl } from '../../../../lib/posts';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getSortedPosts();
+
+  return posts.map((entry) => {
+    const date = entry.post.data.date;
+    return {
+      params: {
+        year: String(date.getFullYear()),
+        month: String(date.getMonth() + 1).padStart(2, '0'),
+        slug: entry.slug
+      },
+      props: { entry }
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { post, image, embeddedImages } = entry;
+const rendered = await render(post);
+const Content = rendered?.Content;
+const tags = post.data.tags ?? [];
+const isVlog = post.data.videoTitle && post.data.videoSrcURL;
+const githubEditPath = `https://github.com/falconmick/blog/edit/main/content/posts/${postDirectory(post)}/index.mdx`;
+---
+<BaseLayout title={post.data.title} description={post.data.excerpt}>
+  <article class="post mb-12 md:mb-24">
+    <div class="mx-auto px-4 text-center lg:w-4/5">
+      <p class="small">{formatPostDate(post.data.date)}</p>
+      <h1 class="mt-2"><span>{post.data.title}</span></h1>
+      {post.data.excerpt && <p class="lead mt-4">{post.data.excerpt}</p>}
+    </div>
+
+    {
+      !isVlog && image && (
+        <figure class="post-image mt-8 mb-10 md:mt-16">
+          <OptimizedImage
+            src={image}
+            title={post.data.title}
+            alt={post.data.caption || post.data.title}
+            class="rounded-sm"
+            layout="full-width"
+            quality={70}
+            fit="contain"
+            loading="eager"
+            priority
+            sizes="100vw"
+          />
+          {post.data.caption && <figcaption set:html={post.data.caption} />}
+        </figure>
+      )
+    }
+
+    {
+      isVlog && post.data.videoSrcURL && post.data.videoTitle && (
+        <div class="content mx-auto my-6 px-4 lg:w-4/5">
+          <Video videoSrcURL={post.data.videoSrcURL} videoTitle={post.data.videoTitle} />
+        </div>
+      )
+    }
+
+    <div class="content mx-auto my-6 px-4 lg:w-4/5">
+      {Content && <Content localImages={embeddedImages} githubEditPath={githubEditPath} />}
+    </div>
+
+    <div class="mx-auto px-4 lg:w-4/5">
+      <div class="mt-8 border-t border-offwhite pt-8 text-sm text-text md:mt-16 md:pt-16">
+        {
+          tags.length > 0 && (
+            <>
+              Tagged with{' '}
+              {tags.map((tag, index) => (
+                <>
+                  <a href={tagUrl(tag)} class="font-semibold text-dark underline">
+                    {slugify(tag)}
+                  </a>
+                  {index < tags.length - 1 && <span>, </span>}
+                </>
+              ))}
+            </>
+          )
+        }
+        <br />
+        <br />
+        something not right?&nbsp;
+        <a href={githubEditPath} rel="noopener noreferrer" target="_blank" class="font-semibold text-dark underline">
+          Open a PR
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
