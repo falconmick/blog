@@ -15,9 +15,8 @@ embeddedImagesLocal:
   - ./technologyUsed/tailwindcss.svg       # 7
   - ./coding-life-structure.png            # 8
 ---
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Gallery } from "@stubs/stubs/post/2021-06-28-hello-new-world/gallery";
-import { getAlt } from "./util.js"
+import OptimizedImage from "../../../src/components/OptimizedImage.astro";
+import Gallery from "./Gallery.astro";
 
 This blog post has been a long way coming but after many re-attempts to build the blogging platform
 of my desires, I have finally settled on this one! Welcome all to My (new) Coding Life!
@@ -149,12 +148,14 @@ in a structured way.
 3. A theme that provides the HTML/CSS and layout through use of the building blocks 1 and 2
 4. The actual site, of which implements the Theme and only defines content as such as pages and posts.
 
-<GatsbyImage
-  imgStyle={{objectFit: "contain"}}
-  style={{maxHeight: "600px", maxWidth: "default"}}
-  image={getImage(props?.localImages?.[8])}
+<OptimizedImage
+  src={props?.localImages?.[8]}
   alt="diagram showing how the blog is structured as a series of core components which layer upon each other"
-  style={{paddingBottom: "16px"}}
+  layout="constrained"
+  widths={[320, 480, 640, 736]}
+  quality={70}
+  fit="contain"
+  sizes="(min-width: 1024px) 736px, calc(100vw - 2rem)"
 />
 
 

@@ -1,13 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@stubs/*": [
-        "src/components/mdx/*"
-      ]
-    }
-  },
   "include": [
     "./worker-configuration.d.ts"
   ]
