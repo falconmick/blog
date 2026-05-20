@@ -13,7 +13,7 @@ export interface BlogPostView {
 
 const POSTS_PER_PAGE = 5;
 
-const imageModules = import.meta.glob('../../../blog/content/posts/**/*.{jpg,jpeg,png,webp,svg}', {
+const imageModules = import.meta.glob('../../content/posts/**/*.{jpg,jpeg,png,webp,svg}', {
   eager: true,
   import: 'default'
 }) as Record<string, ImageMetadata | string>;
@@ -57,7 +57,7 @@ function resolvePostAsset(post: BlogPost, assetPath?: string) {
   }
 
   const cleanPath = assetPath.replace(/^\.\//, '');
-  return imageModules[`../../../blog/content/posts/${postDirectory(post)}/${cleanPath}`];
+  return imageModules[`../../content/posts/${postDirectory(post)}/${cleanPath}`];
 }
 
 export function toPostView(post: BlogPost): BlogPostView {

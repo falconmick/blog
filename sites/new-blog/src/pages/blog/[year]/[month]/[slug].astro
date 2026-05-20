@@ -27,7 +27,7 @@ const rendered = await render(post);
 const Content = rendered?.Content;
 const tags = post.data.tags ?? [];
 const isVlog = post.data.videoTitle && post.data.videoSrcURL;
-const githubEditPath = `https://github.com/falconmick/blog/edit/main/sites/blog/content/posts/${postDirectory(post)}/index.mdx`;
+const githubEditPath = `https://github.com/falconmick/blog/edit/main/sites/new-blog/content/posts/${postDirectory(post)}/index.mdx`;
 ---
 <BaseLayout title={post.data.title} description={post.data.excerpt}>
   <article class="post mb-12 md:mb-24">

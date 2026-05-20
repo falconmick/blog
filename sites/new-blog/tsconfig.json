@@ -3,9 +3,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@posts/*": [
-        "../blog/content/posts/*"
-      ],
       "@stubs/*": [
         "src/components/mdx/*"
       ]
