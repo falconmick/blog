@@ -272,6 +272,8 @@ h2:not(.no-fancy) {
   color: #f8f8f2;
   overflow-x: auto;
   padding: 1rem;
+  margin-left: calc(var(--spacing) * -4);
+  margin-right: calc(var(--spacing) * -4);
 }
 
 .post-image {

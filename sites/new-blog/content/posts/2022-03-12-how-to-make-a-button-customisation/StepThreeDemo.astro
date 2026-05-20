@@ -1,4 +1,129 @@
 ---
-import ButtonDemo from '../2022-03-09-how-to-make-a-button-intro/ButtonDemo.astro';
+interface Props {
+  className?: string;
+  code?: string;
+  demoOne?: boolean;
+  demoTwo?: boolean;
+}
+
+const { className = 'css', code = '// code missing', demoOne = false, demoTwo = false } = Astro.props;
+
+const stepThreeCss = `/* define default button theme on root */
+:root {
+  --btn-color: #FFFFFF;
+  --btn-background-color: #EA4C89;
+  --btn-background-color-hover: #F082AC;
+}
+
+/* normalise base element */
+.anchor-btn {
+  display: inline-block;
+  text-decoration: unset;
+  color: var(--btn-color);
+}
+
+.button-btn {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--btn-color);
+}
+
+/* button styling */
+.btn {
+  background-color: var(--btn-background-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+.btn:focus, .btn:focus-visible {
+  outline: 2px dotted #999;
+  outline-offset: -2px;
+}
+
+.btn:hover {
+  background-color: var(--btn-background-color-hover);
+}
+
+/* customised buttons */
+.btn.btn-green {
+  --btn-color: #232323;
+  --btn-background-color: #5cdb5c;
+  --btn-background-color-hover: #7ce27c;
+}`;
+
+const shadowCss = `${stepThreeCss.replace(/:root/g, '#shadow-root')}
+
+.demo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: -8px -8px 0;
+  padding: 16px 0;
+}
+
+.demo > * {
+  margin: 8px 8px 0;
+}
+
+.red {
+  --btn-background-color: #ff0021;
+}`;
 ---
-<ButtonDemo />
+<section class="code-example">
+  <pre class:list={[`language-${className}`]}><code>{code}</code></pre>
+  <div class="shadow-root-container" data-shadow-root-container>
+    <template>
+      <style set:html={shadowCss}></style>
+      <div id="shadow-root">
+        <div class="demo">
+          {demoOne && <a href="?click" class="anchor-btn btn btn-green">&lt;a class="anchor-btn btn btn-green" /&gt;</a>}
+          {demoTwo && <a href="?click" class="anchor-btn btn red">&lt;a style="--btn-background-color: #ff0021" /&gt;</a>}
+        </div>
+      </div>
+    </template>
+  </div>
+</section>
+
+<script is:inline>
+  document.querySelectorAll('[data-shadow-root-container]').forEach((container) => {
+    if (container.shadowRoot) {
+      return;
+    }
+
+    const template = container.querySelector('template');
+    const shadowRoot = container.attachShadow({ mode: 'open', delegatesFocus: true });
+    shadowRoot.append(template.content.cloneNode(true));
+    template.remove();
+  });
+</script>
+
+<style>
+  .code-example {
+    position: relative;
+  }
+
+  .code-example::after {
+    border: 1px solid #333;
+    content: '';
+    height: 100%;
+    left: -1rem;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: calc(100% + 2rem);
+  }
+
+  .shadow-root-container {
+    display: block;
+  }
+</style>
