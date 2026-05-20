@@ -2,3 +2,5 @@
 .idea
 .yarn
 .DS_Store
+migration-report-artifacts
+migration-report.md

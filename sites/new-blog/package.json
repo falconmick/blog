@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "test:perf": "playwright test",
+    "report:migration": "node scripts/generate-migration-report.mjs",
     "generate-types": "wrangler types"
   },
   "dependencies": {
