@@ -116,5 +116,8 @@ export default defineConfig({
     },
   },
 
-  ...(isCloudflareBuild ? { adapter: cloudflare() } : {}),
+  adapter: cloudflare({
+    imageService: 'compile',
+    prerenderEnvironment: isCloudflareBuild ? 'workerd' : 'node'
+  }),
 });
