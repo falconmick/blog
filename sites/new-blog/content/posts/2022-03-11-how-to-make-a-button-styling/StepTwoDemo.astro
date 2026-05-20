@@ -1,4 +1,6 @@
 ---
+import { Code } from 'astro:components';
+
 const stepTwoCss = `/* define default button theme on root */
 :root {
   --btn-color: #FFFFFF;
@@ -60,7 +62,7 @@ const shadowCss = `${stepTwoCss.replace(/:root/g, '#shadow-root')}
 }`;
 ---
 <section class="code-example">
-  <pre class="language-css"><code>{stepTwoCss}</code></pre>
+  <Code code={stepTwoCss} lang="css" />
   <div class="shadow-root-container" data-shadow-root-container>
     <template>
       <style set:html={shadowCss}></style>

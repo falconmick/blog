@@ -1,4 +1,6 @@
 ---
+import { Code } from 'astro:components';
+
 const finalCss = `/* define default button theme on root */
 :root {
   --btn-color: #FFFFFF;
@@ -71,7 +73,7 @@ const shadowCss = `${finalCss.replace(/:root/g, '#shadow-root')}
 }`;
 ---
 <section class="code-example">
-  <pre class="language-css"><code>{finalCss}</code></pre>
+  <Code code={finalCss} lang="css" />
   <div class="shadow-root-container" data-shadow-root-container>
     <template>
       <style set:html={shadowCss}></style>
