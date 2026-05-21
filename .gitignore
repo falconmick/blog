@@ -4,6 +4,4 @@ dist
 worker-configuration.d.ts
 .wrangler
 .idea
-migration-report-artifacts
-migration-report.md
 .DS_Store
