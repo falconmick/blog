@@ -1,0 +1,51 @@
+---
+import type { ImageMetadata } from 'astro:assets';
+import OptimizedImage from '../../../src/components/OptimizedImage.astro';
+
+interface Props {
+  localImages?: (ImageMetadata | string)[];
+}
+
+const { localImages = [] } = Astro.props;
+const altTags = [
+  'gatsby logo',
+  'styled components logo',
+  'mdx logo',
+  'yarn logo',
+  'goat counter logo',
+  'netlify logo',
+  'prismjs logo',
+  'tailwind css logo'
+];
+---
+<div class="gallery">
+  {
+    localImages.slice(0, 8).map((image, index) => (
+      <OptimizedImage
+        src={image}
+        alt={altTags[index] || ''}
+        layout="none"
+        height={100}
+        quality={70}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .gallery {
+    background-color: #66666650;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 0 -1rem 1rem;
+    padding: 1rem;
+  }
+
+  .gallery > img {
+    flex: 1 0 100px;
+    object-fit: contain;
+    margin: 0;
+  }
+</style>

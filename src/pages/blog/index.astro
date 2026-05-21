@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Pager from "../../components/Pager.astro";
+import PostTeaser from "../../components/PostTeaser.astro";
+import { getSortedPosts, paginatePosts } from "../../lib/posts";
+
+const pages = paginatePosts(await getSortedPosts());
+const posts = pages[0] ?? [];
+---
+
+<BaseLayout title="Michael's Coding Blog" description="My Coding Life">
+  <div class="mx-auto mb-12 text-center md:w-4/5">
+    <h1>Michael's Coding Blog</h1>
+  </div>
+  {posts.map((entry) => <PostTeaser entry={entry} />)}
+  <Pager nextPagePath={pages.length > 1 ? "/blog/page/2/" : undefined} />
+</BaseLayout>

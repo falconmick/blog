@@ -1,0 +1,44 @@
+---
+import OptimizedImage from "./OptimizedImage.astro";
+import { formatPostDate, type BlogPostView } from "../lib/posts";
+
+interface Props {
+  entry: BlogPostView;
+}
+
+const { entry } = Astro.props;
+const { post, image, url } = entry;
+const excerpt =
+  post.data.excerpt && post.data.excerpt.length > 150
+    ? `${post.data.excerpt.slice(0, 150)}...`
+    : post.data.excerpt;
+---
+
+<a
+  href={url}
+  class="group hover:bg-eggshell block rounded hover:no-underline md:-mx-8 md:p-8"
+  title={`Go to the &quot;${post.data.title}&quot; post`}
+>
+  <article class="flex-col justify-between md:flex md:flex-row">
+    <div class="md:w-1/2 md:pr-4 lg:pr-10">
+      {
+        image && (
+          <OptimizedImage
+            src={image}
+            class="rounded-sm"
+            alt={`Image for ${post.data.title}`}
+            title={post.data.title}
+            layout="constrained"
+            widths={[320, 480, 640, 736]}
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        )
+      }
+    </div>
+    <div class="mx-4 py-4 md:mx-0 md:w-1/2 md:py-0 md:pl-4 lg:py-6 lg:pl-2">
+      <h2 class="text-text no-fancy">{post.data.title}</h2>
+      <small class="mt-2 block">{formatPostDate(post.data.date)}</small>
+      {excerpt && <p class="text-text mt-5">{excerpt}</p>}
+    </div>
+  </article>
+</a>

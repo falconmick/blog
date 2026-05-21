@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostTeaser from "../components/PostTeaser.astro";
+import { getSortedPosts } from "../lib/posts";
+
+const posts = await getSortedPosts();
+---
+
+<BaseLayout title="Michael's Coding Blog" description="My Coding Life">
+  <div class="mx-auto mb-12 text-center md:w-4/5">
+    <h1>Michael's Coding Blog</h1>
+  </div>
+  {posts.slice(0, 5).map((entry) => <PostTeaser entry={entry} />)}
+</BaseLayout>

@@ -1,0 +1,320 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #111111;
+  --color-text: #333333;
+  --color-light: #555555;
+  --color-gray: #888888;
+  --color-offwhite: #d8d8d8;
+  --color-primary: #3c64f1;
+  --color-eggshell: #efefef;
+  --font-heading: "Alegreya Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-branding: "Bowlby One SC", Impact, fantasy;
+  --font-text: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  color: var(--color-text);
+  font-family: var(--font-text);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: white;
+  font-size: 16px;
+  padding-bottom: 3rem;
+}
+
+.mode-dark body {
+  background: var(--color-dark);
+  color: white;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.content a {
+  color: var(--color-primary);
+}
+
+.animated {
+  transition: all ease-in 0.25s;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.625;
+}
+
+.small,
+small {
+  --tw-text-opacity: 1;
+  color: rgba(85, 85, 85, var(--tw-text-opacity));
+  font-size: 0.875rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+@media (min-width: 960px) {
+  .lead {
+    font-size: 1.5rem;
+    line-height: 38px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 42px;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 1.875rem;
+  line-height: 36px;
+  text-transform: capitalize;
+}
+
+.post h2 {
+  margin-top: 4rem !important;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h1 span,
+.h1 span {
+  display: inline;
+
+  padding-inline: 0.08em;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  background-image:
+    /* darker ink bleed near the top of each stroke */
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-primary) 20%, transparent) 2%,
+      color-mix(in srgb, var(--color-primary) 25%, transparent) 95%,
+      transparent 100%
+    ),
+    /* main highlighter body, feathered at the ends */
+    linear-gradient(
+        90deg,
+        transparent 0%,
+        color-mix(in srgb, var(--color-primary) 28%, transparent) 3%,
+        color-mix(in srgb, var(--color-primary) 22%, transparent) 94%,
+        transparent 100%
+      );
+
+  background-repeat: no-repeat;
+
+  background-size:
+    92% 0.31em,
+    94% 0.29em;
+
+  background-position:
+    100% 84%,
+    0 67%;
+}
+
+.content :not(pre) > code,
+h2:not(.no-fancy) {
+  background-image: linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--color-primary) 20%, transparent) 35%,
+    transparent 20%
+  );
+}
+
+.mode-dark h1,
+.mode-dark h2,
+.mode-dark h3,
+.mode-dark h4,
+.mode-dark .text-dark,
+.mode-dark .text-text {
+  color: white;
+}
+
+.mode-dark .text-light,
+.mode-dark .text-gray,
+.mode-dark small,
+.mode-dark .small {
+  color: var(--color-gray);
+}
+
+.mode-dark .hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+.mode-dark .hover\:bg-eggshell:hover {
+  background: var(--color-text);
+}
+
+.mode-dark .border-offwhite {
+  border-color: var(--color-text);
+}
+
+.mode-dark .theme-icon-moon,
+.theme-icon-sun {
+  display: none;
+}
+
+.mode-dark .theme-icon-sun {
+  display: block;
+}
+
+@media (min-width: 960px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 64px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 42px;
+  }
+}
+
+.lead {
+  color: var(--color-light);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.mode-dark .lead,
+.mode-dark p,
+.mode-dark li {
+  color: white;
+}
+
+.small {
+  color: var(--color-gray);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.content > * + * {
+  margin-top: 1.25rem;
+}
+
+.content ul,
+.content ol {
+  margin-left: 1.5rem;
+}
+
+.content ul {
+  list-style: disc;
+}
+
+.content ol {
+  list-style: decimal;
+}
+
+.content blockquote {
+  border-left: 0.25rem solid var(--color-primary);
+  color: var(--color-light);
+  padding-left: 1rem;
+}
+
+.content pre {
+  background: #272822;
+  border-radius: 0.25rem;
+  color: #f8f8f2;
+  overflow-x: auto;
+  padding: 1rem;
+  margin-left: calc(var(--spacing) * -4);
+  margin-right: calc(var(--spacing) * -4);
+}
+
+.post-image {
+  max-height: 340px;
+}
+
+.content img,
+.post-image img {
+  max-height: 340px;
+}
+
+.post-image .svg-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.button {
+  align-items: center;
+  border: 1px solid var(--color-dark);
+  border-radius: 0.25rem;
+  color: var(--color-dark);
+  display: inline-flex;
+  font-weight: 700;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.button:hover {
+  background: var(--color-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.mode-dark .button {
+  border-color: white;
+  color: white;
+}
+
+.mode-dark .button:hover {
+  background: var(--color-gray);
+}
+
+.video iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
