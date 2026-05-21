@@ -10,7 +10,7 @@
     "build:ci": "cross-env CLOUDFLARE_BUILD=1 astro check && cross-env CLOUDFLARE_BUILD=1 astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test:perf": "playwright test",
+    "format": "prettier . --write",
     "generate-types": "wrangler types"
   },
   "dependencies": {
@@ -27,6 +27,9 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "cross-env": "^10.1.0",
+    "prettier": "3.8.3",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.8.0",
     "typescript": "^6.0.3"
   },
   "overrides": {

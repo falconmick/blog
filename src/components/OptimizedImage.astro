@@ -1,18 +1,18 @@
 ---
-import { Image, type ImageMetadata } from 'astro:assets';
+import { Image, type ImageMetadata } from "astro:assets";
 
 interface Props {
   src?: ImageMetadata | string;
   alt: string;
   title?: string;
   class?: string;
-  layout?: 'constrained' | 'fixed' | 'full-width' | 'none';
+  layout?: "constrained" | "fixed" | "full-width" | "none";
   widths?: number[];
   height?: number;
   quality?: number;
-  fit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-  loading?: 'eager' | 'lazy';
-  decoding?: 'async' | 'auto' | 'sync';
+  fit?: "contain" | "cover" | "fill" | "none" | "scale-down";
+  loading?: "eager" | "lazy";
+  decoding?: "async" | "auto" | "sync";
   priority?: boolean;
   sizes?: string;
 }
@@ -22,19 +22,19 @@ const {
   alt,
   title,
   class: className,
-  layout = 'constrained',
+  layout = "constrained",
   widths,
   height,
   quality = 70,
-  fit = 'contain',
+  fit = "contain",
   loading,
-  decoding = 'async',
+  decoding = "async",
   priority,
-  sizes
+  sizes,
 } = Astro.props;
 
 const isLocalRasterImage =
-  src && typeof src === 'object' && 'src' in src && src.format !== 'svg';
+  src && typeof src === "object" && "src" in src && src.format !== "svg";
 ---
 
 {
@@ -58,13 +58,13 @@ const isLocalRasterImage =
   ) : (
     src && (
       <img
-        src={typeof src === 'string' ? src : src.src}
+        src={typeof src === "string" ? src : src.src}
         alt={alt}
         title={title}
-        class:list={[className, 'svg-img']}
+        class:list={[className, "svg-img"]}
         loading={loading}
         decoding={decoding}
-        style={{height: height ? `${height}px` : undefined}}
+        style={{ height: height ? `${height}px` : undefined }}
       />
     )
   )

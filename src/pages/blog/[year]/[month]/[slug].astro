@@ -1,9 +1,15 @@
 ---
-import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import OptimizedImage from '../../../../components/OptimizedImage.astro';
-import Video from '../../../../components/Video.astro';
-import { formatPostDate, getSortedPosts, postDirectory, slugify, tagUrl } from '../../../../lib/posts';
-import { render } from 'astro:content';
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import OptimizedImage from "../../../../components/OptimizedImage.astro";
+import Video from "../../../../components/Video.astro";
+import {
+  formatPostDate,
+  getSortedPosts,
+  postDirectory,
+  slugify,
+  tagUrl,
+} from "../../../../lib/posts";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getSortedPosts();
@@ -13,10 +19,10 @@ export async function getStaticPaths() {
     return {
       params: {
         year: String(date.getFullYear()),
-        month: String(date.getMonth() + 1).padStart(2, '0'),
-        slug: entry.slug
+        month: String(date.getMonth() + 1).padStart(2, "0"),
+        slug: entry.slug,
       },
-      props: { entry }
+      props: { entry },
     };
   });
 }
@@ -29,6 +35,7 @@ const tags = post.data.tags ?? [];
 const isVlog = post.data.videoTitle && post.data.videoSrcURL;
 const githubEditPath = `https://github.com/falconmick/blog/edit/main/content/posts/${postDirectory(post)}/index.mdx`;
 ---
+
 <BaseLayout title={post.data.title} description={post.data.excerpt}>
   <article class="post mb-12 md:mb-24">
     <div class="mx-auto px-4 text-center lg:w-4/5">
@@ -60,24 +67,39 @@ const githubEditPath = `https://github.com/falconmick/blog/edit/main/content/pos
     {
       isVlog && post.data.videoSrcURL && post.data.videoTitle && (
         <div class="content mx-auto my-6 px-4 lg:w-4/5">
-          <Video videoSrcURL={post.data.videoSrcURL} videoTitle={post.data.videoTitle} />
+          <Video
+            videoSrcURL={post.data.videoSrcURL}
+            videoTitle={post.data.videoTitle}
+          />
         </div>
       )
     }
 
     <div class="content mx-auto my-6 px-4 lg:w-4/5">
-      {Content && <Content localImages={embeddedImages} githubEditPath={githubEditPath} />}
+      {
+        Content && (
+          <Content
+            localImages={embeddedImages}
+            githubEditPath={githubEditPath}
+          />
+        )
+      }
     </div>
 
     <div class="mx-auto px-4 lg:w-4/5">
-      <div class="mt-8 border-t border-offwhite pt-8 text-sm text-text md:mt-16 md:pt-16">
+      <div
+        class="border-offwhite text-text mt-8 border-t pt-8 text-sm md:mt-16 md:pt-16"
+      >
         {
           tags.length > 0 && (
             <>
-              Tagged with{' '}
+              Tagged with{" "}
               {tags.map((tag, index) => (
                 <>
-                  <a href={tagUrl(tag)} class="font-semibold text-dark underline">
+                  <a
+                    href={tagUrl(tag)}
+                    class="text-dark font-semibold underline"
+                  >
                     {slugify(tag)}
                   </a>
                   {index < tags.length - 1 && <span>, </span>}
@@ -89,7 +111,12 @@ const githubEditPath = `https://github.com/falconmick/blog/edit/main/content/pos
         <br />
         <br />
         something not right?&nbsp;
-        <a href={githubEditPath} rel="noopener noreferrer" target="_blank" class="font-semibold text-dark underline">
+        <a
+          href={githubEditPath}
+          rel="noopener noreferrer"
+          target="_blank"
+          class="text-dark font-semibold underline"
+        >
           Open a PR
         </a>
       </div>

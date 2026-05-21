@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -7,8 +7,10 @@ interface Props {
 }
 
 const { title, description = "Michael's personal site and blog" } = Astro.props;
-const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Life`;
+const fullTitle =
+  title === "My Coding Life" ? title : `${title} | My Coding Life`;
 ---
+
 <html lang="en" class="">
   <head>
     <meta charset="utf-8" />
@@ -20,7 +22,12 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
     <meta name="og:description" content={description} />
     <meta name="og:type" content="article" />
     <meta name="og:title" content={title} />
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feeds/posts/default" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed"
+      href="/feeds/posts/default"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,59 +36,152 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
     />
     <script is:inline>
       (() => {
-        const mode = localStorage.getItem('mode') || 'light';
-        document.documentElement.classList.toggle('mode-dark', mode === 'dark');
+        const mode = localStorage.getItem("mode") || "light";
+        document.documentElement.classList.toggle("mode-dark", mode === "dark");
       })();
     </script>
     <title>{fullTitle}</title>
   </head>
-  <body class="antialiased bg-white">
+  <body class="bg-white antialiased">
     <header>
-      <div class="h-2 bg-primary"></div>
+      <div class="bg-primary h-2"></div>
       <div class="container mx-auto px-4 py-2 md:px-0 md:py-6">
-        <div class="flex-col justify-center md:flex md:flex-row md:justify-between">
+        <div
+          class="flex-col justify-center md:flex md:flex-row md:justify-between"
+        >
           <a
             href="/blog"
-            class="font-branding h-12 text-3xl text-dark hover:text-primary hover:no-underline md:h-18 md:text-5xl"
+            class="font-branding text-dark hover:text-primary h-12 text-3xl hover:no-underline md:h-18 md:text-5xl"
             aria-label="My Coding Life, Back to homepage"
           >
             My Coding Life
           </a>
-          <nav class="flex justify-center mt-4 md:mt-0">
+          <nav class="mt-4 flex justify-center md:mt-0">
             <ul class="flex items-center">
               <li>
-                <a class="ml-6 block text-dark hover:text-primary" href="https://github.com/falconmick/" aria-label="Follow on Github">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.1-1.5 6.1-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.7 12.7 0 0 0-6.7 0C6.7.3 5.6.6 5.6.6a4.8 4.8 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.1 6.4 6.1 6.7a3.4 3.4 0 0 0-.9 2.6V22"/></svg>
+                <a
+                  class="text-dark hover:text-primary ml-6 block"
+                  href="https://github.com/falconmick/"
+                  aria-label="Follow on Github"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.1-1.5 6.1-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.7 12.7 0 0 0-6.7 0C6.7.3 5.6.6 5.6.6a4.8 4.8 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.1 6.4 6.1 6.7a3.4 3.4 0 0 0-.9 2.6V22"
+                    ></path></svg
+                  >
                   <span class="sr-only">Github</span>
                 </a>
               </li>
               <li>
-                <a class="ml-6 block text-dark hover:text-primary" href="https://twitter.com/falconmick" aria-label="Follow on Twitter">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.1 1.5 4.5 4.5 0 0 0-7.9 3v1A10.7 10.7 0 0 1 3 4s-4 9 5 13a11.6 11.6 0 0 1-7 2c9 5 20 0 20-11.5v-.8A7.7 7.7 0 0 0 23 3z"/></svg>
+                <a
+                  class="text-dark hover:text-primary ml-6 block"
+                  href="https://twitter.com/falconmick"
+                  aria-label="Follow on Twitter"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path
+                      d="M23 3a10.9 10.9 0 0 1-3.1 1.5 4.5 4.5 0 0 0-7.9 3v1A10.7 10.7 0 0 1 3 4s-4 9 5 13a11.6 11.6 0 0 1-7 2c9 5 20 0 20-11.5v-.8A7.7 7.7 0 0 0 23 3z"
+                    ></path></svg
+                  >
                   <span class="sr-only">Twitter</span>
                 </a>
               </li>
               <li>
-                <a class="ml-6 block text-dark hover:text-primary" href="mailto:contact@mcrook.com" aria-label="Email">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+                <a
+                  class="text-dark hover:text-primary ml-6 block"
+                  href="mailto:contact@mcrook.com"
+                  aria-label="Email"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path><path d="m22 6-10 7L2 6"></path></svg
+                  >
                   <span class="sr-only">Email</span>
                 </a>
               </li>
               <li>
-                <a class="ml-6 block text-dark hover:text-primary" href="/feeds/posts/default" aria-label="RSS feed" title="RSS feed">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                <a
+                  class="text-dark hover:text-primary ml-6 block"
+                  href="/feeds/posts/default"
+                  aria-label="RSS feed"
+                  title="RSS feed"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path d="M4 11a9 9 0 0 1 9 9"></path><path
+                      d="M4 4a16 16 0 0 1 16 16"></path><circle
+                      cx="5"
+                      cy="19"
+                      r="1"></circle></svg
+                  >
                 </a>
               </li>
               <li>
                 <button
-                  class="ml-6 block text-dark hover:text-primary"
+                  class="text-dark hover:text-primary ml-6 block"
                   type="button"
                   aria-label="Toggle dark/light mode"
                   title="Toggle dark/light mode"
                   data-theme-toggle
                 >
-                  <svg class="theme-icon theme-icon-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
-                  <svg class="theme-icon theme-icon-sun" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                  <svg
+                    class="theme-icon theme-icon-moon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path
+                      d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"
+                    ></path></svg
+                  >
+                  <svg
+                    class="theme-icon theme-icon-sun"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
+                    ></path><path d="M12 20v2"></path><path
+                      d="m4.93 4.93 1.41 1.41"></path><path
+                      d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
+                    ></path><path d="M20 12h2"></path><path
+                      d="m6.34 17.66-1.41 1.41"></path><path
+                      d="m19.07 4.93-1.41 1.41"></path></svg
+                  >
                 </button>
               </li>
             </ul>
@@ -89,15 +189,24 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
         </div>
         <!-- TODO: make border-primary determined by route -->
         <nav id="nav-main" class="mt-4 hidden md:flex">
-          <ul class="flex justify-center w-full">
+          <ul class="flex w-full justify-center">
             <li class="mr-7">
-              <a class="block uppercase text-dark text-center font-semibold hover:text-primary hover:no-underline border-b-8 border-transparent py-2 pb-3" href="/blog?coming=soon">Home</a>
+              <a
+                class="text-dark hover:text-primary block border-b-8 border-transparent py-2 pb-3 text-center font-semibold uppercase hover:no-underline"
+                href="/blog?coming=soon">Home</a
+              >
             </li>
             <li class="mr-7">
-              <a class="block uppercase text-primary text-center font-semibold hover:text-primary hover:no-underline border-b-8 border-primary py-2 pb-3" href="/blog">Blog</a>
+              <a
+                class="text-primary hover:text-primary border-primary block border-b-8 py-2 pb-3 text-center font-semibold uppercase hover:no-underline"
+                href="/blog">Blog</a
+              >
             </li>
             <li>
-              <a class="block uppercase text-dark text-center font-semibold hover:text-primary hover:no-underline border-b-8 border-transparent py-2 pb-3" href="/blog/tags/conference-talk/">Talks</a>
+              <a
+                class="text-dark hover:text-primary block border-b-8 border-transparent py-2 pb-3 text-center font-semibold uppercase hover:no-underline"
+                href="/blog/tags/conference-talk/">Talks</a
+              >
             </li>
           </ul>
         </nav>
@@ -115,19 +224,23 @@ const fullTitle = title === 'My Coding Life' ? title : `${title} | My Coding Lif
     </footer>
     <script is:inline>
       (() => {
-        const toggle = document.querySelector('[data-theme-toggle]');
+        const toggle = document.querySelector("[data-theme-toggle]");
         if (!toggle) {
           return;
         }
 
         const setMode = (mode) => {
-          localStorage.setItem('mode', mode);
-          document.documentElement.classList.toggle('mode-dark', mode === 'dark');
+          localStorage.setItem("mode", mode);
+          document.documentElement.classList.toggle(
+            "mode-dark",
+            mode === "dark",
+          );
         };
 
-        toggle.addEventListener('click', () => {
-          const isDark = document.documentElement.classList.contains('mode-dark');
-          setMode(isDark ? 'light' : 'dark');
+        toggle.addEventListener("click", () => {
+          const isDark =
+            document.documentElement.classList.contains("mode-dark");
+          setMode(isDark ? "light" : "dark");
         });
       })();
     </script>

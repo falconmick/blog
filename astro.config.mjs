@@ -1,8 +1,8 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import tailwindcss from "@tailwindcss/vite";
 
-import cloudflare from '@astrojs/cloudflare';
+import cloudflare from "@astrojs/cloudflare";
 
 const isCloudflareBuild = process.env.CLOUDFLARE_BUILD === "1";
 
@@ -11,15 +11,15 @@ export default defineConfig({
 
   image: {
     service: {
-      entrypoint: 'astro/assets/services/sharp',
+      entrypoint: "astro/assets/services/sharp",
       config: {
         jpeg: { quality: 100 },
-        webp: { quality: 100 }
-      }
+        webp: { quality: 100 },
+      },
     },
-    layout: 'constrained',
-    objectFit: 'contain',
-    responsiveStyles: true
+    layout: "constrained",
+    objectFit: "contain",
+    responsiveStyles: true,
   },
 
   vite: {
@@ -27,7 +27,7 @@ export default defineConfig({
   },
 
   adapter: cloudflare({
-    imageService: 'compile',
-    prerenderEnvironment: isCloudflareBuild ? 'workerd' : 'node'
+    imageService: "compile",
+    prerenderEnvironment: isCloudflareBuild ? "workerd" : "node",
   }),
 });

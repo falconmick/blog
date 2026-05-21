@@ -67,25 +67,26 @@ a:hover {
 
 p {
   font-size: 1.125rem;
-  line-height: 1.625
+  line-height: 1.625;
 }
 
-.small,small {
+.small,
+small {
   --tw-text-opacity: 1;
-  color: rgba(85,85,85,var(--tw-text-opacity));
-  font-size: .875rem
+  color: rgba(85, 85, 85, var(--tw-text-opacity));
+  font-size: 0.875rem;
 }
 
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  line-height: 32px
+  line-height: 32px;
 }
 
 @media (min-width: 960px) {
   .lead {
-    font-size:1.5rem;
-    line-height: 38px
+    font-size: 1.5rem;
+    line-height: 38px;
   }
 }
 
@@ -137,15 +138,14 @@ h1 span,
       color-mix(in srgb, var(--color-primary) 25%, transparent) 95%,
       transparent 100%
     ),
-
     /* main highlighter body, feathered at the ends */
     linear-gradient(
-      90deg,
-      transparent 0%,
-      color-mix(in srgb, var(--color-primary) 28%, transparent) 3%,
-      color-mix(in srgb, var(--color-primary) 22%, transparent) 94%,
-      transparent 100%
-    );
+        90deg,
+        transparent 0%,
+        color-mix(in srgb, var(--color-primary) 28%, transparent) 3%,
+        color-mix(in srgb, var(--color-primary) 22%, transparent) 94%,
+        transparent 100%
+      );
 
   background-repeat: no-repeat;
 
@@ -287,7 +287,6 @@ h2:not(.no-fancy) {
   width: 100%;
   object-fit: contain;
 }
-
 
 .button {
   align-items: center;

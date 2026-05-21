@@ -1,11 +1,11 @@
-import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
-import { z } from 'astro/zod';
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const posts = defineCollection({
   loader: glob({
-    pattern: '**/index.mdx',
-    base: './content/posts'
+    pattern: "**/index.mdx",
+    base: "./content/posts",
   }),
   schema: z.object({
     title: z.string(),
@@ -17,8 +17,8 @@ const posts = defineCollection({
     tags: z.array(z.string()).optional(),
     videoSrcURL: z.string().optional(),
     videoTitle: z.string().optional(),
-    embeddedImagesLocal: z.array(z.string()).optional()
-  })
+    embeddedImagesLocal: z.array(z.string()).optional(),
+  }),
 });
 
 export const collections = { posts };

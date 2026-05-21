@@ -1,6 +1,6 @@
 ---
-import OptimizedImage from './OptimizedImage.astro';
-import { formatPostDate, type BlogPostView } from '../lib/posts';
+import OptimizedImage from "./OptimizedImage.astro";
+import { formatPostDate, type BlogPostView } from "../lib/posts";
 
 interface Props {
   entry: BlogPostView;
@@ -13,9 +13,10 @@ const excerpt =
     ? `${post.data.excerpt.slice(0, 150)}...`
     : post.data.excerpt;
 ---
+
 <a
   href={url}
-  class="group block rounded md:-mx-8 md:p-8 hover:bg-eggshell hover:no-underline"
+  class="group hover:bg-eggshell block rounded hover:no-underline md:-mx-8 md:p-8"
   title={`Go to the &quot;${post.data.title}&quot; post`}
 >
   <article class="flex-col justify-between md:flex md:flex-row">
@@ -37,7 +38,7 @@ const excerpt =
     <div class="mx-4 py-4 md:mx-0 md:w-1/2 md:py-0 md:pl-4 lg:py-6 lg:pl-2">
       <h2 class="text-text no-fancy">{post.data.title}</h2>
       <small class="mt-2 block">{formatPostDate(post.data.date)}</small>
-      {excerpt && <p class="mt-5 text-text">{excerpt}</p>}
+      {excerpt && <p class="text-text mt-5">{excerpt}</p>}
     </div>
   </article>
 </a>
