@@ -3,12 +3,24 @@ import type { ImageMetadata } from 'astro:assets';
 
 export type BlogPost = CollectionEntry<'posts'>;
 
+export interface BlogPostComment {
+  id: string;
+  username: string;
+  avatarUrl: string;
+  url: string;
+  createdAt: string;
+  updatedAt?: string;
+  replyToId?: string;
+  body: string;
+}
+
 export interface BlogPostView {
   post: BlogPost;
   slug: string;
   url: string;
   image?: ImageMetadata | string;
   embeddedImages: (ImageMetadata | string)[];
+  comments: BlogPostComment[];
 }
 
 const POSTS_PER_PAGE = 5;
@@ -17,6 +29,11 @@ const imageModules = import.meta.glob('../../content/posts/**/*.{jpg,jpeg,png,we
   eager: true,
   import: 'default'
 }) as Record<string, ImageMetadata | string>;
+
+const commentModules = import.meta.glob('../../content/posts/**/comments.json', {
+  eager: true,
+  import: 'default'
+}) as Record<string, BlogPostComment[]>;
 
 export function slugify(value: string) {
   return value
@@ -61,6 +78,8 @@ function resolvePostAsset(post: BlogPost, assetPath?: string) {
 }
 
 export function toPostView(post: BlogPost): BlogPostView {
+  const directory = postDirectory(post);
+
   return {
     post,
     slug: postSlug(post),
@@ -68,7 +87,8 @@ export function toPostView(post: BlogPost): BlogPostView {
     image: resolvePostAsset(post, post.data.image),
     embeddedImages: (post.data.embeddedImagesLocal ?? [])
       .map((imagePath) => resolvePostAsset(post, imagePath))
-      .filter((image): image is ImageMetadata | string => Boolean(image))
+      .filter((image): image is ImageMetadata | string => Boolean(image)),
+    comments: commentModules[`../../content/posts/${directory}/comments.json`] ?? []
   };
 }
 

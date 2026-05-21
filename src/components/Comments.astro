@@ -1,0 +1,73 @@
+---
+import { formatPostDate } from '../lib/posts';
+
+export interface CommentEntry {
+  id: string;
+  username: string;
+  avatarUrl: string;
+  url: string;
+  createdAt: string;
+  updatedAt?: string;
+  replyToId?: string;
+  body: string;
+}
+
+interface Props {
+  comments: CommentEntry[];
+  discussionUrl?: string;
+}
+
+const { comments, discussionUrl } = Astro.props;
+---
+
+{
+  discussionUrl && (
+    <section class="comments mx-auto mt-12 border-t border-offwhite px-4 pt-8 lg:w-4/5">
+      <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 class="no-fancy">Comments</h2>
+          <p class="small mt-1">
+            {comments.length === 0 ? 'No comments yet.' : `${comments.length} comment${comments.length === 1 ? '' : 's'}`}
+          </p>
+        </div>
+        <a class="font-semibold text-dark underline" href={discussionUrl} rel="noopener noreferrer" target="_blank">
+          Join the discussion
+        </a>
+      </div>
+
+      {comments.length > 0 && (
+        <ol class="space-y-6">
+          {comments.map((comment) => {
+            const createdAt = new Date(comment.createdAt);
+
+            return (
+              <li class:list={['rounded-sm border border-offwhite p-4', comment.replyToId && 'ml-6 md:ml-12']}>
+                <article>
+                  <header class="mb-3 flex items-center gap-3">
+                    <img
+                      class="h-10 w-10 rounded-full"
+                      src={comment.avatarUrl}
+                      alt={`${comment.username}'s avatar`}
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                    <div>
+                      <a class="font-semibold text-dark underline" href={comment.url} rel="noopener noreferrer" target="_blank">
+                        {comment.username}
+                      </a>
+                      <p class="small">
+                        <time datetime={comment.createdAt}>{formatPostDate(createdAt)}</time>
+                      </p>
+                    </div>
+                  </header>
+                  <p class="whitespace-pre-wrap text-base leading-7">{comment.body}</p>
+                </article>
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </section>
+  )
+}

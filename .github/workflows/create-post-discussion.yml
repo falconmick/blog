@@ -1,0 +1,41 @@
+name: Create post discussion
+
+on:
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  contents: write
+  discussions: write
+  pull-requests: read
+
+jobs:
+  create-discussion:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Create discussions for trusted merged posts
+        run: node scripts/github/create-post-discussions.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          DISCUSSION_CATEGORY_NAME: ${{ vars.DISCUSSION_CATEGORY_NAME || 'Comments' }}
+          BLOG_BASE_URL: ${{ vars.BLOG_BASE_URL }}
+
+      - name: Commit discussion frontmatter
+        run: |
+          if git diff --quiet -- content/posts; then
+            echo "No post frontmatter changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/posts
+          git commit -m "Add discussion links for blog posts"
+          git push origin HEAD:main

@@ -1,0 +1,48 @@
+name: Sync discussion comments
+
+on:
+  discussion_comment:
+    types: [created, edited, deleted]
+
+permissions:
+  contents: write
+  discussions: read
+  pull-requests: write
+
+jobs:
+  sync-comments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Sync comments JSON
+        run: node scripts/github/sync-discussion-comments.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+
+      - name: Open comments update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH_NAME: comments/discussion-${{ github.event.discussion.number }}-${{ github.run_id }}
+          DISCUSSION_URL: ${{ github.event.discussion.html_url }}
+        run: |
+          if git diff --quiet -- content/posts; then
+            echo "No comment changes to publish."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH_NAME"
+          git add content/posts
+          git commit -m "Sync discussion comments"
+          git push origin "$BRANCH_NAME"
+          gh pr create \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --title "Sync comments for discussion #${{ github.event.discussion.number }}" \
+            --body "Updates the cached blog comments from $DISCUSSION_URL."

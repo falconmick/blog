@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Comments from '../../../../components/Comments.astro';
 import OptimizedImage from '../../../../components/OptimizedImage.astro';
 import Video from '../../../../components/Video.astro';
 import { formatPostDate, getSortedPosts, postDirectory, slugify, tagUrl } from '../../../../lib/posts';
@@ -22,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { post, image, embeddedImages } = entry;
+const { post, image, embeddedImages, comments } = entry;
 const rendered = await render(post);
 const Content = rendered?.Content;
 const tags = post.data.tags ?? [];
@@ -94,5 +95,7 @@ const githubEditPath = `https://github.com/falconmick/blog/edit/main/content/pos
         </a>
       </div>
     </div>
+
+    <Comments comments={comments} discussionUrl={post.data.discussion?.url} />
   </article>
 </BaseLayout>

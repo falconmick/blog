@@ -17,7 +17,14 @@ const posts = defineCollection({
     tags: z.array(z.string()).optional(),
     videoSrcURL: z.string().optional(),
     videoTitle: z.string().optional(),
-    embeddedImagesLocal: z.array(z.string()).optional()
+    embeddedImagesLocal: z.array(z.string()).optional(),
+    discussion: z
+      .object({
+        id: z.string().optional(),
+        number: z.number().int().positive(),
+        url: z.string().url()
+      })
+      .optional()
   })
 });
 
