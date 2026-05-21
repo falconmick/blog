@@ -52,12 +52,13 @@ const githubEditPath = `https://github.com/falconmick/blog/edit/main/content/pos
             title={post.data.title}
             alt={post.data.caption || post.data.title}
             class="rounded-sm"
-            layout="full-width"
+            layout="constrained"
+            widths={[240, 540, 640]}
             quality={70}
             fit="contain"
             loading="eager"
             priority
-            sizes="100vw"
+        sizes="(max-width: 360px) 240px, (max-width: 720px) 540px, 640px"
           />
           {post.data.caption && <figcaption set:html={post.data.caption} />}
         </figure>

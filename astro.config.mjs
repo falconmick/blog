@@ -13,8 +13,8 @@ export default defineConfig({
     service: {
       entrypoint: "astro/assets/services/sharp",
       config: {
-        jpeg: { quality: 100 },
-        webp: { quality: 100 },
+        jpeg: { quality: 70 },
+        webp: { quality: 70 },
       },
     },
     layout: "constrained",
